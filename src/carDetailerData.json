@@ -1,0 +1,16 @@
+{
+  "company": "Car Detailer Pro",
+  "phone": "555-555-5555",
+  "email": "email@email.com",
+  "address": "123 Detail Street",
+  "sections": [
+    {
+      "title": "Services",
+      "links": [
+        "Exterior Wash & Wax",
+        "Interior Deep Cleaning",
+        "Paint Corretion"
+      ]
+    }
+  ]
+}

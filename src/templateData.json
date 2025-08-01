@@ -1,0 +1,16 @@
+{
+  "company": "Company Name",
+  "title": "Company Name",
+  "phone": "555-555-5555",
+  "email": "email@email.com",
+  "facebook": "Facebook",
+  "linkedin": "Linkedin",
+  "youtube": "youtube",
+  "instagram": "instagram",
+  "twitter": "twitter",
+  "tiktok": "tiktok",
+  "whatsapp": "whatsapp",
+  "address": "123 Street",
+  "footer_description": "Description Text",
+  "sections": [{ "title": "Section", "links": ["Link1", "Link2", "Link3"] }]
+}

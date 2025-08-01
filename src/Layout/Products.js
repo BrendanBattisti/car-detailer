@@ -6,7 +6,7 @@ const Products = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h2>Products</h2>
+            <h2 className="text-2xl font-bold text-center">Products</h2>
           </div>
         </div>
       </div>

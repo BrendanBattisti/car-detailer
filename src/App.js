@@ -1,19 +1,19 @@
-import { Navbar } from "@brendanbattisti/componentlibrary";
+import { BlockyNavbar, Footer } from "@brendanbattisti/componentlibrary";
 import Hero from "./Layout/Hero";
 import Products from "./Layout/Products";
 import About from "./Layout/About";
 import Contact from "./Layout/Contact";
-import Footer from "./Layout/Footer";
+import data from "./templateData.json";
 
 function App() {
   return (
     <>
-      {Navbar(["About", "Contact", "Products"])}
+      <BlockyNavbar sections={["About", "Contact", "Products"]} />
       <Hero />
       <Products />
       <About />
       <Contact />
-      <Footer />
+      <Footer data={data} />
     </>
   );
 }

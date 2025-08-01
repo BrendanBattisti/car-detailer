@@ -1,7 +1,9 @@
-const Section = ({ id, children }) => {
+import React from "react";
+
+const Section = ({ id, children, className = "" }) => {
   return (
-    <section id={id} className="min-h-screen flex items-center">
-      {children}
+    <section id={id} className={`py-16 px-4 ${className}`}>
+      <div className="container mx-auto max-w-6xl">{children}</div>
     </section>
   );
 };
