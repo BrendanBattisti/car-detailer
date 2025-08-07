@@ -42,12 +42,12 @@ const About = () => {
               Our Services
             </h3>
             <ul className="space-y-3 text-subtext">
-              <ol>Exterior Wash & Wax</ol>
-              <ol>Interior Deep Cleaning</ol>
-              <ol>Paint Correction</ol>
-              <ol>Ceramic Coating</ol>
-              <ol>Headlight Restoration</ol>
-              <ol>Engine Bay Cleaning</ol>
+              <li>Exterior Wash & Wax</li>
+              <li>Interior Deep Cleaning</li>
+              <li>Paint Correction</li>
+              <li>Ceramic Coating</li>
+              <li>Headlight Restoration</li>
+              <li>Engine Bay Cleaning</li>
             </ul>
           </div>
         </div>
