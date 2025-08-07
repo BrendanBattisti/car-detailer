@@ -17,22 +17,24 @@ const Navbar = () => {
   }
 
   return (
-    <div className="absolute z-10 w-screen font-bold">
-      <div className="flex flex-row justify-between w-3/5 mx-auto">
+    <div className="absolute z-10 w-screen font-bold p-4">
+      <div className="flex flex-row justify-between md:w-3/5 mx-auto">
         {/* Logo */}
-        <div className="text-center my-auto p-6">Car Detailer Logo</div>
+        <div className="text-center my-auto">Car Detailer Logo</div>
         {/* Links */}
-        <div className="flex flex-row gap-4">
+        <div className="flex-row gap-4 hidden md:flex">
           {sections.map(([text, url]) => (
             <NavbarLink text={text} url={url} />
           ))}
         </div>
         {/* Call to action */}
-        <div className="flex">
+        <div className="hidden md:flex">
           <a className="button-primary" href="#contact">
             Contact Us
           </a>
         </div>
+        {/* Mobile Menu */}
+        <div className="md:hidden flex my-auto">Mobile Menu</div>
       </div>
     </div>
   );

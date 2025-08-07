@@ -2,7 +2,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="w-full bg-background">
-      <div className="flex flex-row w-full justify-evenly mx-auto p-6 pt-10">
+      <div className="grid md:grid-cols-3 grid-cols-3 w-full justify-evenly mx-auto p-6 pt-10 md:w-4/5">
         <div>Logo</div>
         <div className="flex flex-col gap-4">
           <h4>Links</h4>
