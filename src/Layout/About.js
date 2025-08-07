@@ -11,33 +11,33 @@ const About = () => {
       <div className="text-center">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="text-left">
-            <p className="text-subtext mb-4">
+            <p className="animate-in text-subtext mb-4">
               We are passionate about bringing your vehicle back to its showroom
               glory. With years of experience and attention to detail, our team
               provides professional car detailing services that exceed
               expectations.
             </p>
-            <p className="text-subtext mb-6">
+            <p className="animate-in text-subtext mb-6">
               From basic washes to complete paint correction and ceramic
               coatings, we use only the highest quality products and techniques
               to ensure your car looks its absolute best.
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="flex items-center text-primary">
+              <div className="animate-in flex items-center text-primary">
                 <span className="text-2xl mr-2">✓</span>
                 <span>Professional Equipment</span>
               </div>
-              <div className="flex items-center text-primary">
+              <div className="animate-in flex items-center text-primary">
                 <span className="text-2xl mr-2">✓</span>
                 <span>Premium Products</span>
               </div>
-              <div className="flex items-center text-primary">
+              <div className="animate-in flex items-center text-primary">
                 <span className="text-2xl mr-2">✓</span>
                 <span>Expert Technicians</span>
               </div>
             </div>
           </div>
-          <div className="bg-background-200 rounded-lg p-8">
+          <div className="animate-in bg-background-200 rounded-lg p-8">
             <h3 className="text-xl font-semibold text-white mb-4">
               Our Services
             </h3>

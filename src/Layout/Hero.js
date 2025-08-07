@@ -1,18 +1,54 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 const Hero = () => {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".hero-title", {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+      gsap.from(".hero-sub", {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: 0.1,
+      });
+      gsap.from(".hero-cta a", {
+        y: 10,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.1,
+        delay: 0.2,
+      });
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="relative min-h-screen flex md:items-center items-end pb-10">
+    <div
+      ref={heroRef}
+      className="relative min-h-screen flex md:items-center items-end pb-10"
+    >
       {/* Content */}
       <div className="relative h-full z-10 container mx-auto px-4 md:w-4/5">
         <div className="md:w-3/4">
-          <h1>
+          <h1 className="hero-title">
             Make your car <em className="font-hero_emphasis">Shine</em>
           </h1>
-          <p className="text-lg md:text-xl text-white mb-8 max-w-2xl md:w-3/5 font-secondary">
+          <p className="hero-sub text-lg md:text-xl text-white mb-8 max-w-2xl md:w-3/5 font-secondary">
             Transform your vehicle with our premium detailing services. From
             basic washes to complete restoration, we bring out the best in your
             car.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="hero-cta flex flex-col sm:flex-row gap-4">
             <a className="button-primary w-fit" href="#contact">
               Book Now
             </a>

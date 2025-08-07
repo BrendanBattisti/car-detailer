@@ -50,13 +50,13 @@ const Contact = () => {
     >
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Contact Form */}
-        <div className="bg-background-200 rounded-lg p-8">
+        <div className="animate-in bg-background-200 rounded-lg p-8">
           <h3 className="text-2xl font-bold text-white mb-6">
             Send us a Message
           </h3>
           <form className="space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
-              <div>
+              <div className="animate-in">
                 <label
                   htmlFor="firstName"
                   className="block text-white font-semibold mb-2"
@@ -70,7 +70,7 @@ const Contact = () => {
                   placeholder="John"
                 />
               </div>
-              <div>
+              <div className="animate-in">
                 <label
                   htmlFor="lastName"
                   className="block text-white font-semibold mb-2"
@@ -86,7 +86,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div>
+            <div className="animate-in">
               <label
                 htmlFor="email"
                 className="block text-white font-semibold mb-2"
@@ -101,7 +101,7 @@ const Contact = () => {
               />
             </div>
 
-            <div>
+            <div className="animate-in">
               <label
                 htmlFor="phone"
                 className="block text-white font-semibold mb-2"
@@ -116,7 +116,7 @@ const Contact = () => {
               />
             </div>
 
-            <div>
+            <div className="animate-in">
               <label
                 htmlFor="service"
                 className="block text-white font-semibold mb-2"
@@ -136,7 +136,7 @@ const Contact = () => {
               </select>
             </div>
 
-            <div>
+            <div className="animate-in">
               <label
                 htmlFor="message"
                 className="block text-white font-semibold mb-2"
@@ -151,7 +151,7 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className="w-full">
+            <button type="submit" className="animate-in w-full">
               Send Message
             </button>
           </form>
@@ -162,7 +162,10 @@ const Contact = () => {
           <div>
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start space-x-4">
+                <div
+                  key={index}
+                  className="animate-in flex items-start space-x-4"
+                >
                   <div className="text-3xl">{info.icon}</div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-2">
@@ -191,7 +194,7 @@ const Contact = () => {
           </div>
 
           {/* Map Placeholder */}
-          <div className="bg-background-100 rounded-lg p-6">
+          <div className="animate-in bg-background-100 rounded-lg p-6">
             <h4 className="text-lg font-semibold text-white mb-4">
               Visit Our Location
             </h4>

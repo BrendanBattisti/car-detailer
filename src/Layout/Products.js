@@ -76,7 +76,7 @@ const Products = () => {
         {services.map((service) => (
           <div
             key={service.id}
-            className="bg-background-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="animate-in bg-background-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 service-card"
           >
             <div className="flex flex-col justify-between p-6 h-full">
               <div className="flex justify-between items-start mb-3">

@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 const Navbar = () => {
   const sections = [
     ["Our Services", "#services"],
@@ -16,9 +19,23 @@ const Navbar = () => {
     );
   }
 
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".nav-wrap", {
+        y: -20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+    }, navRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="absolute z-10 w-screen font-bold p-4">
-      <div className="flex flex-row justify-between md:w-4/5 mx-auto">
+    <div ref={navRef} className="absolute z-10 w-screen font-bold p-4">
+      <div className="nav-wrap flex flex-row justify-between md:w-4/5 mx-auto">
         {/* Logo */}
         <div className="text-center my-auto">Car Detailer Logo</div>
         {/* Links */}
