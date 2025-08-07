@@ -83,7 +83,7 @@ const Products = () => {
             key={service.id}
             className="bg-background-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <div className="p-6">
+            <div className="flex flex-col justify-evenly p-6 h-full">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-xl font-semibold text-white">
                   {service.name}

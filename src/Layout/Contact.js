@@ -214,69 +214,6 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
-          {/* Quick Actions */}
-          <div className="bg-background-700 rounded-lg p-6">
-            <h4 className="text-lg font-semibold text-white mb-4">
-              Quick Actions
-            </h4>
-            <div className="space-y-3">
-              <button className="w-full bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
-                📅 Schedule Appointment
-              </button>
-              <button className="w-full bg-background-600 hover:bg-background-500 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
-                💬 Live Chat
-              </button>
-              <button className="w-full bg-background-600 hover:bg-background-500 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
-                📱 Text Us
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* FAQ Section */}
-      <div className="mt-16">
-        <h3 className="text-2xl font-bold text-white text-center mb-8">
-          Frequently Asked Questions
-        </h3>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-background-800 rounded-lg p-6">
-            <h4 className="text-lg font-semibold text-white mb-2">
-              How long does a typical detail take?
-            </h4>
-            <p className="text-subtext text-sm">
-              Basic washes take 2-3 hours, while full details can take 4-6
-              hours. Ceramic coatings require 1-2 days for proper curing.
-            </p>
-          </div>
-          <div className="bg-background-800 rounded-lg p-6">
-            <h4 className="text-lg font-semibold text-white mb-2">
-              Do you offer mobile services?
-            </h4>
-            <p className="text-subtext text-sm">
-              Yes! We offer mobile detailing services for your convenience. We
-              can come to your home or office.
-            </p>
-          </div>
-          <div className="bg-background-800 rounded-lg p-6">
-            <h4 className="text-lg font-semibold text-white mb-2">
-              What payment methods do you accept?
-            </h4>
-            <p className="text-subtext text-sm">
-              We accept cash, credit cards, debit cards, and digital payments
-              including Venmo and PayPal.
-            </p>
-          </div>
-          <div className="bg-background-800 rounded-lg p-6">
-            <h4 className="text-lg font-semibold text-white mb-2">
-              Do you provide warranties?
-            </h4>
-            <p className="text-subtext text-sm">
-              Yes, we offer satisfaction guarantees on all services and extended
-              warranties on ceramic coatings.
-            </p>
-          </div>
         </div>
       </div>
     </Section>

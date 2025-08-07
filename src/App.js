@@ -5,12 +5,20 @@ import About from "./Layout/About";
 import Contact from "./Layout/Contact";
 import data from "./templateData.json";
 import Navbar from "./Layout/Navbar";
+import FAQ from "./Layout/FAQ";
 import { getImageUrl } from "./Util/ImageUtil";
 
 function App() {
   const HeroImage = getImageUrl("buffing.jpg");
   return (
-    <div>
+    <div
+      style={{
+        scrollSnapType: "y proximity",
+        overflowY: "auto",
+        height: "100vh",
+        scrollBehavior: "smooth",
+      }}
+    >
       <div
         className="bg-cover h-screen w-full z-0 fixed"
         style={{
@@ -29,6 +37,7 @@ function App() {
         <Products />
         <About />
         <Contact />
+        <FAQ />
         <Footer data={data} />
       </div>
     </div>
