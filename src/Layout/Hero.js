@@ -2,8 +2,8 @@ const Hero = () => {
   return (
     <div className="relative min-h-screen flex md:items-center items-end pb-10">
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 w-3/5">
-        <div className="w-3/4">
+      <div className="relative h-full z-10 container mx-auto px-4 md:w-3/5">
+        <div className="md:w-3/4">
           <h1>
             Make your car <em className="font-hero_emphasis">Shine</em>
           </h1>
