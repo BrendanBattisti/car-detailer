@@ -42,11 +42,13 @@ const Contact = () => {
   ];
 
   return (
-    <Section id="contact" className="bg-background-900">
+    <Section
+      id="contact"
+      className="bg-background-900"
+      header="Contact"
+      title="Get in touch"
+    >
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Contact Us
-        </h2>
         <p className="text-subtext max-w-2xl mx-auto">
           Ready to give your vehicle the care it deserves? Get in touch with us
           to schedule your appointment or learn more about our services.

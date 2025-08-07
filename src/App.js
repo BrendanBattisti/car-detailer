@@ -1,9 +1,10 @@
-import { Footer } from "@brendanbattisti/componentlibrary";
+// import { Footer } from "@brendanbattisti/componentlibrary";
+import Footer from "./Layout/Footer";
 import Hero from "./Layout/Hero";
 import Products from "./Layout/Products";
 import About from "./Layout/About";
 import Contact from "./Layout/Contact";
-import data from "./templateData.json";
+import data from "./carDetailerData.json";
 import Navbar from "./Layout/Navbar";
 import FAQ from "./Layout/FAQ";
 import { getImageUrl } from "./Util/ImageUtil";

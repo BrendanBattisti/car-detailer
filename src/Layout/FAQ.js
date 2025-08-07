@@ -25,12 +25,12 @@ const FAQ = () => {
   ];
 
   return (
-    <Section id="faq" className="bg-background-900">
-      <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold text-white">
-          Frequently Asked Questions
-        </h3>
-      </div>
+    <Section
+      id="faq"
+      className="bg-background-900"
+      title="Frequently Asked Questions"
+    >
+      <div className="text-center mb-8"></div>
       <div className="grid md:grid-cols-2 gap-6">
         {faqData.map((faq, index) => (
           <div key={index} className="bg-background-800 rounded-lg p-6">

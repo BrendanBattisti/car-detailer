@@ -2,11 +2,13 @@ import Section from "../Components/Section";
 
 const About = () => {
   return (
-    <Section id="about" className="bg-background-800">
+    <Section
+      id="about"
+      className="bg-background-800"
+      title="Who we are"
+      header="About"
+    >
       <div className="text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-          About Us
-        </h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="text-left">
             <p className="text-subtext mb-4">
