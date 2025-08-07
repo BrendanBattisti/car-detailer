@@ -1,10 +1,11 @@
 // import { Footer } from "@brendanbattisti/componentlibrary";
 import Footer from "./Layout/Footer";
+import data from "./carDetailerData.json";
 import Hero from "./Layout/Hero";
 import Products from "./Layout/Products";
 import About from "./Layout/About";
 import Contact from "./Layout/Contact";
-import data from "./carDetailerData.json";
+import { Helmet } from "react-helmet";
 import Navbar from "./Layout/Navbar";
 import FAQ from "./Layout/FAQ";
 import { getImageUrl } from "./Util/ImageUtil";
@@ -20,6 +21,14 @@ function App() {
         scrollBehavior: "smooth",
       }}
     >
+      <Helmet>
+        <title>Car Detailer Pro | Premium Car Detailing Services</title>
+        <meta
+          name="description"
+          content="Professional car detailing services including paint correction, interior restoration, and ceramic coating. Book now."
+        />
+        <link rel="canonical" href="https://cardetailerpro.com/" />
+      </Helmet>
       <div
         className="bg-cover h-screen w-full z-0 fixed"
         style={{

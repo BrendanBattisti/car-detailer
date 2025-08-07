@@ -5,16 +5,47 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="index, follow" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Premium car detailing services: washes, polishing, paint correction, ceramic coating, and interior restoration. Book with Car Detailer Pro."
     />
+    <meta name="author" content="Car Detailer Pro" />
+    <link rel="canonical" href="https://cardetailerpro.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Car Detailer Pro" />
+    <meta
+      property="og:title"
+      content="Car Detailer Pro | Premium Car Detailing Services"
+    />
+    <meta
+      property="og:description"
+      content="Professional car detailing: exterior/interior, paint correction, ceramic coating. Serving your vehicle with care."
+    />
+    <meta property="og:url" content="https://cardetailerpro.com/" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Car Detailer Pro | Premium Car Detailing Services"
+    />
+    <meta
+      name="twitter:description"
+      content="Professional car detailing: exterior/interior, paint correction, ceramic coating. Book now."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo512.png" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- Preload hero image for faster LCP -->
+    <link rel="preload" as="image" href="%PUBLIC_URL%/Images/buffing.jpg" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,7 +55,24 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Car Detailer Pro | Premium Car Detailing Services</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutomotiveBusiness",
+        "name": "Car Detailer Pro",
+        "url": "https://cardetailerpro.com/",
+        "image": "%PUBLIC_URL%/logo512.png",
+        "telephone": "555-555-5555",
+        "email": "email@email.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Detail Street"
+        }
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
