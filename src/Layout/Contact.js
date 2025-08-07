@@ -44,20 +44,13 @@ const Contact = () => {
   return (
     <Section
       id="contact"
-      className="bg-background-900"
+      className="bg-background"
       header="Contact"
       title="Get in touch"
     >
-      <div className="text-center mb-12">
-        <p className="text-subtext max-w-2xl mx-auto">
-          Ready to give your vehicle the care it deserves? Get in touch with us
-          to schedule your appointment or learn more about our services.
-        </p>
-      </div>
-
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Contact Form */}
-        <div className="bg-background-800 rounded-lg p-8">
+        <div className="bg-background-200 rounded-lg p-8">
           <h3 className="text-2xl font-bold text-white mb-6">
             Send us a Message
           </h3>
@@ -73,7 +66,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="firstName"
-                  className="w-full px-4 py-3 bg-background-700 border border-background-600 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3  border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
                   placeholder="John"
                 />
               </div>
@@ -87,7 +80,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="lastName"
-                  className="w-full px-4 py-3 bg-background-700 border border-background-600 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 border  rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
                   placeholder="Doe"
                 />
               </div>
@@ -103,7 +96,7 @@ const Contact = () => {
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-3 bg-background-700 border border-background-600 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full px-4 py-3 border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
                 placeholder="john.doe@example.com"
               />
             </div>
@@ -118,7 +111,7 @@ const Contact = () => {
               <input
                 type="tel"
                 id="phone"
-                className="w-full px-4 py-3 bg-background-700 border border-background-600 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full px-4 py-3  border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
                 placeholder="(555) 123-4567"
               />
             </div>
@@ -132,7 +125,7 @@ const Contact = () => {
               </label>
               <select
                 id="service"
-                className="w-full px-4 py-3 bg-background-700 border border-background-600 rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full px-4 py-3 border rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
               >
                 <option value="">Select a service</option>
                 {services.map((service, index) => (
@@ -153,7 +146,7 @@ const Contact = () => {
               <textarea
                 id="message"
                 rows="4"
-                className="w-full px-4 py-3 bg-background-700 border border-background-600 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors resize-none"
+                className="w-full px-4 py-3  border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors resize-none"
                 placeholder="Tell us about your vehicle and what you'd like us to help you with..."
               ></textarea>
             </div>
@@ -167,7 +160,6 @@ const Contact = () => {
         {/* Contact Information */}
         <div className="space-y-8">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -199,7 +191,7 @@ const Contact = () => {
           </div>
 
           {/* Map Placeholder */}
-          <div className="bg-background-700 rounded-lg p-6">
+          <div className="bg-background-100 rounded-lg p-6">
             <h4 className="text-lg font-semibold text-white mb-4">
               Visit Our Location
             </h4>

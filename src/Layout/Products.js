@@ -68,24 +68,17 @@ const Products = () => {
   return (
     <Section
       id="services"
-      className="bg-background-900"
+      className="bg-background"
       title="What we offer"
       header="Services"
     >
-      <div className="text-center mb-12">
-        <p className="text-subtext max-w-2xl mx-auto">
-          Choose from our range of professional car detailing services designed
-          to keep your vehicle looking its absolute best.
-        </p>
-      </div>
-
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service) => (
           <div
             key={service.id}
-            className="bg-background-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="bg-background-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <div className="flex flex-col justify- p-6 h-full">
+            <div className="flex flex-col justify-between p-6 h-full">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-xl font-semibold text-white">
                   {service.name}

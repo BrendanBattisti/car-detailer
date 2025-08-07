@@ -27,13 +27,13 @@ const FAQ = () => {
   return (
     <Section
       id="faq"
-      className="bg-background-900"
+      className="bg-background-100"
       title="Frequently Asked Questions"
     >
       <div className="text-center mb-8"></div>
       <div className="grid md:grid-cols-2 gap-6">
         {faqData.map((faq, index) => (
-          <div key={index} className="bg-background-800 rounded-lg p-6">
+          <div key={index} className="bg-background-200 rounded-lg p-6">
             <h4 className="text-lg font-semibold text-white mb-2">
               {faq.question}
             </h4>

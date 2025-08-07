@@ -4,7 +4,7 @@ const About = () => {
   return (
     <Section
       id="about"
-      className="bg-background-800"
+      className="bg-background-100"
       title="Who we are"
       header="About"
     >
@@ -37,7 +37,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="bg-background-700 rounded-lg p-8">
+          <div className="bg-background-200 rounded-lg p-8">
             <h3 className="text-xl font-semibold text-white mb-4">
               Our Services
             </h3>
