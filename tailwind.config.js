@@ -28,8 +28,10 @@ module.exports = {
         subtext: "#cbd5e1",
       },
       fontFamily: {
+        hero: ["Publico Banner", "system-ui", "sans-serif"],
+        hero_emphasis: ["Style Script"],
         primary: ["Inter", "system-ui", "sans-serif"],
-        secondary: ["Inter", "system-ui", "serif"],
+        secondary: ["Caudex", "serif"],
       },
     },
   },

@@ -97,15 +97,15 @@ const Products = () => {
                 <span className="font-semibold">Duration:</span>{" "}
                 {service.duration}
               </div>
-              <ul className="space-y-2 text-sm text-subtext">
+              <ul className="space-y-2 text-sm text-subtext font-primary">
                 {service.features.slice(0, 3).map((feature, index) => (
-                  <li key={index} className="flex items-center">
+                  <li key={index} className="flex items-center font-primary">
                     <span className="text-primary mr-2">✓</span>
                     {feature}
                   </li>
                 ))}
                 {service.features.length > 3 && (
-                  <li className="text-primary font-semibold">
+                  <li className="text-primary font-semibold font-primary">
                     +{service.features.length - 3} more features
                   </li>
                 )}
@@ -116,43 +116,6 @@ const Products = () => {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="mt-12 text-center">
-        <div className="bg-background-800 rounded-lg p-8 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Why Choose Our Services?
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-4xlmb-2">🏆</div>
-              <h4 className="text-lg font-semibold text-white mb-2">
-                Premium Quality
-              </h4>
-              <p className="text-subtext text-sm">
-                We use only the highest quality products and equipment
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xlmb-2">👨‍🔧</div>
-              <h4 className="text-lg font-semibold text-white mb-2">
-                Expert Technicians
-              </h4>
-              <p className="text-subtext text-sm">
-                Certified professionals with years of experience
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xlmb-2">💯</div>
-              <h4 className="text-lg font-semibold text-white mb-2">
-                Satisfaction Guaranteed
-              </h4>
-              <p className="text-subtext text-sm">
-                100% satisfaction guarantee on all our services
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </Section>
   );

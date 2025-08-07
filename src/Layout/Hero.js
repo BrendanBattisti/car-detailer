@@ -4,10 +4,10 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 w-3/5">
         <div className="w-3/4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-primary">
-            Professional Car Detailing
+          <h1>
+            Make your car <em className="font-hero_emphasis">Shine</em>
           </h1>
-          <p className="text-lg md:text-2xl text-white mb-8 max-w-2xl w-3/5 font-secondary">
+          <p className="text-lg md:text-xl text-white mb-8 max-w-2xl w-3/5 font-secondary">
             Transform your vehicle with our premium detailing services. From
             basic washes to complete restoration, we bring out the best in your
             car.
