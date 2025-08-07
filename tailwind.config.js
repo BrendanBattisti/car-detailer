@@ -9,20 +9,11 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          default: "#fdf2f8",
-          50: "#fdf2f8",
-          100: "#fce7f3",
-          200: "#fbcfe8",
-          300: "#f9a8d4",
-          400: "#f472b6",
-          500: "#ec4899",
-          600: "#db2777",
-          700: "#be185d",
-          800: "#9d174d",
-          900: "#831843",
+          DEFAULT: "#ef233c",
+          100: "#d90429",
         },
         background: {
-          50: "#f8fafc",
+          50: "#2b2d42",
           100: "#f1f5f9",
           200: "#e2e8f0",
           300: "#cbd5e1",
@@ -38,7 +29,7 @@ module.exports = {
       },
       fontFamily: {
         primary: ["Inter", "system-ui", "sans-serif"],
-        secondary: ["Inter", "system-ui", "sans-serif"],
+        secondary: ["Inter", "system-ui", "serif"],
       },
     },
   },

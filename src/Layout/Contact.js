@@ -156,10 +156,7 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-            >
+            <button type="submit" className="w-full">
               Send Message
             </button>
           </form>
@@ -180,7 +177,7 @@ const Contact = () => {
                     {info.link ? (
                       <a
                         href={info.link}
-                        className="text-subtext hover:text-primary-400 transition-colors"
+                        className="text-subtext hover:text-primary transition-colors"
                       >
                         {info.details.map((detail, idx) => (
                           <div key={idx}>{detail}</div>

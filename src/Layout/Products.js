@@ -66,7 +66,7 @@ const Products = () => {
   ];
 
   return (
-    <Section id="products" className="bg-background-900">
+    <Section id="services" className="bg-background-900">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           Our Services
@@ -83,34 +83,34 @@ const Products = () => {
             key={service.id}
             className="bg-background-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <div className="flex flex-col justify-evenly p-6 h-full">
+            <div className="flex flex-col justify- p-6 h-full">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-xl font-semibold text-white">
                   {service.name}
                 </h3>
-                <span className="text-2xl font-bold text-primary-500">
+                <span className="text-2xl font-bold text-primary-100">
                   {service.price}
                 </span>
               </div>
               <p className="text-subtext text-sm mb-3">{service.description}</p>
-              <div className="text-primary-400 text-sm mb-4">
+              <div className="text-primary text-sm mb-4">
                 <span className="font-semibold">Duration:</span>{" "}
                 {service.duration}
               </div>
               <ul className="space-y-2 text-sm text-subtext">
                 {service.features.slice(0, 3).map((feature, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="text-primary-400 mr-2">✓</span>
+                    <span className="text-primary mr-2">✓</span>
                     {feature}
                   </li>
                 ))}
                 {service.features.length > 3 && (
-                  <li className="text-primary-400 font-semibold">
+                  <li className="text-primary font-semibold">
                     +{service.features.length - 3} more features
                   </li>
                 )}
               </ul>
-              <button className="w-full mt-4 bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
+              <button className="w-full mt-4 bg-primary hover:bg-primary-100 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
                 Book This Service
               </button>
             </div>
@@ -125,7 +125,7 @@ const Products = () => {
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-4xl text-primary-500 mb-2">🏆</div>
+              <div className="text-4xlmb-2">🏆</div>
               <h4 className="text-lg font-semibold text-white mb-2">
                 Premium Quality
               </h4>
@@ -134,7 +134,7 @@ const Products = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="text-4xl text-primary-500 mb-2">👨‍🔧</div>
+              <div className="text-4xlmb-2">👨‍🔧</div>
               <h4 className="text-lg font-semibold text-white mb-2">
                 Expert Technicians
               </h4>
@@ -143,7 +143,7 @@ const Products = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="text-4xl text-primary-500 mb-2">💯</div>
+              <div className="text-4xlmb-2">💯</div>
               <h4 className="text-lg font-semibold text-white mb-2">
                 Satisfaction Guaranteed
               </h4>

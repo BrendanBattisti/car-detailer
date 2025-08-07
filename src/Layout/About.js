@@ -21,15 +21,15 @@ const About = () => {
               to ensure your car looks its absolute best.
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="flex items-center text-primary-400">
+              <div className="flex items-center text-primary">
                 <span className="text-2xl mr-2">✓</span>
                 <span>Professional Equipment</span>
               </div>
-              <div className="flex items-center text-primary-400">
+              <div className="flex items-center text-primary">
                 <span className="text-2xl mr-2">✓</span>
                 <span>Premium Products</span>
               </div>
-              <div className="flex items-center text-primary-400">
+              <div className="flex items-center text-primary">
                 <span className="text-2xl mr-2">✓</span>
                 <span>Expert Technicians</span>
               </div>

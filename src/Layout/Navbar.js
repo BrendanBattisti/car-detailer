@@ -6,13 +6,13 @@ const Navbar = () => {
   ];
   function NavbarLink({ text, url }) {
     return (
-      <button
+      <a
         key={text}
-        className="hover:bg-white/20 py-2 px-6 rounded-xl my-auto"
+        className="hover:bg-white/20 py-2 px-6 rounded-xl my-auto text-white"
         href={url}
       >
         {text}
-      </button>
+      </a>
     );
   }
 
@@ -29,9 +29,9 @@ const Navbar = () => {
         </div>
         {/* Call to action */}
         <div className="flex">
-          <button className="rounded-lg py-2 px-6 bg-primary-500 hover:bg-primary-600 transition-colors duration-200 my-auto">
-            Contact us
-          </button>
+          <a className="button-primary" href="#contact">
+            Contact Us
+          </a>
         </div>
       </div>
     </div>
