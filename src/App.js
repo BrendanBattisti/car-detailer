@@ -1,4 +1,4 @@
-import { BlockyNavbar, Footer } from "@brendanbattisti/componentlibrary";
+import { Footer } from "@brendanbattisti/componentlibrary";
 import Hero from "./Layout/Hero";
 import Products from "./Layout/Products";
 import About from "./Layout/About";
@@ -10,7 +10,7 @@ import { getImageUrl } from "./Util/ImageUtil";
 function App() {
   const HeroImage = getImageUrl("buffing.jpg");
   return (
-    <>
+    <div>
       <div
         className="bg-cover h-screen w-full z-0 fixed"
         style={{
@@ -18,17 +18,20 @@ function App() {
         }}
       >
         {/* Dark overlay */}
-        <div className="absolute z-10 inset-0 bg-gradient-to-r from-black via-black/65 to-black/10"></div>
       </div>
-      <div className="z-20">
-        <Navbar />
-        <Hero />
+      <div className="absolute z-10 inset-0 bg-gradient-to-r from-black via-black/65 to-black/10"></div>
+
+      <div className="absolute z-20 w-screen">
+        <div className="w-screen h-screen">
+          <Navbar />
+          <Hero />
+        </div>
         <Products />
         <About />
         <Contact />
         <Footer data={data} />
       </div>
-    </>
+    </div>
   );
 }
 

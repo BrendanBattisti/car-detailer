@@ -17,14 +17,14 @@ const Navbar = () => {
         {/* Logo */}
         <div className="text-center my-auto p-6">Car Detailer Logo</div>
         {/* Links */}
-        <div className="flex flex-row">
+        <div className="flex flex-row gap-4">
           {sections.map((text) => (
             <NavbarLink text={text} />
           ))}
         </div>
         {/* Call to action */}
         <div className="flex">
-          <button className="rounded-lg py-2 px-6 bg-primary-300 hover:bg-primary-600 transition-colors duration-200 my-auto">
+          <button className="rounded-lg py-2 px-6 bg-primary-500 hover:bg-primary-600 transition-colors duration-200 my-auto">
             Contact us
           </button>
         </div>
