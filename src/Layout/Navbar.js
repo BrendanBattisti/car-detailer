@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <div className="absolute z-10 w-screen font-bold p-4">
-      <div className="flex flex-row justify-between md:w-3/5 mx-auto">
+      <div className="flex flex-row justify-between md:w-4/5 mx-auto">
         {/* Logo */}
         <div className="text-center my-auto">Car Detailer Logo</div>
         {/* Links */}
