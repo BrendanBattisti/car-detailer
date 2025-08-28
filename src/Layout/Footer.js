@@ -13,14 +13,15 @@ const Footer = () => {
         </div>
         <div className="animate-in flex flex-col gap-4">
           <h4>Contact</h4>
-          <p>Phone: 555-555-5555</p>
-          <p>Email: email@email.com</p>
-          <p>Address: 123 Detail Street</p>
+          <p>Phone: (585) 507-7146</p>
+          <p>Email: carmichaelelite25@gmail.com</p>
+          <p>Rochester, NY Area - Mobile Service</p>
         </div>
       </div>
       <div className="animate-in w-4/5 mx-auto text-center border-t p-6">
         <p className="text-sm">
-          Copyright © {year} Pro Car Detailer All rights reserved. Created by{" "}
+          Copyright © {year} Carmicheal's Elite Mobile Detailing. All rights
+          reserved. Created by{" "}
           <a href="https://brendanbattisti.com">Brendan Battisti</a> and Gabe
           Adamson
         </p>

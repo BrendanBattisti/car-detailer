@@ -41,12 +41,13 @@ const Hero = () => {
       <div className="relative h-full z-10 container mx-auto px-4 md:w-4/5">
         <div className="md:w-3/4">
           <h1 className="hero-title">
-            Make your car <em className="font-hero_emphasis">Shine</em>
+            <em className="font-hero_emphasis">Carmicheal's Elite</em> Mobile
+            Detailing
           </h1>
           <p className="hero-sub text-lg md:text-xl text-white mb-8 max-w-2xl md:w-3/5 font-secondary">
-            Transform your vehicle with our premium detailing services. From
-            basic washes to complete restoration, we bring out the best in your
-            car.
+            Transform your vehicle with our premium mobile detailing services.
+            From basic washes to complete restoration, we bring out the best in
+            your car wherever you are.
           </p>
           <div className="hero-cta flex flex-col sm:flex-row gap-4">
             <a className="button-primary w-fit" href="#contact">

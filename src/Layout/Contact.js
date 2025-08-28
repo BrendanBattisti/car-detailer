@@ -5,29 +5,29 @@ const Contact = () => {
     {
       icon: "📞",
       title: "Phone",
-      details: ["(555) 123-4567", "(555) 123-4568"],
-      link: "tel:5551234567",
+      details: ["(585) 507-7146"],
+      link: "tel:5855077146",
     },
     {
       icon: "📧",
       title: "Email",
-      details: ["info@cardetailerpro.com", "bookings@cardetailerpro.com"],
-      link: "mailto:info@cardetailerpro.com",
+      details: ["carmichaelelite25@gmail.com"],
+      link: "mailto:carmichaelelite25@gmail.com",
     },
     {
-      icon: "📍",
-      title: "Location",
+      icon: "🚗",
+      title: "Service Area",
       details: [
-        "123 Detail Street",
-        "Automotive District",
-        "City, State 12345",
+        "We come to you!",
+        "Serving Rochester, NY and surrounding areas",
+        "Call for availability in your area",
       ],
-      link: "https://maps.google.com",
+      link: null,
     },
     {
       icon: "🕒",
       title: "Hours",
-      details: ["Mon-Fri: 8AM-6PM", "Sat: 9AM-5PM", "Sun: 10AM-4PM"],
+      details: ["Monday through Sunday", "By appointment only"],
       link: null,
     },
   ];
@@ -190,22 +190,6 @@ const Contact = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Map Placeholder */}
-          <div className="animate-in bg-background-100 rounded-lg p-6">
-            <h4 className="text-lg font-semibold text-white mb-4">
-              Visit Our Location
-            </h4>
-            <div className="bg-background-600 rounded-lg h-48 flex items-center justify-center">
-              <div className="text-center text-subtext">
-                <div className="text-4xl mb-2">🗺️</div>
-                <p>Interactive Map</p>
-                <p className="text-sm">
-                  123 Detail Street, Automotive District
-                </p>
-              </div>
             </div>
           </div>
         </div>

@@ -22,12 +22,15 @@ function App() {
       }}
     >
       <Helmet>
-        <title>Car Detailer Pro | Premium Car Detailing Services</title>
+        <title>
+          Carmicheal's Elite Mobile Detailing | Premium Mobile Car Detailing
+          Services
+        </title>
         <meta
           name="description"
-          content="Professional car detailing services including paint correction, interior restoration, and ceramic coating. Book now."
+          content="Professional mobile car detailing services in Rochester, NY area including paint correction, interior restoration, and ceramic coating. We come to you! Book now."
         />
-        <link rel="canonical" href="https://cardetailerpro.com/" />
+        <link rel="canonical" href="https://carmichealselite.com/" />
       </Helmet>
       <div
         className="bg-cover h-screen w-full z-0 fixed"

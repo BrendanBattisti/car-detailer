@@ -37,7 +37,9 @@ const Navbar = () => {
     <div ref={navRef} className="absolute z-10 w-screen font-bold p-4">
       <div className="nav-wrap flex flex-row justify-between md:w-4/5 mx-auto">
         {/* Logo */}
-        <div className="text-center my-auto">Car Detailer Logo</div>
+        <div className="text-center my-auto font-bold text-white">
+          Carmicheal's Elite
+        </div>
         {/* Links */}
         <div className="flex-row gap-4 hidden md:flex">
           {sections.map(([text, url]) => (
