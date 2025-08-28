@@ -27,7 +27,7 @@
   }
 
   h4 {
-    @apply font-bold text-accent font-primary tracking-tight text-lg md:text-xl;
+    @apply font-bold text-white font-primary tracking-tight text-lg md:text-xl;
   }
 
   p,

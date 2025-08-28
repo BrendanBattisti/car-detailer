@@ -8,10 +8,9 @@ import Contact from "./Layout/Contact";
 import { Helmet } from "react-helmet";
 import Navbar from "./Layout/Navbar";
 import FAQ from "./Layout/FAQ";
-import { getImageUrl } from "./Util/ImageUtil";
+import VideoSlideshow from "./Layout/VideoSlideshow";
 
 function App() {
-  const HeroImage = getImageUrl("buffing.jpg");
   return (
     <div
       style={{
@@ -32,13 +31,8 @@ function App() {
         />
         <link rel="canonical" href="https://carmichealselite.com/" />
       </Helmet>
-      <div
-        className="bg-cover h-screen w-full z-0 fixed"
-        style={{
-          backgroundImage: `url(${HeroImage})`,
-        }}
-      >
-        {/* Dark overlay */}
+      <div className="h-screen w-full z-0 fixed">
+        <VideoSlideshow />
       </div>
       <div className="absolute z-10 inset-0 bg-gradient-to-r from-black via-black/65 to-black/10"></div>
 
