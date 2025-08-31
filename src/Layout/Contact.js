@@ -66,7 +66,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="firstName"
-                  className="w-full px-4 py-3  border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3  border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="John"
                 />
               </div>
@@ -80,7 +80,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="lastName"
-                  className="w-full px-4 py-3 border  rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3 border  rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="Doe"
                 />
               </div>
@@ -96,7 +96,7 @@ const Contact = () => {
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-3 border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full px-4 py-3 border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                 placeholder="john.doe@example.com"
               />
             </div>
@@ -111,7 +111,7 @@ const Contact = () => {
               <input
                 type="tel"
                 id="phone"
-                className="w-full px-4 py-3  border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full px-4 py-3  border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                 placeholder="(555) 123-4567"
               />
             </div>
@@ -125,7 +125,7 @@ const Contact = () => {
               </label>
               <select
                 id="service"
-                className="w-full px-4 py-3 border rounded-lg text-white focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full px-4 py-3 border rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
               >
                 <option value="">Select a service</option>
                 {services.map((service, index) => (
@@ -146,7 +146,7 @@ const Contact = () => {
               <textarea
                 id="message"
                 rows="4"
-                className="w-full px-4 py-3  border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary-500 transition-colors resize-none"
+                className="w-full px-4 py-3  border rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors resize-none"
                 placeholder="Tell us about your vehicle and what you'd like us to help you with..."
               ></textarea>
             </div>
