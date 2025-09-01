@@ -12,7 +12,7 @@ const Products = () => {
     );
   };
 
-  const products = [
+  const services = [
     {
       category: "Interior",
       tiers: [
@@ -125,20 +125,20 @@ const Products = () => {
   ];
 
   return (
-    <Section id="products" className="bg-background" title="Our Packages" header="Products">
+    <Section id="services" className="bg-background" title="" header="Our Services">
       <div className="space-y-8">
-        {products.map((product, idx) => (
+        {services.map((service, idx) => (
           <div key={idx}>
-            <h2 className="text-2xl font-bold text-white mb-4">{product.category}</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">{service.category}</h2>
             <div className="grid md:grid-cols-2 gap-6 items-start">
-              {product.tiers.map((tier, tIdx) => {
+              {service.tiers.map((tier, tIdx) => {
                 const cardKey = `${idx}-${tIdx}`;
                 const isExpanded = expandedCards.includes(cardKey);
 
                 // add "Includes everything..." for Deluxe cards
                 const featureList =
                   tier.name === "Deluxe"
-                    ? ["Includes everything in the Premium package", ...tier.features]
+                    ? ["Includes everything in the Premium package, plus:", ...tier.features]
                     : tier.features;
 
                 return (
@@ -194,7 +194,7 @@ const Products = () => {
                       </div>
 
                       {/* Right column: pricing */}
-                      <div className="mt-4 xl:mt-0 xl:w-2/5 flex xl:flex-col flex-row text-right text-subtext text-sm gap-2">
+                      <div className="mt-4 xl:mt-0 xl:w-2/5 flex xl:flex-col flex-row text-right text-subtext text-sm gap-2 flex-wrap">
                         <p className="text-subtext text-sm p-1 xl:mb-2 border border-primary rounded-lg self-end">Sedan: {tier.prices.sedan}</p>
                         <p className="text-subtext text-sm p-1 xl:mb-2 border border-primary rounded-lg self-end">SUV: {tier.prices.suv}</p>
                         <p className="text-subtext text-sm p-1 border border-primary rounded-lg self-end">Truck/Minivan: {tier.prices.truck}</p>
