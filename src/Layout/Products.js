@@ -1,14 +1,27 @@
 import React, { useState } from "react";
 import Section from "../Components/Section";
+import { FaCarAlt } from "react-icons/fa";
+import { TbCarSuv } from "react-icons/tb";
+import { FaVanShuttle } from "react-icons/fa6";
 
 const Products = () => {
   const [expandedCards, setExpandedCards] = useState([]);
+  const [vehichleType, setVehichleType] = useState("sedan");
+  const [selectedAddons, setSelectedAddons] = useState([]);
 
   const toggleExpand = (cardKey) => {
     setExpandedCards((prev) =>
       prev.includes(cardKey)
         ? prev.filter((key) => key !== cardKey)
         : [...prev, cardKey]
+    );
+  };
+
+  const toggleAddon = (addonName) => {
+    setSelectedAddons((prev) =>
+      prev.includes(addonName)
+        ? prev.filter((name) => name !== addonName)
+        : [...prev, addonName]
     );
   };
 
@@ -125,12 +138,19 @@ const Products = () => {
   ];
 
   return (
-    <Section id="services" className="bg-background" title="" header="Our Services">
+    <Section
+      id="services"
+      className="bg-background"
+      title=""
+      header="Our Services"
+    >
       <div className="space-y-8">
         {services.map((service, idx) => (
           <div key={idx}>
-            <h2 className="animate-in text-2xl font-bold text-white mb-4">{service.category}</h2>
-            <div className="animate-in grid md:grid-cols-2 gap-6 items-start">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              {service.category}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               {service.tiers.map((tier, tIdx) => {
                 const cardKey = `${idx}-${tIdx}`;
                 const isExpanded = expandedCards.includes(cardKey);
@@ -138,7 +158,10 @@ const Products = () => {
                 // add "Includes everything..." for Deluxe cards
                 const featureList =
                   tier.name === "Deluxe"
-                    ? ["Includes everything in the Premium package, plus:", ...tier.features]
+                    ? [
+                        "Includes everything in the Premium package, plus:",
+                        ...tier.features,
+                      ]
                     : tier.features;
 
                 return (
@@ -152,22 +175,34 @@ const Products = () => {
                       <div className="flex-1 xl:w-3/5 xl:pr-6">
                         {/* Title + description */}
                         <div className="mb-3">
-                          <h3 className="text-xl font-semibold text-white">{tier.name}</h3>
-                          <p className="text-subtext text-sm mt-1">{tier.description}</p>
+                          <h3 className="text-xl font-semibold text-white">
+                            {tier.name}
+                          </h3>
+                          <p className="text-subtext text-sm mt-1">
+                            {tier.description}
+                          </p>
                         </div>
 
                         {/* Features */}
                         <ul className="space-y-2 text-sm font-secondary leading-relaxed">
-                          {(isExpanded ? featureList : featureList.slice(0, 3)).map((feature, fIdx) => {
-                            const isPremiumLine = tier.name === "Deluxe" && fIdx === 0;
+                          {(isExpanded
+                            ? featureList
+                            : featureList.slice(0, 3)
+                          ).map((feature, fIdx) => {
+                            const isPremiumLine =
+                              tier.name === "Deluxe" && fIdx === 0;
                             return (
                               <li
                                 key={fIdx}
                                 className={`flex items-center ${
-                                  isPremiumLine ? "text-white font-bold" : "text-subtext"
+                                  isPremiumLine
+                                    ? "text-white font-bold"
+                                    : "text-subtext"
                                 }`}
                               >
-                                <span className="text-primary mr-2">{isPremiumLine ? "★" : "✓"}</span>
+                                <span className="text-primary mr-2">
+                                  {isPremiumLine ? "★" : "✓"}
+                                </span>
                                 {feature}
                               </li>
                             );
@@ -195,9 +230,15 @@ const Products = () => {
 
                       {/* Right column: pricing */}
                       <div className="mt-4 xl:mt-0 xl:w-2/5 flex xl:flex-col flex-row text-right text-subtext text-sm gap-2 flex-wrap">
-                        <p className="text-subtext text-sm p-1 xl:mb-2 border border-primary rounded-lg self-end">Sedan: {tier.prices.sedan}</p>
-                        <p className="text-subtext text-sm p-1 xl:mb-2 border border-primary rounded-lg self-end">SUV: {tier.prices.suv}</p>
-                        <p className="text-subtext text-sm p-1 border border-primary rounded-lg self-end">Truck/Minivan: {tier.prices.truck}</p>
+                        <p className="text-subtext text-sm p-1 xl:mb-2 border border-primary rounded-lg self-end">
+                          Sedan: {tier.prices.sedan}
+                        </p>
+                        <p className="text-subtext text-sm p-1 xl:mb-2 border border-primary rounded-lg self-end">
+                          SUV: {tier.prices.suv}
+                        </p>
+                        <p className="text-subtext text-sm p-1 border border-primary rounded-lg self-end">
+                          Truck/Minivan: {tier.prices.truck}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -211,20 +252,116 @@ const Products = () => {
       {/* Add-Ons Section*/}
       <div className="animate-in mt-12">
         <h2 className="text-2xl font-bold text-white mb-4">Add-Ons</h2>
-        <div className="grid md:grid-cols-3 gap-3">
-          {addons.map((addon, idx) => (
-            <div
-              key={idx}
-              className="bg-background-200 rounded-lg p-4 shadow-xl hover:shadow-2xl hover:scale-105 transform transition duration-300"
-            >
-              <div className="animate-in flex justify-between items-center">
-                <span className="text-white font-semibold">{addon.name}</span>
-                <span className="text-primary font-bold">{addon.price}</span>
+        <div className="grid md:grid-cols-3 gap-6">
+          {addons.map((addon, idx) => {
+            const isSelected = selectedAddons.includes(addon.name);
+            return (
+              <div
+                key={idx}
+                onClick={() => toggleAddon(addon.name)}
+                className={`bg-background-200 rounded-lg p-4 shadow hover:shadow-lg transition duration-300 cursor-pointer ${
+                  isSelected ? "ring-2 ring-primary" : ""
+                }`}
+              >
+                <div className="flex justify-between items-center">
+                  <span className="text-white font-semibold">{addon.name}</span>
+                  <span className="text-primary font-bold">{addon.price}</span>
+                </div>
+                {isSelected && (
+                  <div className="mt-2 text-primary text-sm font-semibold">
+                    ✓ Selected
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
+
+      {/* Vehicle Type Selector */}
+      <div className="mt-12 w-3/5 mx-auto">
+        <h2 className="text-2xl font-bold text-white mb-6 text-center">
+          Vehicle Type
+        </h2>
+        <div className="flex justify-center w-full rounded-full overflow-hidden bg-white">
+          <button
+            onClick={() => setVehichleType("sedan")}
+            className={`flex flex-col w-full rounded-none items-center gap-2 transition-colors duration-200 ${
+              vehichleType === "sedan"
+                ? "bg-primary text-white"
+                : "bg-white text-primary hover:bg-gray-100"
+            }`}
+          >
+            <FaCarAlt className="w-8 h-8" />
+            <span className="font-semibold">Sedan</span>
+          </button>
+
+          <button
+            onClick={() => setVehichleType("suv")}
+            className={`flex flex-col w-full items-center gap-2 transition-colors rounded-none duration-200 ${
+              vehichleType === "suv"
+                ? "bg-primary text-white"
+                : "bg-white text-primary hover:bg-gray-100"
+            }`}
+          >
+            <TbCarSuv className="w-8 h-8" />
+            <span className="font-semibold">SUV</span>
+          </button>
+
+          <button
+            onClick={() => setVehichleType("truck")}
+            className={`flex flex-col w-full items-center gap-2 transition-colors duration-200  rounded-none ${
+              vehichleType === "truck"
+                ? "bg-primary text-white"
+                : "bg-white text-primary hover:bg-gray-100"
+            }`}
+          >
+            <FaVanShuttle className="w-8 h-8" />
+            <span className="font-semibold">Truck/Minivan</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Selected Addons Summary */}
+      {selectedAddons.length > 0 && (
+        <div className="mt-12 w-4/5 mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">
+            Selected Add-Ons
+          </h2>
+          <div className="bg-background-200 rounded-lg p-6">
+            <div className="space-y-3">
+              {selectedAddons.map((addonName) => {
+                const addon = addons.find((a) => a.name === addonName);
+                return (
+                  <div
+                    key={addonName}
+                    className="flex justify-between items-center"
+                  >
+                    <span className="text-white font-semibold">
+                      {addonName}
+                    </span>
+                    <span className="text-primary font-bold">
+                      {addon.price}
+                    </span>
+                  </div>
+                );
+              })}
+              <hr className="border-background-300 my-4" />
+              <div className="flex justify-between items-center text-lg">
+                <span className="text-white font-bold">Total Add-Ons:</span>
+                <span className="text-primary font-bold">
+                  $
+                  {selectedAddons.reduce((total, addonName) => {
+                    const addon = addons.find((a) => a.name === addonName);
+                    const price = addon.price.replace(/[^0-9]/g, "");
+                    return total + parseInt(price);
+                  }, 0)}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </Section>
   );
 };
