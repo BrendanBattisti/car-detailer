@@ -116,7 +116,7 @@ const Products = () => {
     { name: "Headlight Restoration", price: "$55" },
     { name: "Engine Bay Detail", price: "$70" },
     { name: "Clay Bar Treatment", price: "$55" },
-    { name: "Ceramic Coating", price: "from $550" },
+    { name: "Ceramic Coating", price: "$550+" },
     { name: "UV Protection", price: "$35" },
     { name: "Seat Shampoo", price: "$70" },
     { name: "Carpet & Mat Shampoo", price: "$55" },
@@ -129,8 +129,8 @@ const Products = () => {
       <div className="space-y-8">
         {services.map((service, idx) => (
           <div key={idx}>
-            <h2 className="text-2xl font-bold text-white mb-4">{service.category}</h2>
-            <div className="grid md:grid-cols-2 gap-6 items-start">
+            <h2 className="animate-in text-2xl font-bold text-white mb-4">{service.category}</h2>
+            <div className="animate-in grid md:grid-cols-2 gap-6 items-start">
               {service.tiers.map((tier, tIdx) => {
                 const cardKey = `${idx}-${tIdx}`;
                 const isExpanded = expandedCards.includes(cardKey);
@@ -209,15 +209,15 @@ const Products = () => {
       </div>
 
       {/* Add-Ons Section*/}
-      <div className="mt-12">
+      <div className="animate-in mt-12">
         <h2 className="text-2xl font-bold text-white mb-4">Add-Ons</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-3">
           {addons.map((addon, idx) => (
             <div
               key={idx}
-              className="bg-background-200 rounded-lg p-4 shadow hover:shadow-lg transition duration-300"
+              className="bg-background-200 rounded-lg p-4 shadow-xl hover:shadow-2xl hover:scale-105 transform transition duration-300"
             >
-              <div className="flex justify-between items-center">
+              <div className="animate-in flex justify-between items-center">
                 <span className="text-white font-semibold">{addon.name}</span>
                 <span className="text-primary font-bold">{addon.price}</span>
               </div>
