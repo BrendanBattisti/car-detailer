@@ -141,7 +141,7 @@ const Products = () => {
     { name: "Headlight Restoration", price: "$55" },
     { name: "Engine Bay Detail", price: "$70" },
     { name: "Clay Bar Treatment", price: "$55" },
-    { name: "Ceramic Coating", price: "from $550" },
+    { name: "Ceramic Coating", price: "$550+" },
     { name: "UV Protection", price: "$35" },
     { name: "Seat Shampoo", price: "$70" },
     { name: "Carpet & Mat Shampoo", price: "$55" },
@@ -300,7 +300,7 @@ const Products = () => {
       </div>
 
       {/* Add-Ons Section*/}
-      <div className="mt-12">
+      <div className="animate-in mt-12">
         <h2 className="text-2xl font-bold text-white mb-4">Add-Ons</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {addons.map((addon, idx) => {
