@@ -259,19 +259,31 @@ const Products = () => {
               <div
                 key={idx}
                 onClick={() => toggleAddon(addon.name)}
-                className={`bg-background-200 rounded-lg p-4 shadow hover:shadow-lg transition duration-300 cursor-pointer ${
-                  isSelected ? "ring-2 ring-primary" : ""
-                }`}
+                className={`bg-background-200 rounded-lg p-4 shadow hover:shadow-lg transition duration-300 cursor-pointer`}
               >
                 <div className="flex justify-between items-center">
-                  <span className="text-white font-semibold">{addon.name}</span>
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={`w-5 h-5 border-2 rounded transition-colors duration-200 ${
+                        isSelected
+                          ? "bg-primary border-primary"
+                          : "border-white"
+                      }`}
+                    >
+                      {isSelected && (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <span className="text-white text-xs font-bold">
+                            ✓
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <span className="text-white font-semibold">
+                      {addon.name}
+                    </span>
+                  </div>
                   <span className="text-primary font-bold">{addon.price}</span>
                 </div>
-                {isSelected && (
-                  <div className="mt-2 text-primary text-sm font-semibold">
-                    ✓ Selected
-                  </div>
-                )}
               </div>
             );
           })}
