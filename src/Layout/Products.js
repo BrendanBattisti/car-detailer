@@ -144,6 +144,50 @@ const Products = () => {
       title=""
       header="Our Services"
     >
+      {/* Vehicle Type Selector */}
+      <div className="mb-8 w-3/5 mx-auto">
+        <h2 className="text-2xl font-bold text-white mb-6 text-center">
+          Vehicle Type
+        </h2>
+        <div className="flex justify-center w-full rounded-full overflow-hidden bg-white">
+          <button
+            onClick={() => setVehichleType("sedan")}
+            className={`flex flex-col w-full rounded-none items-center gap-2 transition-colors duration-200 ${
+              vehichleType === "sedan"
+                ? "bg-primary text-white"
+                : "bg-white text-primary hover:bg-gray-100"
+            }`}
+          >
+            <FaCarAlt className="w-8 h-8" />
+            <span className="font-semibold">Sedan</span>
+          </button>
+
+          <button
+            onClick={() => setVehichleType("suv")}
+            className={`flex flex-col w-full items-center gap-2 transition-colors rounded-none duration-200 ${
+              vehichleType === "suv"
+                ? "bg-primary text-white"
+                : "bg-white text-primary hover:bg-gray-100"
+            }`}
+          >
+            <TbCarSuv className="w-8 h-8" />
+            <span className="font-semibold">SUV</span>
+          </button>
+
+          <button
+            onClick={() => setVehichleType("truck")}
+            className={`flex flex-col w-full items-center gap-2 transition-colors duration-200  rounded-none ${
+              vehichleType === "truck"
+                ? "bg-primary text-white"
+                : "bg-white text-primary hover:bg-gray-100"
+            }`}
+          >
+            <FaVanShuttle className="w-8 h-8" />
+            <span className="font-semibold">Truck/Minivan</span>
+          </button>
+        </div>
+      </div>
+
       <div className="space-y-8">
         {services.map((service, idx) => (
           <div key={idx}>
@@ -229,15 +273,9 @@ const Products = () => {
                       </div>
 
                       {/* Right column: pricing */}
-                      <div className="mt-4 xl:mt-0 xl:w-2/5 flex xl:flex-col flex-row text-right text-subtext text-sm gap-2 flex-wrap">
-                        <p className="text-subtext text-sm p-1 xl:mb-2 border border-primary rounded-lg self-end">
-                          Sedan: {tier.prices.sedan}
-                        </p>
-                        <p className="text-subtext text-sm p-1 xl:mb-2 border border-primary rounded-lg self-end">
-                          SUV: {tier.prices.suv}
-                        </p>
-                        <p className="text-subtext text-sm p-1 border border-primary rounded-lg self-end">
-                          Truck/Minivan: {tier.prices.truck}
+                      <div className="mt-4 xl:mt-0 xl:w-2/5 flex xl:flex-col flex-row text-right text-lg gap-2 flex-wrap">
+                        <p className="text-sm p-1 xl:mb-2 rounded-lg font-primary self-end text-xl font-bold">
+                          {tier.prices[vehichleType]}
                         </p>
                       </div>
                     </div>
@@ -287,50 +325,6 @@ const Products = () => {
               </div>
             );
           })}
-        </div>
-      </div>
-
-      {/* Vehicle Type Selector */}
-      <div className="mt-12 w-3/5 mx-auto">
-        <h2 className="text-2xl font-bold text-white mb-6 text-center">
-          Vehicle Type
-        </h2>
-        <div className="flex justify-center w-full rounded-full overflow-hidden bg-white">
-          <button
-            onClick={() => setVehichleType("sedan")}
-            className={`flex flex-col w-full rounded-none items-center gap-2 transition-colors duration-200 ${
-              vehichleType === "sedan"
-                ? "bg-primary text-white"
-                : "bg-white text-primary hover:bg-gray-100"
-            }`}
-          >
-            <FaCarAlt className="w-8 h-8" />
-            <span className="font-semibold">Sedan</span>
-          </button>
-
-          <button
-            onClick={() => setVehichleType("suv")}
-            className={`flex flex-col w-full items-center gap-2 transition-colors rounded-none duration-200 ${
-              vehichleType === "suv"
-                ? "bg-primary text-white"
-                : "bg-white text-primary hover:bg-gray-100"
-            }`}
-          >
-            <TbCarSuv className="w-8 h-8" />
-            <span className="font-semibold">SUV</span>
-          </button>
-
-          <button
-            onClick={() => setVehichleType("truck")}
-            className={`flex flex-col w-full items-center gap-2 transition-colors duration-200  rounded-none ${
-              vehichleType === "truck"
-                ? "bg-primary text-white"
-                : "bg-white text-primary hover:bg-gray-100"
-            }`}
-          >
-            <FaVanShuttle className="w-8 h-8" />
-            <span className="font-semibold">Truck/Minivan</span>
-          </button>
         </div>
       </div>
 
