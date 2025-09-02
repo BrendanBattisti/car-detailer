@@ -283,7 +283,7 @@ const Products = () => {
         <h2 className="text-2xl font-bold text-white mb-6 text-center">
           Vehicle Type
         </h2>
-        <div className="flex justify-center w-full rounded-lg">
+        <div className="flex justify-center w-full rounded-full overflow-hidden bg-white">
           <button
             onClick={() => setVehichleType("sedan")}
             className={`flex flex-col w-full rounded-none items-center gap-2 transition-colors duration-200 ${
@@ -298,7 +298,7 @@ const Products = () => {
 
           <button
             onClick={() => setVehichleType("suv")}
-            className={`flex flex-col w-full rounded-none items-center gap-2 transition-colors duration-200 ${
+            className={`flex flex-col w-full items-center gap-2 transition-colors rounded-none duration-200 ${
               vehichleType === "suv"
                 ? "bg-primary text-white"
                 : "bg-white text-primary hover:bg-gray-100"
@@ -310,7 +310,7 @@ const Products = () => {
 
           <button
             onClick={() => setVehichleType("truck")}
-            className={`flex flex-col w-full rounded-none items-center gap-2 transition-colors duration-200 ${
+            className={`flex flex-col w-full items-center gap-2 transition-colors duration-200  rounded-none ${
               vehichleType === "truck"
                 ? "bg-primary text-white"
                 : "bg-white text-primary hover:bg-gray-100"
