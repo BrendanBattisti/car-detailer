@@ -1,6 +1,6 @@
 import Section from "../Components/Section";
 
-const Contact = () => {
+const Contact = ({ vehicleType, setVehicleType }) => {
   const contactInfo = [
     {
       icon: "📞",
@@ -114,6 +114,25 @@ const Contact = () => {
                 className="w-full px-4 py-3  border rounded-lg text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                 placeholder="(555) 123-4567"
               />
+            </div>
+
+            <div className="animate-in">
+              <label
+                htmlFor="vehicleType"
+                className="block text-white font-semibold mb-2"
+              >
+                Vehicle Type
+              </label>
+              <select
+                id="vehicleType"
+                value={vehicleType}
+                onChange={(e) => setVehicleType(e.target.value)}
+                className="w-full px-4 py-3 border rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
+              >
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="truck">Truck/Minivan</option>
+              </select>
             </div>
 
             <div className="animate-in">

@@ -9,8 +9,12 @@ import { Helmet } from "react-helmet";
 import Navbar from "./Layout/Navbar";
 import FAQ from "./Layout/FAQ";
 import VideoSlideshow from "./Layout/VideoSlideshow";
+import VehicleSelector from "./Layout/VehicleSelector";
+import { useState } from "react";
 
 function App() {
+  const [vehicleType, setVehicleType] = useState("sedan");
+
   return (
     <div
       style={{
@@ -41,9 +45,13 @@ function App() {
           <Navbar />
           <Hero />
         </div>
-        <Products />
+        <VehicleSelector
+          vehicleType={vehicleType}
+          setVehicleType={setVehicleType}
+        />
+        <Products vehicleType={vehicleType} />
         <About />
-        <Contact />
+        <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
         <FAQ />
         <Footer data={data} />
       </div>

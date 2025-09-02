@@ -17,11 +17,6 @@ const FAQ = () => {
       answer:
         "We accept cash, credit cards, debit cards, and digital payments including Venmo and PayPal.",
     },
-    {
-      question: "Do you provide warranties?",
-      answer:
-        "Yes, we offer satisfaction guarantees on all services and extended warranties on ceramic coatings.",
-    },
   ];
 
   return (

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import Section from "../Components/Section";
-import { FaCarAlt } from "react-icons/fa";
-import { TbCarSuv } from "react-icons/tb";
-import { FaVanShuttle } from "react-icons/fa6";
 
-const Products = () => {
+const Products = ({ vehicleType }) => {
   const [expandedCards, setExpandedCards] = useState([]);
-  const [vehichleType, setVehichleType] = useState("sedan");
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [contactForm, setContactForm] = useState({
     name: "",
@@ -156,50 +152,6 @@ const Products = () => {
       title=""
       header="Our Services"
     >
-      {/* Vehicle Type Selector */}
-      <div className="mb-8 md:w-3/5 mx-auto">
-        <h2 className="text-2xl font-bold text-white mb-6 text-center">
-          Vehicle Type
-        </h2>
-        <div className="flex justify-center w-full rounded-full overflow-hidden bg-white">
-          <button
-            onClick={() => setVehichleType("sedan")}
-            className={`flex flex-col w-full rounded-none items-center gap-2 transition-colors duration-200 ${
-              vehichleType === "sedan"
-                ? "bg-primary text-white"
-                : "bg-white text-primary hover:bg-gray-100"
-            }`}
-          >
-            <FaCarAlt className="w-8 h-8" />
-            <span className="font-semibold">Sedan</span>
-          </button>
-
-          <button
-            onClick={() => setVehichleType("suv")}
-            className={`flex flex-col w-full items-center gap-2 transition-colors rounded-none duration-200 ${
-              vehichleType === "suv"
-                ? "bg-primary text-white"
-                : "bg-white text-primary hover:bg-gray-100"
-            }`}
-          >
-            <TbCarSuv className="w-8 h-8" />
-            <span className="font-semibold">SUV</span>
-          </button>
-
-          <button
-            onClick={() => setVehichleType("truck")}
-            className={`flex flex-col w-full items-center gap-2 transition-colors duration-200  rounded-none ${
-              vehichleType === "truck"
-                ? "bg-primary text-white"
-                : "bg-white text-primary hover:bg-gray-100"
-            }`}
-          >
-            <FaVanShuttle className="w-8 h-8" />
-            <span className="font-semibold">Truck/Minivan</span>
-          </button>
-        </div>
-      </div>
-
       <div className="space-y-8">
         {services.map((service, idx) => (
           <div key={idx}>
@@ -287,7 +239,7 @@ const Products = () => {
                       {/* Right column: pricing */}
                       <div className="mt-4 xl:mt-0 xl:w-2/5 flex xl:flex-col flex-row text-right text-lg gap-2 flex-wrap">
                         <p className="text-sm p-1 xl:mb-2 rounded-lg font-primary self-end text-xl font-bold">
-                          {tier.prices[vehichleType]}
+                          {tier.prices[vehicleType]}
                         </p>
                       </div>
                     </div>

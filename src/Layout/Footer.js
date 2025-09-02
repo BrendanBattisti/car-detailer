@@ -66,9 +66,7 @@ const Footer = () => {
       <div className="animate-in w-4/5 mx-auto text-center border-t p-6">
         <p className="text-sm">
           Copyright © {year} Carmicheal's Elite Mobile Detailing. All rights
-          reserved. Created by{" "}
-          <a href="https://brendanbattisti.com">Brendan Battisti</a> and Gabe
-          Adamson
+          reserved.
         </p>
       </div>
     </footer>
