@@ -8,6 +8,11 @@ const Products = () => {
   const [expandedCards, setExpandedCards] = useState([]);
   const [vehichleType, setVehichleType] = useState("sedan");
   const [selectedAddons, setSelectedAddons] = useState([]);
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    number: "",
+    email: "",
+  });
 
   const toggleExpand = (cardKey) => {
     setExpandedCards((prev) =>
@@ -23,6 +28,13 @@ const Products = () => {
         ? prev.filter((name) => name !== addonName)
         : [...prev, addonName]
     );
+  };
+
+  const handleContactInputChange = (field, value) => {
+    setContactForm((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
   };
 
   const services = [
@@ -145,7 +157,7 @@ const Products = () => {
       header="Our Services"
     >
       {/* Vehicle Type Selector */}
-      <div className="mb-8 w-3/5 mx-auto">
+      <div className="mb-8 md:w-3/5 mx-auto">
         <h2 className="text-2xl font-bold text-white mb-6 text-center">
           Vehicle Type
         </h2>
@@ -364,6 +376,67 @@ const Products = () => {
                   }, 0)}
                 </span>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Contact Section - Only shows when addons are selected */}
+      {selectedAddons.length > 0 && (
+        <div className="mt-12 w-4/5 mx-auto">
+          <div className="bg-background-200 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-white mb-4 text-center">
+              Is this exactly what you are looking for? Let us know!
+            </h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div>
+                <label className="block text-white text-sm font-medium mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  value={contactForm.name}
+                  onChange={(e) =>
+                    handleContactInputChange("name", e.target.value)
+                  }
+                  className="w-full px-3 py-2 bg-background-100 border border-background-300 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label className="block text-white text-sm font-medium mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  value={contactForm.number}
+                  onChange={(e) =>
+                    handleContactInputChange("number", e.target.value)
+                  }
+                  className="w-full px-3 py-2 bg-background-100 border border-background-300 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+              <div>
+                <label className="block text-white text-sm font-medium mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  value={contactForm.email}
+                  onChange={(e) =>
+                    handleContactInputChange("email", e.target.value)
+                  }
+                  className="w-full px-3 py-2 bg-background-100 border border-background-300 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                  placeholder="your@email.com"
+                  disabled
+                />
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <button className="bg-primary hover:bg-primary-100 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200">
+                Contact Us
+              </button>
             </div>
           </div>
         </div>
