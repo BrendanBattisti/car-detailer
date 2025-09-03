@@ -59,10 +59,7 @@ const Hero = () => {
             {/* <button className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold py-3 px-8 rounded-lg transition-colors duration-200 bg-transparent">
               View Services
             </button> */}
-            <a
-              className="border-2 rounded-lg py-2 px-6 bg-transparent hover:bg-white text-white hover:text-black transition-colors duration-200 my-auto w-fit"
-              href="#services"
-            >
+            <a className="border-2 button-secondary w-fit" href="#services">
               View Services
             </a>
           </div>

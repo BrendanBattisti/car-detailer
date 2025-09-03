@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
       <a
         key={text}
-        className={`hover:bg-white/20 py-2 px-6 rounded-xl my-auto text-white ${extraClasses}`}
+        className={`hover:bg-white/20 p-6 my-auto text-white ${extraClasses}`}
         href={url}
       >
         {text}
@@ -43,9 +43,7 @@ const Navbar = () => {
     <div ref={navRef} className="absolute z-20 w-full font-bold p-4">
       <div className="nav-wrap flex flex-row justify-between md:w-4/5 mx-auto">
         {/* Logo */}
-        <div className="text-center my-auto font-bold text-white">
-          Carmicheal&apos;s Elite
-        </div>
+        <img src="/Images/darkmodeLogosmall.png" />
 
         {/* Desktop Links */}
         <div className="flex-row gap-4 hidden md:flex">
