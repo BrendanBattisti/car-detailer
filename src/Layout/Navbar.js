@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
       <a
         key={text}
-        className={`hover:bg-white/20 p-6 my-auto text-white ${extraClasses}`}
+        className={`hover:bg-white/20 p-6 my-auto text-white text-center ${extraClasses}`}
         href={url}
       >
         {text}
@@ -54,7 +54,7 @@ const Navbar = () => {
 
         {/* Desktop Contact Button */}
         <div className="hidden lg:flex">
-          <a className="button-primary" href="#contact">
+          <a className="button-primary text-center" href="#contact">
             Contact Us
           </a>
         </div>

@@ -356,7 +356,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
                   onChange={(e) =>
                     handleContactInputChange("name", e.target.value)
                   }
-                  className="w-full px-3 py-2 bg-background-100 border border-background-300 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-3 py-2 bg-background-100 border border-background-300  text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -370,7 +370,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
                   onChange={(e) =>
                     handleContactInputChange("number", e.target.value)
                   }
-                  className="w-full px-3 py-2 bg-background-100 border border-background-300 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-3 py-2 bg-background-100 border border-background-300 text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="(555) 123-4567"
                 />
               </div>
@@ -384,15 +384,13 @@ const Products = ({ vehicleType, setVehicleType }) => {
                   onChange={(e) =>
                     handleContactInputChange("email", e.target.value)
                   }
-                  className="w-full px-3 py-2 bg-background-100 border border-background-300 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-3 py-2 bg-background-100 border border-background-300 text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="your@email.com"
                 />
               </div>
             </div>
             <div className="mt-6 text-center">
-              <button className="bg-primary hover:bg-primary-100 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200">
-                Contact Us
-              </button>
+              <button className="button-primary">Contact Us</button>
             </div>
           </div>
         </div>

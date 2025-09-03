@@ -1,21 +1,24 @@
 import Section from "../Components/Section";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaLocationDot, FaClock } from "react-icons/fa6";
 
 const Contact = ({ vehicleType, setVehicleType }) => {
   const contactInfo = [
     {
-      icon: "📞",
+      icon: <FaPhoneAlt className="text-3xl" />,
       title: "Phone",
       details: ["(585) 507-7146"],
       link: "tel:5855077146",
     },
     {
-      icon: "📧",
+      icon: <MdEmail className="text-3xl" />,
       title: "Email",
       details: ["carmichaelelite25@gmail.com"],
       link: "mailto:carmichaelelite25@gmail.com",
     },
     {
-      icon: "🚗",
+      icon: <FaLocationDot className="text-3xl" />,
       title: "Service Area",
       details: [
         "We come to you!",
@@ -25,7 +28,7 @@ const Contact = ({ vehicleType, setVehicleType }) => {
       link: null,
     },
     {
-      icon: "🕒",
+      icon: <FaClock className="text-3xl" />,
       title: "Hours",
       details: ["Monday through Sunday", "By appointment only"],
       link: null,
@@ -66,7 +69,7 @@ const Contact = ({ vehicleType, setVehicleType }) => {
                 <input
                   type="text"
                   id="firstName"
-                  className="w-full px-4 py-3  border rounded-lg text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-4 py-3 border text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="John"
                 />
               </div>
@@ -80,7 +83,7 @@ const Contact = ({ vehicleType, setVehicleType }) => {
                 <input
                   type="text"
                   id="lastName"
-                  className="w-full px-4 py-3 border  rounded-lg text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-4 py-3 border  rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="Doe"
                 />
               </div>
@@ -96,7 +99,7 @@ const Contact = ({ vehicleType, setVehicleType }) => {
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-3 border rounded-lg text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                className="w-full px-4 py-3 border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                 placeholder="john.doe@example.com"
               />
             </div>
@@ -111,7 +114,7 @@ const Contact = ({ vehicleType, setVehicleType }) => {
               <input
                 type="tel"
                 id="phone"
-                className="w-full px-4 py-3  border rounded-lg text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                className="w-full px-4 py-3  border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                 placeholder="(555) 123-4567"
               />
             </div>
@@ -127,7 +130,7 @@ const Contact = ({ vehicleType, setVehicleType }) => {
                 id="vehicleType"
                 value={vehicleType}
                 onChange={(e) => setVehicleType(e.target.value)}
-                className="w-full px-4 py-3 border rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
+                className="w-full px-4 py-3 border rounded-none text-black focus:outline-none focus:border-primary transition-colors"
               >
                 <option value="sedan">Sedan</option>
                 <option value="suv">SUV</option>
@@ -144,7 +147,7 @@ const Contact = ({ vehicleType, setVehicleType }) => {
               </label>
               <select
                 id="service"
-                className="w-full px-4 py-3 border rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
+                className="w-full px-4 py-3 border rounded-none text-black focus:outline-none focus:border-primary transition-colors"
               >
                 <option value="">Select a service</option>
                 {services.map((service, index) => (
@@ -165,7 +168,7 @@ const Contact = ({ vehicleType, setVehicleType }) => {
               <textarea
                 id="message"
                 rows="4"
-                className="w-full px-4 py-3  border rounded-lg text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors resize-none"
+                className="w-full px-4 py-3  border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors resize-none"
                 placeholder="Tell us about your vehicle and what you'd like us to help you with..."
               ></textarea>
             </div>
@@ -185,7 +188,7 @@ const Contact = ({ vehicleType, setVehicleType }) => {
                   key={index}
                   className="animate-in flex items-start space-x-4"
                 >
-                  <div className="text-3xl">{info.icon}</div>
+                  <div className="text-3xl h-full my-auto">{info.icon}</div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-2">
                       {info.title}
