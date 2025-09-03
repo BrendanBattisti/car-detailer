@@ -41,19 +41,19 @@ const Navbar = () => {
 
   return (
     <div ref={navRef} className="absolute z-20 w-full font-bold p-4">
-      <div className="nav-wrap flex flex-row justify-between md:w-4/5 mx-auto">
+      <div className="nav-wrap flex flex-row justify-between lg:w-4/5 mx-auto">
         {/* Logo */}
         <img src="/Images/darkmodeLogosmall.png" />
 
         {/* Desktop Links */}
-        <div className="flex-row gap-4 hidden md:flex">
+        <div className="flex-row gap-4 hidden lg:flex">
           {sections.map(([text, url]) => (
             <NavbarLink key={text} text={text} url={url} />
           ))}
         </div>
 
         {/* Desktop Contact Button */}
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <a className="button-primary" href="#contact">
             Contact Us
           </a>
@@ -62,7 +62,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <div
           onClick={() => setMobileNav(true)}
-          className="md:hidden flex my-auto cursor-pointer px-4"
+          className="lg:hidden flex my-auto cursor-pointer px-4"
         >
           <AiOutlineMenu size={30} />
         </div>

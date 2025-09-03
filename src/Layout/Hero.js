@@ -35,11 +35,11 @@ const Hero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative min-h-screen flex md:items-center items-end pb-10"
+      className="relative min-h-screen flex lg:items-center items-end pb-10"
     >
       {/* Content */}
-      <div className="relative h-full z-10 container mx-auto px-4 md:w-4/5">
-        <div className="md:w-3/4">
+      <div className="relative h-full z-10 container mx-auto px-4 lg:w-4/5">
+        <div className="lg:w-3/4">
           <h1 className="hero-title">
             <span className="from-primary-200 via-primary-100 to-primary bg-gradient-to-tr bg-clip-text text-transparent">
               Elite
@@ -47,18 +47,16 @@ const Hero = () => {
             <br />
             Mobile <br /> Detailing
           </h1>
-          <p className="hero-sub text-lg md:text-xl text-white mb-8 max-w-2xl md:w-3/5 font-secondary mt-10">
+          <p className="hero-sub text-lg lg:text-xl text-white mb-8 max-w-2xl lg:w-3/5 font-secondary mt-10">
             Transform your vehicle with our premium mobile detailing services.
             From basic washes to complete restoration, we bring out the best in
             your car wherever you are.
           </p>
-          <div className="hero-cta flex flex-col sm:flex-row gap-4">
+          <div className="hero-cta flex flex-row gap-4 pb-6">
             <a className="button-primary w-fit" href="#contact">
               Book Now
             </a>
-            {/* <button className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold py-3 px-8 rounded-lg transition-colors duration-200 bg-transparent">
-              View Services
-            </button> */}
+
             <a className="border-2 button-secondary w-fit" href="#services">
               View Services
             </a>

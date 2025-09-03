@@ -2,7 +2,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="w-full bg-background">
-      <div className="grid md:grid-cols-4 grid-cols-2 w-full justify-evenly mx-auto p-6 pt-10 md:w-4/5">
+      <div className="grid md:grid-cols-4 grid-cols-2 w-full justify-evenly mx-auto p-6 pt-10 md:w-4/5 gap-6">
         <div className="animate-in">
           <img src="/Images/darkmodeLogosmall.png" />
         </div>
