@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Section from "../Components/Section";
+import VehicleSelector from "./VehicleSelector";
 
-const Products = ({ vehicleType }) => {
+const Products = ({ vehicleType, setVehicleType }) => {
   const [expandedCards, setExpandedCards] = useState([]);
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [contactForm, setContactForm] = useState({
@@ -152,6 +153,10 @@ const Products = ({ vehicleType }) => {
       title=""
       header="Our Services"
     >
+      <VehicleSelector
+        vehicleType={vehicleType}
+        setVehicleType={setVehicleType}
+      />
       <div className="space-y-8">
         {services.map((service, idx) => (
           <div key={idx}>

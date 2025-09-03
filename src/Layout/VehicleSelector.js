@@ -6,7 +6,7 @@ import { FaVanShuttle } from "react-icons/fa6";
 
 const VehicleSelector = ({ vehicleType, setVehicleType }) => {
   return (
-    <div className="bg-background-200 md:py-10 pt-10">
+    <div className="bg-background md:py-10 pt-10">
       <div className="mx-auto">
         <h2 className="text-2xl font-bold text-white mb-6 text-center">
           What type of vehicle do you drive?

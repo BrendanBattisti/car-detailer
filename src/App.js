@@ -47,11 +47,8 @@ function App() {
           <Navbar />
           <Hero />
         </div>
-        <VehicleSelector
-          vehicleType={vehicleType}
-          setVehicleType={setVehicleType}
-        />
-        <Products vehicleType={vehicleType} />
+
+        <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
         <About />
         <BeforeandAfter />
         <Testimonials />
