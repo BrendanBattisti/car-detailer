@@ -48,8 +48,9 @@ function App() {
           <Hero />
         </div>
 
-        <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
         <About />
+        <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
+
         <BeforeandAfter />
         {/* <Testimonials /> */}
         <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
