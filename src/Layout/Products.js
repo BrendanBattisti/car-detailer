@@ -338,7 +338,7 @@ const Products = ({ vehicleType }) => {
         <div className="mt-12 w-4/5 mx-auto">
           <div className="bg-background-200 rounded-lg p-6">
             <h3 className="text-xl font-bold text-white mb-4 text-center">
-              Is this exactly what you are looking for? Let us know!
+              Is this exactly what you are looking for? Send us a message!
             </h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div>
@@ -381,7 +381,6 @@ const Products = ({ vehicleType }) => {
                   }
                   className="w-full px-3 py-2 bg-background-100 border border-background-300 rounded-lg text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="your@email.com"
-                  disabled
                 />
               </div>
             </div>

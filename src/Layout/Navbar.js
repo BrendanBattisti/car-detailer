@@ -7,6 +7,8 @@ const Navbar = () => {
     ["Our Services", "#services"],
     ["About Us", "#about"],
     ["FAQs", "#faq"],
+    ["Testimonials", "#testimonials"],
+    ["Before and After", "#beforeandafter"],
   ];
 
   function NavbarLink({ text, url, extraClasses = "" }) {
@@ -60,14 +62,20 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div onClick={() => setMobileNav(true)} className="md:hidden flex my-auto cursor-pointer px-4">
+        <div
+          onClick={() => setMobileNav(true)}
+          className="md:hidden flex my-auto cursor-pointer px-4"
+        >
           <AiOutlineMenu size={30} />
         </div>
       </div>
 
       {/* Overlay */}
       {mobileNav && (
-        <div onClick={() => setMobileNav(false)} className="bg-black/80 fixed inset-0 z-30"/>
+        <div
+          onClick={() => setMobileNav(false)}
+          className="bg-black/80 fixed inset-0 z-30"
+        />
       )}
 
       {/* Side Drawer Menu */}

@@ -10,6 +10,8 @@ import Navbar from "./Layout/Navbar";
 import FAQ from "./Layout/FAQ";
 import VideoSlideshow from "./Layout/VideoSlideshow";
 import VehicleSelector from "./Layout/VehicleSelector";
+import BeforeandAfter from "./Layout/BeforeandAfter";
+import Testimonials from "./Layout/Testimonials";
 import { useState } from "react";
 
 function App() {
@@ -51,6 +53,8 @@ function App() {
         />
         <Products vehicleType={vehicleType} />
         <About />
+        <BeforeandAfter />
+        <Testimonials />
         <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
         <FAQ />
         <Footer data={data} />
