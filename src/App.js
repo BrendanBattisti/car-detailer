@@ -50,9 +50,8 @@ function App() {
 
         <About />
         <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
-
         <BeforeandAfter />
-        {/* <Testimonials /> */}
+        <Testimonials />
         <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
         <FAQ />
         <Footer data={data} />

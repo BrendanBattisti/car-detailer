@@ -5,51 +5,105 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah M.",
-      vehicle: "2020 Honda CR-V",
-      service: "Full Package Deluxe",
+      name: "Alexa Walters",
       rating: 5,
-      text: "Absolutely incredible work! My CR-V looks brand new. The attention to detail was amazing - they even cleaned the air vents I didn't know were dirty!",
+      text: "Carmichael and his team are the best in the business. He was able to get years-old stains out of my sister's car seats after other detailers had failed, and he had my mom's car looking better than when she bought it. He has done many detailing jobs for me and his work is top tier every single time!",
     },
     {
       id: 2,
-      name: "Mike R.",
-      vehicle: "2018 Ford F-150",
-      service: "Exterior Premium",
+      name: "Madison Elia",
       rating: 5,
-      text: "Best detailing service I've ever used. My truck looks showroom ready!",
+      text: "Carmichael did an amazing job detailing the inside of my Honda CRV! He got stains out that others had not been able to prior. Everything was beautifully finished and cleaned. He was extremely professional and produces high quality results. Highly recommend Carmichael and his services! I will be a returning customer.",
     },
     {
       id: 3,
-      name: "Jennifer L.",
-      vehicle: "2019 Toyota Camry",
-      service: "Interior Deluxe",
+      name: "Sasha-kaye Needham",
       rating: 5,
-      text: "They transformed my car's interior. Smells amazing and looks spotless!",
+      text: "This is the most convenient and professional car detailing that I've ever got. Vehicle was squeaky clean and smelled so good and refreshing. I would definitely recommend 💯",
     },
     {
       id: 4,
-      name: "David K.",
-      vehicle: "2021 Subaru Outback",
-      service: "Full Package Premium",
+      name: "Solange George",
       rating: 5,
-      text: "Professional, thorough, and reasonably priced. My Outback has never looked better!",
+      text: "I'm so impressed with the service! They did an amazing deep clean on my car every corner looks spotless. Excellent attention to detail and very professional. Highly recommend!",
     },
     {
       id: 5,
-      name: "Amanda T.",
-      vehicle: "2017 Chevy Silverado",
-      service: "Headlight Restoration + Exterior",
+      name: "Laura Kemler",
       rating: 5,
-      text: "My headlights were completely yellowed and cloudy. Now they're crystal clear! Amazing transformation.",
+      text: "Attention to detail was outstanding! The interior of my car was cleaner than when I purchased it. Highly recommend and will use this service again!",
     },
     {
       id: 6,
-      name: "Robert P.",
-      vehicle: "2020 Lexus RX 350",
-      service: "Ceramic Coating",
+      name: "Andrew Kemler",
       rating: 5,
-      text: "The ceramic coating is incredible! Water beads right off and it still looks perfect months later. Worth every penny!",
+      text: "This is the cleanest my car has been since I bought it! Amazing work. Very timely and professional!",
+    },
+    {
+      id: 7,
+      name: "David Taylor",
+      rating: 5,
+      text: "The best car detailing service I've ever used. They go above and beyond to make sure everything is done perfectly. I would definitely recommend booking with Carmichael Elite!!",
+    },
+    {
+      id: 8,
+      name: "INK REDIBLE",
+      rating: 5,
+      text: "Excellent service from start to finish! The team was efficient, professional, and paid great attention to detail. My car looks spotless inside and out, like I just bought it from the dealership and the whole process was hassle-free. I highly recommend to anyone looking for top-quality car detailing services.",
+    },
+    {
+      id: 9,
+      name: "Stenbert Martin",
+      rating: 5,
+      text: "One of the best detailing business in Canandaigua I got my car done and it felt like I just got it from the mart felt so refreshing. If you are ever in this area look them up. Thank you Team!!",
+    },
+    {
+      id: 10,
+      name: "Beth McHenry",
+      rating: 5,
+      text: "Absolutely blown away by the detail and care put into my car! It looks brand new—inside and out. The attention to even the tiniest spots was next-level, and the whole process was quick, professional, and super friendly. Highly recommend to anyone who wants their car to truly shine!",
+    },
+    {
+      id: 11,
+      name: "Tameka Kelly",
+      rating: 5,
+      text: "I couldn't be happier with the service at Carmichaels Car Detailing. From start to finish, they were professional, friendly, and detail-oriented. My car looks brand new—inside and out! The attention to detail is incredible.",
+    },
+    {
+      id: 12,
+      name: "Stacey Buckley",
+      rating: 5,
+      text: "Had my headlights looking brand spanking new when he got done",
+    },
+    {
+      id: 13,
+      name: "Jordaen Nicole",
+      rating: 5,
+      text: "Carmichael and his team provide the BEST professional service, the cleanest cars, and are fairly priced. With 3 dogs the pet hair can be invasive in all areas of my life. You'd never know I had 3 dogs after my car was done.",
+    },
+    {
+      id: 14,
+      name: "Carloe Gordon",
+      rating: 5,
+      text: "Very professional and offer exceptional services!!",
+    },
+    {
+      id: 15,
+      name: "Rebecca R",
+      rating: 5,
+      text: "The professionalism and expertise of CARmichaels RV detailing is incredible. They absolutely took years off; making our RV 'like new' condition, which brought value up! We appreciate your service.",
+    },
+    {
+      id: 16,
+      name: "Kyle Pridmore",
+      rating: 5,
+      text: "Incredible work and customer service. It feels like I'm driving a brand new car",
+    },
+    {
+      id: 17,
+      name: "Ashley McNamara",
+      rating: 5,
+      text: "Not only was Carmichael able to get the stain off my ceiling that no amount of steam cleaning could touch but he went above and beyond with the rest of my interior. He left my car sparkling and smelling fresh! Truly a great service and Carmichael is a wonderful and generous business man!",
     },
   ];
 
@@ -106,12 +160,16 @@ const Testimonials = () => {
                     {renderStars(testimonial.rating)}
                   </div>
                 </div>
-                <p className="text-subtext text-sm mb-1">
-                  {testimonial.vehicle}
-                </p>
-                <p className="text-primary text-sm font-medium">
-                  {testimonial.service}
-                </p>
+                {testimonial.vehicle && (
+                  <p className="text-subtext text-sm mb-1">
+                    {testimonial.vehicle}
+                  </p>
+                )}
+                {testimonial.service && (
+                  <p className="text-primary text-sm font-medium">
+                    {testimonial.service}
+                  </p>
+                )}
               </div>
 
               {/* Testimonial text */}
@@ -151,12 +209,16 @@ const Testimonials = () => {
                           {renderStars(testimonial.rating)}
                         </div>
                       </div>
-                      <p className="text-subtext text-sm mb-1">
-                        {testimonial.vehicle}
-                      </p>
-                      <p className="text-primary text-sm font-medium">
-                        {testimonial.service}
-                      </p>
+                      {testimonial.vehicle && (
+                        <p className="text-subtext text-sm mb-1">
+                          {testimonial.vehicle}
+                        </p>
+                      )}
+                      {testimonial.service && (
+                        <p className="text-primary text-sm font-medium">
+                          {testimonial.service}
+                        </p>
+                      )}
                     </div>
 
                     {/* Testimonial text */}
