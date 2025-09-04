@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="w-full bg-background">
       <div className="grid md:grid-cols-4 grid-cols-2 w-full justify-evenly mx-auto p-6 pt-10 md:w-4/5 gap-6">
         <div className="animate-in">
-          <img src="/Images/darkmodeLogosmall.png" />
+          <img src="/Images/darkmodeLogosmall.png" alt="Carmicheal Elite"/>
         </div>
         <div className="animate-in flex flex-col gap-4">
           <h4>Links</h4>

@@ -1,52 +1,41 @@
 import React from "react";
-import Section from "../Components/Section";
 import { FaCarAlt } from "react-icons/fa";
 import { TbCarSuv } from "react-icons/tb";
 import { FaVanShuttle } from "react-icons/fa6";
 
 const VehicleSelector = ({ vehicleType, setVehicleType }) => {
+  const buttons = [
+    { type: "sedan", label: "Sedan", icon: <FaCarAlt className="w-8 h-8" /> },
+    { type: "suv", label: "SUV", icon: <TbCarSuv className="w-8 h-8" /> },
+    { type: "truck", label: "Truck/Minivan", icon: <FaVanShuttle className="w-8 h-8" /> },
+  ];
+
   return (
-    <div className="bg-background md:py-10 pt-10">
-      <div className="mx-auto">
-        <h2 className="text-2xl font-bold text-white mb-6 text-center">
+    <div className="bg-background md:py-10 py-6 px-4">
+      <div className="mx-auto max-w-xl">
+        <h2 className="text-2xl font-bold text-white text-center">
           What type of vehicle do you drive?
         </h2>
-        <div className="flex justify-center md:w-3/5 mx-auto w-full overflow-hidden bg-white">
-          <button
-            onClick={() => setVehicleType("sedan")}
-            className={`flex flex-col w-full rounded-none items-center gap-2 transition-colors duration-200 ${
-              vehicleType === "sedan"
-                ? "bg-primary text-white"
-                : "bg-white text-primary hover:bg-gray-400"
-            }`}
-          >
-            <FaCarAlt className="w-8 h-8" />
-            <span className="font-semibold">Sedan</span>
-          </button>
-
-          <button
-            onClick={() => setVehicleType("suv")}
-            className={`flex flex-col w-full items-center gap-2 border-gray-600 border-x-2 transition-colors rounded-none duration-200 ${
-              vehicleType === "suv"
-                ? "bg-primary text-white"
-                : "bg-white text-primary hover:bg-gray-400"
-            }`}
-          >
-            <TbCarSuv className="w-8 h-8" />
-            <span className="font-semibold">SUV</span>
-          </button>
-
-          <button
-            onClick={() => setVehicleType("truck")}
-            className={`flex flex-col w-full items-center gap-2 transition-colors duration-200  rounded-none ${
-              vehicleType === "truck"
-                ? "bg-primary text-white"
-                : "bg-white text-primary hover:bg-gray-400"
-            }`}
-          >
-            <FaVanShuttle className="w-8 h-8" />
-            <span className="font-semibold">Truck/Minivan</span>
-          </button>
+        <p className="text-center text-sm text-gray-300 mb-6">
+          This helps determine the package price.
+        </p>
+        {/*horizontal on sm+ screens, vertical on smaller screens */}
+        <div className="flex flex-col sm:flex-row justify-between w-full bg-white rounded-md overflow-hidden border border-gray-300">
+          {buttons.map((btn) => (
+            <button
+              key={btn.type}
+              onClick={() => setVehicleType(btn.type)}
+              className={`flex flex-col w-full sm:w-1/3 items-center gap-2 py-4 font-semibold transition-colors duration-300 ease-in-out
+                ${
+                  vehicleType === btn.type
+                    ? "bg-red-500 text-white"
+                    : "bg-white text-red-500 hover:bg-red-100"
+                }`}
+            >
+              {btn.icon}
+              <span>{btn.label}</span>
+            </button>
+          ))}
         </div>
       </div>
     </div>

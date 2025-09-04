@@ -5,50 +5,54 @@ const About = () => {
     <Section
       id="about"
       className="bg-background-100"
-      title="Who we are"
+      title="Passion for Perfection. Wherever You Are."
       header="About"
     >
       <div className="text-center">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="text-left">
-            <p className="animate-in text-subtext mb-4">
-              We are passionate about bringing your vehicle back to its showroom
-              glory. With years of experience and attention to detail, our team
-              provides professional car detailing services that exceed
-              expectations.
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* Left side - text content */}
+          <div className="text-left space-y-6">
+            <p className="animate-in text-subtext leading-relaxed">
+              At <span className="text-primary font-semibold">Carmichael's Elite Mobile Detailing</span>, 
+              we're dedicated to keeping your vehicle looking its absolute best—inside and out. 
+              As a fully mobile service, we bring top-tier auto care straight to your driveway, 
+              office, or anywhere else you need us.
             </p>
-            <p className="animate-in text-subtext mb-6">
-              From basic washes to complete paint correction and ceramic
-              coatings, we use only the highest quality products and techniques
-              to ensure your car looks its absolute best.
+            <p className="animate-in text-subtext leading-relaxed">
+              With a focus on <span className="font-semibold">quality</span>, 
+              <span className="font-semibold"> convenience</span>, and 
+              <span className="font-semibold"> customer satisfaction</span>, 
+              every vehicle is treated like our own. From a quick refresh to a full transformation, 
+              we make car care effortless, reliable, and hassle-free.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 pt-2">
               <div className="animate-in flex items-center text-primary">
                 <span className="text-2xl mr-2">✓</span>
-                <span>Professional Equipment</span>
+                <span>Mobile Convenience</span>
               </div>
               <div className="animate-in flex items-center text-primary">
                 <span className="text-2xl mr-2">✓</span>
-                <span>Premium Products</span>
+                <span>Premium Quality Care</span>
               </div>
               <div className="animate-in flex items-center text-primary">
                 <span className="text-2xl mr-2">✓</span>
-                <span>Expert Technicians</span>
+                <span>Customer-First Service</span>
               </div>
             </div>
           </div>
-          <div className="animate-in bg-background-200 rounded-lg p-8">
-            <h3 className="text-xl font-semibold text-white mb-4">
-              Our Services
-            </h3>
-            <ul className="space-y-3 text-subtext">
-              <li>Exterior Wash & Wax</li>
-              <li>Interior Deep Cleaning</li>
-              <li>Paint Correction</li>
-              <li>Ceramic Coating</li>
-              <li>Headlight Restoration</li>
-              <li>Engine Bay Cleaning</li>
-            </ul>
+
+          {/* Right side - visual accent card */}
+          <div className="animate-in bg-gradient-to-br from-primary/10 to-background-200 rounded-2xl p-8 shadow-xl">
+            <div className="space-y-4">
+              <h4 className="text-xl font-semibold text-white">
+                Our Promise
+              </h4>
+              <p className="text-subtext leading-relaxed">
+                Whether it’s restoring that showroom shine or giving your ride 
+                a quick refresh, our goal is always the same: make your car 
+                look and feel its best—without ever stepping foot in a shop.
+              </p>
+            </div>
           </div>
         </div>
       </div>
