@@ -40,8 +40,11 @@ const Navbar = () => {
   const [mobileNav, setMobileNav] = useState(false);
 
   return (
-    <div ref={navRef} className="absolute z-20 w-full font-bold p-4">
-      <div className="nav-wrap flex flex-row justify-between lg:w-4/5 mx-auto">
+    <div
+      ref={navRef}
+      className="z-20 w-full font-bold p-4 bg-gradient-to-r from-black via-black/65 to-black/10 h-1/6"
+    >
+      <div className="nav-wrap flex flex-row justify-between lg:w-4/5 mx-auto ">
         {/* Logo */}
         <img src="/Images/darkmodeLogosmall.png" />
 

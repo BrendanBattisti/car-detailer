@@ -50,7 +50,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
           prices: { sedan: "$120", suv: "$160", truck: "$200" },
         },
         {
-          name: "Deluxe",
+          name: "Elite",
           description: "Deep interior detail with premium treatments.",
           features: [
             "UV Protection of Hard Surfaces",
@@ -81,7 +81,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
           prices: { sedan: "$80", suv: "$120", truck: "$160" },
         },
         {
-          name: "Deluxe",
+          name: "Elite",
           description: "Full exterior restoration with lasting shine.",
           features: [
             "Iron Decontamination",
@@ -116,7 +116,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
           prices: { sedan: "$180", suv: "$250", truck: "$320" },
         },
         {
-          name: "Deluxe",
+          name: "Elite",
           description: "Our most comprehensive detailing package.",
           features: [
             "UV Protection of Hard Surfaces",
@@ -168,9 +168,9 @@ const Products = ({ vehicleType, setVehicleType }) => {
                 const cardKey = `${idx}-${tIdx}`;
                 const isExpanded = expandedCards.includes(cardKey);
 
-                // add "Includes everything..." for Deluxe cards
+                // add "Includes everything..." for Elite cards
                 const featureList =
-                  tier.name === "Deluxe"
+                  tier.name === "Elite"
                     ? [
                         "Includes everything in the Premium package, plus:",
                         ...tier.features,
@@ -188,8 +188,14 @@ const Products = ({ vehicleType, setVehicleType }) => {
                       <div className="flex-1 xl:w-3/5 xl:pr-6">
                         {/* Title + description */}
                         <div className="mb-3">
-                          <h3 className="text-xl font-semibold text-white">
-                            {tier.name}
+                          <h3 className="text-xl font-semibold">
+                            {tier.name === "Elite" ? (
+                              <span className="from-primary-200 via-primary-100 to-primary bg-gradient-to-tr bg-clip-text text-transparent">
+                                Elite
+                              </span>
+                            ) : (
+                              <span className="text-white">{tier.name}</span>
+                            )}
                           </h3>
                           <p className="text-subtext text-sm mt-1">
                             {tier.description}
@@ -203,7 +209,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
                             : featureList.slice(0, 3)
                           ).map((feature, fIdx) => {
                             const isPremiumLine =
-                              tier.name === "Deluxe" && fIdx === 0;
+                              tier.name === "Elite" && fIdx === 0;
                             return (
                               <li
                                 key={fIdx}
