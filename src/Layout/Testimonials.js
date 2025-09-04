@@ -135,6 +135,15 @@ const Testimonials = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
         },
       },
     ],
@@ -226,6 +235,22 @@ const Testimonials = () => {
         }
         .testimonials-slider .slick-slide > div {
           height: 100%;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+          .testimonials-slider .slick-slide {
+            opacity: 1 !important;
+          }
+          .testimonials-slider .slick-slide > div {
+            padding: 0 8px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .testimonials-slider .slick-slide > div {
+            padding: 0 4px;
+          }
         }
       `}</style>
     </Section>
