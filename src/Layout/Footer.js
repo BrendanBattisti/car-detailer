@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="w-full bg-background">
       <div className="grid md:grid-cols-4 grid-cols-2 w-full justify-evenly mx-auto p-6 pt-10 md:w-4/5 gap-6">
         <div className="animate-in">
-          <img src="/Images/darkmodeLogosmall.png" alt="Carmicheal Elite"/>
+          <img src="/Images/darkmodeLogosmall.png" alt="Carmichael Elite"/>
         </div>
         <div className="animate-in flex flex-col gap-4">
           <h4>Links</h4>
@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
       <div className="animate-in w-4/5 mx-auto text-center border-t p-6">
         <p className="text-sm">
-          Copyright © {year} Carmicheal's Elite Mobile Detailing. All rights
+          Copyright © {year} Carmichael's Elite Mobile Detailing. All rights
           reserved.
         </p>
       </div>
