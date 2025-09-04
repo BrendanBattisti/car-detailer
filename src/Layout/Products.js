@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import Section from "../Components/Section";
 import VehicleSelector from "./VehicleSelector";
+import { Link } from "react-router-dom";
 
 const Products = ({ vehicleType, setVehicleType }) => {
   const [expandedCards, setExpandedCards] = useState([]);
-  const [selectedAddons, setSelectedAddons] = useState([]);
-  const [contactForm, setContactForm] = useState({
-    name: "",
-    number: "",
-    email: "",
-  });
+  // const [selectedAddons, setSelectedAddons] = useState([]);
+  // const [contactForm, setContactForm] = useState({
+  //   name: "",
+  //   number: "",
+  //   email: "",
+  // });
 
   const toggleExpand = (cardKey) => {
     setExpandedCards((prev) =>
@@ -19,20 +20,20 @@ const Products = ({ vehicleType, setVehicleType }) => {
     );
   };
 
-  const toggleAddon = (addonName) => {
-    setSelectedAddons((prev) =>
-      prev.includes(addonName)
-        ? prev.filter((name) => name !== addonName)
-        : [...prev, addonName]
-    );
-  };
+  // const toggleAddon = (addonName) => {
+  //   setSelectedAddons((prev) =>
+  //     prev.includes(addonName)
+  //       ? prev.filter((name) => name !== addonName)
+  //       : [...prev, addonName]
+  //   );
+  // };
 
-  const handleContactInputChange = (field, value) => {
-    setContactForm((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
-  };
+  // const handleContactInputChange = (field, value) => {
+  //   setContactForm((prev) => ({
+  //     ...prev,
+  //     [field]: value,
+  //   }));
+  // };
 
   const services = [
     {
@@ -266,45 +267,43 @@ const Products = ({ vehicleType, setVehicleType }) => {
       <div className="animate-in mt-12">
         <h2 className="text-2xl font-bold text-white mb-4">Add-Ons</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {addons.map((addon, idx) => {
-            const isSelected = selectedAddons.includes(addon.name);
-            return (
-              <div
-                key={idx}
-                onClick={() => toggleAddon(addon.name)}
-                className={`bg-background-200 rounded-lg p-4 shadow hover:shadow-lg transition duration-300 cursor-pointer`}
-              >
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`w-5 h-5 border-2 rounded transition-colors duration-200 ${
-                        isSelected
-                          ? "bg-primary border-primary"
-                          : "border-white"
-                      }`}
-                    >
-                      {isSelected && (
-                        <div className="w-full h-full flex items-center justify-center">
-                          <span className="text-white text-xs font-bold">
-                            ✓
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                    <span className="text-white font-semibold">
-                      {addon.name}
-                    </span>
-                  </div>
-                  <span className="text-primary font-bold">{addon.price}</span>
+          {addons.map((addon, idx) => (
+            <div
+              key={idx}
+              className="bg-background-200 rounded-lg p-4 shadow hover:shadow-lg transition duration-300"
+            >
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                  <span className="text-white font-semibold">{addon.name}</span>
                 </div>
+                <span className="text-primary font-bold">{addon.price}</span>
               </div>
-            );
-          })}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Book Now Section */}
+      <div className="animate-in mt-12 text-center">
+        <div className="bg-background-200 rounded-lg p-8">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            Ready to Book Your Service?
+          </h2>
+          <p className="text-subtext mb-6 max-w-2xl mx-auto">
+            Choose your preferred date, time, and service package. We'll come to
+            you for a convenient, professional detailing experience.
+          </p>
+          <Link
+            to="/booking"
+            className="inline-block bg-primary hover:bg-primary-100 text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 text-lg"
+          >
+            Book Your Service Now
+          </Link>
         </div>
       </div>
 
       {/* Selected Addons Summary */}
-      {selectedAddons.length > 0 && (
+      {/* {selectedAddons.length > 0 && (
         <div className="mt-12 w-4/5 mx-auto">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Selected Add-Ons
@@ -342,10 +341,10 @@ const Products = ({ vehicleType, setVehicleType }) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Contact Section - Only shows when addons are selected */}
-      {selectedAddons.length > 0 && (
+      {/* {selectedAddons.length > 0 && (
         <div className="mt-12 w-4/5 mx-auto">
           <div className="bg-background-200 rounded-lg p-6">
             <h3 className="text-xl font-bold text-white mb-4 text-center">
@@ -400,7 +399,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </Section>
   );
 };

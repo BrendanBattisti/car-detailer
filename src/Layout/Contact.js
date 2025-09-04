@@ -1,9 +1,11 @@
+import React from "react";
 import Section from "../Components/Section";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-const Contact = ({ vehicleType, setVehicleType }) => {
+const Contact = () => {
   const contactInfo = [
     {
       icon: <FaPhoneAlt className="text-3xl" />,
@@ -37,23 +39,36 @@ const Contact = ({ vehicleType, setVehicleType }) => {
 
   const services = [
     "Premium Interior Package",
-    "Deluxe Interior Package",
+    "Elite Interior Package",
     "Premium Exterior Package",
-    "Deluxe Exterior Package",
+    "Elite Exterior Package",
     "Premium Full Package(Interior + Exterior)",
-    "Deluxe Full Package(Interior + Exterior)",
+    "Elite Full Package(Interior + Exterior)",
   ];
 
   return (
     <Section
       id="contact"
-      className="bg-background"
+      className="bg-background-100"
       header="Contact"
       title="Get in touch"
     >
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Contact Form */}
         <div className="animate-in bg-background-200 rounded-lg p-8">
+          {/* Book Now Button */}
+          <div className="text-center mb-6">
+            <Link
+              to="/booking"
+              className="inline-block bg-primary hover:bg-primary-100 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200 text-lg mb-4"
+            >
+              Book Your Service Now
+            </Link>
+            <p className="text-subtext text-sm">
+              Prefer to book directly? Use our comprehensive booking form above.
+            </p>
+          </div>
+
           <h3 className="text-2xl font-bold text-white mb-6">
             Send us a Message
           </h3>
@@ -117,25 +132,6 @@ const Contact = ({ vehicleType, setVehicleType }) => {
                 className="w-full px-4 py-3  border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                 placeholder="(555) 123-4567"
               />
-            </div>
-
-            <div className="animate-in">
-              <label
-                htmlFor="vehicleType"
-                className="block text-white font-semibold mb-2"
-              >
-                Vehicle Type
-              </label>
-              <select
-                id="vehicleType"
-                value={vehicleType}
-                onChange={(e) => setVehicleType(e.target.value)}
-                className="w-full px-4 py-3 border rounded-none text-black focus:outline-none focus:border-primary transition-colors"
-              >
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
-                <option value="truck">Truck/Minivan</option>
-              </select>
             </div>
 
             <div className="animate-in">

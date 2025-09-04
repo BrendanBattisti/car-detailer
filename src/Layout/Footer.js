@@ -1,6 +1,7 @@
 import { FaPhoneAlt, FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -8,24 +9,68 @@ const Footer = () => {
     <footer className="w-full bg-background">
       <div className="grid md:grid-cols-4 grid-cols-2 w-full justify-evenly mx-auto p-6 pt-10 md:w-4/5 gap-6">
         <div className="animate-in">
-          <img src="/Images/darkmodeLogosmall.png" alt="Carmichael Elite"/>
+          <Link to="/">
+            <img src="/Images/darkmodeLogosmall.png" alt="Carmichael Elite" />
+          </Link>
         </div>
         <div className="animate-in flex flex-col gap-4">
           <h4>Links</h4>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a href="#faq">FAQ</a>
+          <Link
+            to="/#services"
+            className="hover:text-primary transition-colors duration-200"
+          >
+            Services
+          </Link>
+          <Link
+            to="/#about"
+            className="hover:text-primary transition-colors duration-200"
+          >
+            About
+          </Link>
+          <Link
+            to="/#testimonials"
+            className="hover:text-primary transition-colors duration-200"
+          >
+            Testimonials
+          </Link>
+          <Link
+            to="/#beforeandafter"
+            className="hover:text-primary transition-colors duration-200"
+          >
+            Before & After
+          </Link>
+          <Link
+            to="/#faq"
+            className="hover:text-primary transition-colors duration-200"
+          >
+            FAQ
+          </Link>
+          <Link
+            to="/booking"
+            className="hover:text-primary transition-colors duration-200"
+          >
+            Book Now
+          </Link>
         </div>
         <div className="animate-in flex flex-col gap-4">
           <h4>Contact</h4>
           <div className="flex items-center gap-2">
             <FaPhoneAlt className="text-sm" />
-            <p>(585) 507-7146</p>
+            <a
+              href="tel:5855077146"
+              className="hover:text-primary transition-colors duration-200"
+            >
+              (585) 507-7146
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <MdEmail className="text-sm" />
-            <p>carmichaelelite25@gmail.com</p>
+            <a
+              href="mailto:carmichaelelite25@gmail.com"
+              className="hover:text-primary transition-colors duration-200"
+            >
+              carmichaelelite25@gmail.com
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <FaLocationDot className="text-sm" />

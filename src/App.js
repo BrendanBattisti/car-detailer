@@ -12,12 +12,15 @@ import VideoSlideshow from "./Layout/VideoSlideshow";
 import VehicleSelector from "./Layout/VehicleSelector";
 import BeforeandAfter from "./Layout/BeforeandAfter";
 import Testimonials from "./Layout/Testimonials";
+import Booking from "./Layout/Booking";
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [vehicleType, setVehicleType] = useState("sedan");
 
-  return (
+  // Main page component with all sections
+  const MainPage = () => (
     <div
       style={{
         scrollSnapType: "y proximity",
@@ -52,12 +55,42 @@ function App() {
           <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
           <BeforeandAfter />
           <Testimonials />
-          <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
           <FAQ />
+          <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
           <Footer data={data} />
         </div>
       </div>
     </div>
+  );
+
+  // Booking page component
+  const BookingPage = () => (
+    <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Book Your Service | Carmichl's Elite Mobile Detailing</title>
+        <meta
+          name="description"
+          content="Book your mobile car detailing service. Choose your preferred date, time, and service package. We come to you in Rochester, NY area."
+        />
+        <link rel="canonical" href="https://carmichaelselite.com/booking" />
+      </Helmet>
+      <div className="absolute z-20 w-screen">
+        <Navbar isBookingPage={true} />
+        <div className="pt-24">
+          <Booking />
+        </div>
+        <Footer data={data} />
+      </div>
+    </div>
+  );
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/booking" element={<BookingPage />} />
+      </Routes>
+    </Router>
   );
 }
 

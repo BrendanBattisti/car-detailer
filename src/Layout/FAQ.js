@@ -22,7 +22,7 @@ const FAQ = () => {
   return (
     <Section
       id="faq"
-      className="bg-background-100"
+      className="bg-background"
       title="Frequently Asked Questions"
     >
       <div className="text-center mb-8"></div>

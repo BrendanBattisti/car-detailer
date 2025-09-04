@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -38,7 +39,7 @@ const Hero = () => {
       className="h-5/6 flex lg:items-center items-end pb-10 bg-gradient-to-r from-black via-black/65 to-black/10"
     >
       {/* Content */}
-      <div className="h-full z-10 container mx-auto px-4 lg:w-4/5 flex flex-col justify-end">
+      <div className="h-full z-10 container mx-auto px-4 lg:w-4/5 flex flex-col justify-end md:mt-16">
         <div className="lg:w-3/4">
           <h1 className="hero-title">
             <span className="from-primary-200 via-primary-100 to-primary bg-gradient-to-tr bg-clip-text text-transparent">
@@ -53,9 +54,9 @@ const Hero = () => {
             your car wherever you are.
           </p>
           <div className="hero-cta flex flex-row gap-4 pb-6">
-            <a className="button-primary w-fit" href="#contact">
+            <Link className="button-primary w-fit" to="/booking">
               Book Now
-            </a>
+            </Link>
 
             <a className="border-2 button-secondary w-fit" href="#services">
               View Services

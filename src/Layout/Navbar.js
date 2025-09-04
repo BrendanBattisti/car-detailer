@@ -1,25 +1,38 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { Link, useLocation } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ isBookingPage = false }) => {
+  const location = useLocation();
+
   const sections = [
-    ["Our Services", "#services"],
-    ["About Us", "#about"],
-    ["FAQs", "#faq"],
-    ["Testimonials", "#testimonials"],
-    ["Before and After", "#beforeandafter"],
+    ["Our Services", "/#services"],
+    ["About Us", "/#about"],
+    ["FAQs", "/#faq"],
+    ["Testimonials", "/#testimonials"],
+    ["Before and After", "/#beforeandafter"],
   ];
 
   function NavbarLink({ text, url, extraClasses = "" }) {
+    const handleClick = (e) => {
+      // If we're on the booking page, we need to navigate to main page first
+      if (isBookingPage) {
+        e.preventDefault();
+        // Navigate to main page with hash
+        window.location.href = url;
+      }
+    };
+
     return (
-      <a
+      <Link
         key={text}
+        to={url}
+        onClick={handleClick}
         className={`hover:bg-white/20 p-6 my-auto text-white text-center ${extraClasses}`}
-        href={url}
       >
         {text}
-      </a>
+      </Link>
     );
   }
 
@@ -42,11 +55,20 @@ const Navbar = () => {
   return (
     <div
       ref={navRef}
-      className="static  w-full font-bold p-4 bg-gradient-to-r from-black via-black/65 to-black/10 h-1/6"
+      className={`static w-full font-bold p-4 h-1/6 ${
+        isBookingPage
+          ? "bg-background border-b border-background-300"
+          : "bg-gradient-to-r from-black via-black/65 to-black/10"
+      }`}
     >
       <div className="nav-wrap flex flex-row justify-between lg:w-4/5 mx-auto ">
         {/* Logo */}
-        <img src="/Images/darkmodeLogosmall.png" />
+        <Link to="/">
+          <img
+            src="/Images/darkmodeLogosmall.png"
+            alt="Carmichl's Elite Mobile Detailing"
+          />
+        </Link>
 
         {/* Desktop Links */}
         <div className="flex-row gap-4 hidden lg:flex">
@@ -55,11 +77,11 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Desktop Contact Button */}
-        <div className="hidden lg:flex">
-          <a className="button-primary text-center" href="#contact">
-            Contact Us
-          </a>
+        {/* Desktop Buttons */}
+        <div className="hidden lg:flex gap-4">
+          <Link className="button-primary text-center" to="/booking">
+            Book Now
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -94,24 +116,24 @@ const Navbar = () => {
         {/* Mobile Links */}
         <nav className="mt-16 p-4 flex flex-col gap-4 text-white">
           {sections.map(([text, url]) => (
-            <a
+            <Link
               key={text}
-              href={url}
+              to={url}
               className="text-xl py-2 px-4 rounded-lg hover:bg-white/20"
               onClick={() => setMobileNav(false)}
             >
               {text}
-            </a>
+            </Link>
           ))}
 
-          {/* Mobile Contact Button */}
-          <a
-            href="#contact"
+          {/* Mobile Buttons */}
+          <Link
+            to="/booking"
             className="mt-6 text-center py-3 rounded-xl button-primary text-xl"
             onClick={() => setMobileNav(false)}
           >
-            Contact Us
-          </a>
+            Book Now
+          </Link>
         </nav>
       </div>
     </div>
