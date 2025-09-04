@@ -15,7 +15,7 @@ const VehicleSelector = ({ vehicleType, setVehicleType }) => {
   ];
 
   return (
-    <div className="bg-background md:py-10 py-6 px-4">
+    <div className="bg-background-100 md:py-10 py-6 px-4">
       <div className="mx-auto max-w-xl">
         <h2 className="text-2xl font-bold text-white text-center">
           What type of vehicle do you drive?
