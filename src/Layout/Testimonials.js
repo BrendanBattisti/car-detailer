@@ -112,18 +112,18 @@ const Testimonials = () => {
 
   return (
     <Section
-      className="bg-background-200"
+      className="bg-background-100"
       id="testimonials"
       title="Hear from our clients"
       header="Testimonials"
     >
-      {/* Scrollable Grid Layout - Works on both mobile and desktop */}
+      {/* Horizontally Scrollable Layout */}
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-background-100 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-background-200 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex-shrink-0 w-80 md:w-96"
             >
               <div className="h-full flex flex-col">
                 {/* Header with name, vehicle, and rating */}
@@ -162,6 +162,13 @@ const Testimonials = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="text-center mt-6">
+          <p className="text-subtext text-sm">
+            ← Scroll to see more testimonials →
+          </p>
         </div>
       </div>
     </Section>

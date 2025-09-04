@@ -149,7 +149,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
   return (
     <Section
       id="services"
-      className="bg-background"
+      className="bg-background-100"
       title=""
       header="Our Services"
     >

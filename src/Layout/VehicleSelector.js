@@ -7,7 +7,11 @@ const VehicleSelector = ({ vehicleType, setVehicleType }) => {
   const buttons = [
     { type: "sedan", label: "Sedan", icon: <FaCarAlt className="w-8 h-8" /> },
     { type: "suv", label: "SUV", icon: <TbCarSuv className="w-8 h-8" /> },
-    { type: "truck", label: "Truck/Minivan", icon: <FaVanShuttle className="w-8 h-8" /> },
+    {
+      type: "truck",
+      label: "Truck/Minivan",
+      icon: <FaVanShuttle className="w-8 h-8" />,
+    },
   ];
 
   return (
@@ -28,8 +32,8 @@ const VehicleSelector = ({ vehicleType, setVehicleType }) => {
               className={`flex flex-col w-full sm:w-1/3 items-center gap-2 py-4 font-semibold transition-colors duration-300 ease-in-out
                 ${
                   vehicleType === btn.type
-                    ? "bg-red-500 text-white"
-                    : "bg-white text-red-500 hover:bg-red-100"
+                    ? "bg-primary-100 text-white"
+                    : "bg-white text-primary-100 hover:bg-primary-100/30"
                 }`}
             >
               {btn.icon}

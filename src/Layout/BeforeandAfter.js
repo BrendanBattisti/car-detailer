@@ -4,7 +4,7 @@ import BeforeAfterSlider from "../Components/BeforeAfterSlider";
 const BeforeandAfter = () => {
   return (
     <Section
-      className="bg-background-200"
+      className="bg-background"
       id="beforeandafter"
       title="See the difference"
       header="Before and After"
