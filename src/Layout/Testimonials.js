@@ -1,6 +1,13 @@
+import React, { useState } from "react";
 import Section from "../Components/Section";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Testimonials = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const testimonials = [
     {
       id: 1,
@@ -106,6 +113,34 @@ const Testimonials = () => {
     },
   ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
+  };
+
   const renderStars = (rating) => {
     return "★".repeat(rating) + "☆".repeat(5 - rating);
   };
@@ -117,60 +152,82 @@ const Testimonials = () => {
       title="Hear from our clients"
       header="Testimonials"
     >
-      {/* Horizontally Scrollable Layout */}
-      <div className="max-w-7xl mx-auto">
-        <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide">
+      {/* Testimonials Carousel */}
+      <div className="max-w-7xl mx-auto relative">
+        <Slider {...settings} className="testimonials-slider">
           {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-background-200 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex-shrink-0 w-80 md:w-96"
-            >
-              <div className="h-full flex flex-col">
-                {/* Header with name, vehicle, and rating */}
-                <div className="mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-bold text-white">
-                      {testimonial.name}
-                    </h3>
-                    <div className="text-primary text-lg">
-                      {renderStars(testimonial.rating)}
+            <div key={testimonial.id} className="px-4">
+              <div className="bg-background-200 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+                <div className="h-full flex flex-col">
+                  {/* Header with name, vehicle, and rating */}
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-lg font-bold text-white">
+                        {testimonial.name}
+                      </h3>
+                      <div className="text-primary text-lg">
+                        {renderStars(testimonial.rating)}
+                      </div>
                     </div>
+                    {testimonial.vehicle && (
+                      <p className="text-subtext text-sm mb-1">
+                        {testimonial.vehicle}
+                      </p>
+                    )}
+                    {testimonial.service && (
+                      <p className="text-primary text-sm font-medium">
+                        {testimonial.service}
+                      </p>
+                    )}
                   </div>
-                  {testimonial.vehicle && (
-                    <p className="text-subtext text-sm mb-1">
-                      {testimonial.vehicle}
-                    </p>
-                  )}
-                  {testimonial.service && (
-                    <p className="text-primary text-sm font-medium">
-                      {testimonial.service}
-                    </p>
-                  )}
-                </div>
 
-                {/* Testimonial text */}
-                <div className="flex-1">
-                  <p className="text-white leading-relaxed">
-                    "{testimonial.text}"
-                  </p>
-                </div>
+                  {/* Testimonial text */}
+                  <div className="flex-1">
+                    <p className="text-white leading-relaxed">
+                      "{testimonial.text}"
+                    </p>
+                  </div>
 
-                {/* Bottom accent */}
-                <div className="mt-4 pt-4 border-t border-background-300">
-                  <div className="w-12 h-1 bg-primary rounded-full"></div>
+                  {/* Bottom accent */}
+                  <div className="mt-4 pt-4 border-t border-background-300">
+                    <div className="w-12 h-1 bg-primary rounded-full"></div>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="text-center mt-6">
-          <p className="text-subtext text-sm">
-            ← Scroll to see more testimonials →
-          </p>
-        </div>
+        </Slider>
       </div>
+
+      {/* Custom CSS for slider */}
+      <style jsx>{`
+        .testimonials-slider .slick-dots {
+          bottom: -40px;
+        }
+        .testimonials-slider .slick-dots li button:before {
+          font-size: 12px;
+          color: #6b7280;
+        }
+        .testimonials-slider .slick-dots li.slick-active button:before {
+          color: #ef233c;
+        }
+        .testimonials-slider .slick-slide {
+          opacity: 0.7;
+          transition: opacity 0.3s ease;
+        }
+        .testimonials-slider .slick-slide.slick-active {
+          opacity: 1;
+        }
+        .testimonials-slider .slick-track {
+          display: flex;
+        }
+        .testimonials-slider .slick-slide {
+          height: inherit;
+        }
+        .testimonials-slider .slick-slide > div {
+          height: 100%;
+        }
+      `}</style>
     </Section>
   );
 };
