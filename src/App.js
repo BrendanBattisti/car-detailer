@@ -44,8 +44,10 @@ function App() {
 
       <div className="absolute z-20 w-screen">
         <div className="w-screen h-screen">
-          <Navbar />
-          <Hero />
+          <div>
+            <Navbar />
+            <Hero />
+          </div>
           <About />
           <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
           <BeforeandAfter />

@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <div
       ref={navRef}
-      className="z-20 w-full font-bold p-4 bg-gradient-to-r from-black via-black/65 to-black/10 h-1/6"
+      className="static  w-full font-bold p-4 bg-gradient-to-r from-black via-black/65 to-black/10 h-1/6"
     >
       <div className="nav-wrap flex flex-row justify-between lg:w-4/5 mx-auto ">
         {/* Logo */}
