@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = ({ isBookingPage = false }) => {
-  const location = useLocation();
-
   const sections = [
     ["Our Services", "/#services"],
     ["About Us", "/#about"],
@@ -15,24 +14,14 @@ const Navbar = ({ isBookingPage = false }) => {
   ];
 
   function NavbarLink({ text, url, extraClasses = "" }) {
-    const handleClick = (e) => {
-      // If we're on the booking page, we need to navigate to main page first
-      if (isBookingPage) {
-        e.preventDefault();
-        // Navigate to main page with hash
-        window.location.href = url;
-      }
-    };
-
     return (
-      <Link
-        key={text}
+      <HashLink
+        smooth
         to={url}
-        onClick={handleClick}
         className={`hover:bg-white/20 p-6 my-auto text-white text-center ${extraClasses}`}
       >
         {text}
-      </Link>
+      </HashLink>
     );
   }
 
@@ -116,14 +105,15 @@ const Navbar = ({ isBookingPage = false }) => {
         {/* Mobile Links */}
         <nav className="mt-16 p-4 flex flex-col gap-4 text-white">
           {sections.map(([text, url]) => (
-            <Link
+            <HashLink
               key={text}
+              smooth
               to={url}
               className="text-xl py-2 px-4 rounded-lg hover:bg-white/20"
               onClick={() => setMobileNav(false)}
             >
               {text}
-            </Link>
+            </HashLink>
           ))}
 
           {/* Mobile Buttons */}

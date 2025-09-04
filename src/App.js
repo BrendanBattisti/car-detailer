@@ -55,8 +55,8 @@ function App() {
           <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
           <BeforeandAfter />
           <Testimonials />
-          <FAQ />
           <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
+          <FAQ />
           <Footer data={data} />
         </div>
       </div>
@@ -76,7 +76,7 @@ function App() {
       </Helmet>
       <div className="absolute z-20 w-screen">
         <Navbar isBookingPage={true} />
-        <div className="pt-24">
+        <div>
           <Booking />
         </div>
         <Footer data={data} />

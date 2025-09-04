@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <Section
       id="contact"
-      className="bg-background-100"
+      className="bg-background"
       header="Contact"
       title="Get in touch"
     >

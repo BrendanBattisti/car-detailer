@@ -2,6 +2,7 @@ import { FaPhoneAlt, FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -15,36 +16,41 @@ const Footer = () => {
         </div>
         <div className="animate-in flex flex-col gap-4">
           <h4>Links</h4>
-          <Link
+          <HashLink
+            smooth
             to="/#services"
             className="hover:text-primary transition-colors duration-200"
           >
             Services
-          </Link>
-          <Link
+          </HashLink>
+          <HashLink
+            smooth
             to="/#about"
             className="hover:text-primary transition-colors duration-200"
           >
             About
-          </Link>
-          <Link
+          </HashLink>
+          <HashLink
+            smooth
             to="/#testimonials"
             className="hover:text-primary transition-colors duration-200"
           >
             Testimonials
-          </Link>
-          <Link
+          </HashLink>
+          <HashLink
+            smooth
             to="/#beforeandafter"
             className="hover:text-primary transition-colors duration-200"
           >
             Before & After
-          </Link>
-          <Link
+          </HashLink>
+          <HashLink
+            smooth
             to="/#faq"
             className="hover:text-primary transition-colors duration-200"
           >
             FAQ
-          </Link>
+          </HashLink>
           <Link
             to="/booking"
             className="hover:text-primary transition-colors duration-200"
