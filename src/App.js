@@ -9,7 +9,6 @@ import { Helmet } from "react-helmet";
 import Navbar from "./Layout/Navbar";
 import FAQ from "./Layout/FAQ";
 import VideoSlideshow from "./Layout/VideoSlideshow";
-import VehicleSelector from "./Layout/VehicleSelector";
 import BeforeandAfter from "./Layout/BeforeandAfter";
 import Testimonials from "./Layout/Testimonials";
 import Booking from "./Layout/Booking";

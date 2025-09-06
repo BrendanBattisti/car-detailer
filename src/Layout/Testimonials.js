@@ -1,12 +1,9 @@
-import React, { useState } from "react";
 import Section from "../Components/Section";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   const testimonials = [
     {
       id: 1,
@@ -135,7 +132,6 @@ const Testimonials = () => {
         settings: { slidesToShow: 1, slidesToScroll: 1, dots: true },
       },
     ],
-    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
   };
 
   const renderStars = (rating) => "★".repeat(rating) + "☆".repeat(5 - rating);

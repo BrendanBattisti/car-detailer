@@ -1,6 +1,6 @@
 import { FaPhoneAlt, FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { FaLocationDot, FaClock } from "react-icons/fa6";
+import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
