@@ -30,7 +30,7 @@ const VideoSlideshow = () => {
   }, [currentVideoIndex]);
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden ">
       {videos.map((video, index) => (
         <video
           key={video}
@@ -47,6 +47,8 @@ const VideoSlideshow = () => {
           Your browser does not support the video tag.
         </video>
       ))}
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/65 to-black/10"></div>
     </div>
   );
 };

@@ -40,14 +40,17 @@ function App() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="canonical" href="https://carmichaelselite.com/" />
+        <link
+          rel="canonical"
+          href="https://carmichaelselitemobiledetailing.com/"
+        />
       </Helmet>
       <div className="h-screen w-full z-0 fixed">
         <VideoSlideshow />
       </div>
 
       <div className="absolute z-20 w-screen">
-        <div className="h-screen flex flex-col justify-between bg-gradient-to-r from-black via-black/65 to-black/10">
+        <div className="h-screen flex flex-col justify-between">
           <Navbar />
           <Hero />
         </div>
@@ -71,7 +74,10 @@ function App() {
           name="description"
           content="Book your mobile car detailing service. Choose your preferred date, time, and service package. We come to you in Rochester, NY area."
         />
-        <link rel="canonical" href="https://carmichaelselite.com/booking" />
+        <link
+          rel="canonical"
+          href="https://carmichaelselitemobiledetailing.com/booking"
+        />
       </Helmet>
       <div className="absolute z-20 w-screen">
         <Navbar isBookingPage={true} />
