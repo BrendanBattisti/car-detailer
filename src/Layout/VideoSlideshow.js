@@ -47,9 +47,6 @@ const VideoSlideshow = () => {
           Your browser does not support the video tag.
         </video>
       ))}
-
-      {/* Video overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/20"></div>
     </div>
   );
 };

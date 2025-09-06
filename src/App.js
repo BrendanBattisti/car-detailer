@@ -38,9 +38,12 @@ function App() {
           name="description"
           content="Professional mobile car detailing services in Rochester, NY area including paint correction, interior restoration, and ceramic coating. We come to you! Book now."
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <link rel="canonical" href="https://carmichaelselite.com/" />
       </Helmet>
       <div className="h-screen w-full z-0 fixed">
+        <div className="bg-transparent h-8"></div>
         <VideoSlideshow />
       </div>
       {/* <div className="absolute z-10 inset-0 bg-gradient-to-r from-black via-black/65 to-black/10"></div> */}

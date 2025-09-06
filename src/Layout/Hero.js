@@ -42,13 +42,11 @@ const Hero = () => {
       <div className="h-full z-10 container mx-auto px-4 lg:w-4/5 flex flex-col justify-end md:mt-16">
         <div className="lg:w-3/4">
           <h1 className="hero-title">
-            <span className="from-primary-200 via-primary-100 to-primary bg-gradient-to-tr bg-clip-text text-transparent">
-              Elite
-            </span>
+            <em>Elite</em>
             <br />
             Mobile <br /> Detailing
           </h1>
-          <p className="hero-sub text-lg lg:text-xl text-white mb-8 max-w-2xl lg:w-3/5 font-secondary mt-10">
+          <p className="hero-sub text-lg lg:text-xl mb-8 max-w-2xl lg:w-3/5 font-secondary mt-10">
             Transform your vehicle with our premium mobile detailing services.
             From basic washes to complete restoration, we bring out the best in
             your car wherever you are.

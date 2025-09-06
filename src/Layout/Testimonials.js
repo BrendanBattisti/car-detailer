@@ -155,7 +155,7 @@ const Testimonials = () => {
                 {/* Header */}
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-bold text-white">
+                    <h3 className="text-lg font-bold text-text">
                       {testimonial.name}
                     </h3>
                     <div className="text-primary text-lg">
@@ -166,7 +166,7 @@ const Testimonials = () => {
 
                 {/* Text */}
                 <div className="flex-1">
-                  <p className="text-white leading-relaxed">
+                  <p className="text-text leading-relaxed">
                     "{testimonial.text}"
                   </p>
                 </div>

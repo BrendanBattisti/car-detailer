@@ -15,7 +15,7 @@
   }
 
   h1 {
-    @apply text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-6 font-hero tracking-tight;
+    @apply text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-hero tracking-tight;
   }
 
   h2 {
@@ -27,7 +27,7 @@
   }
 
   h4 {
-    @apply font-bold text-white font-primary tracking-tight text-lg md:text-xl;
+    @apply font-bold text-text font-primary tracking-tight text-lg md:text-xl;
   }
 
   p,
@@ -49,5 +49,9 @@
 
   a.button-secondary {
     @apply py-2 px-6 bg-transparent border-2 border-white hover:bg-white text-white hover:text-black transition-colors duration-200 my-auto;
+  }
+
+  em {
+    @apply from-primary-200 via-primary-100 to-primary bg-gradient-to-tr bg-clip-text text-transparent not-italic;
   }
 }

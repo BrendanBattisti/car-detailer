@@ -90,7 +90,7 @@ const Footer = () => {
               href="https://www.facebook.com/profile.php?id=61572836793652"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-primary transition-colors duration-200"
+              className="text-text hover:text-primary transition-colors duration-200"
               aria-label="Follow us on Facebook"
             >
               <FaFacebookF className="w-6 h-6" />
@@ -99,7 +99,7 @@ const Footer = () => {
               href="https://www.instagram.com/carmichaelelite25/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-primary transition-colors duration-200"
+              className="text-text hover:text-primary transition-colors duration-200"
               aria-label="Follow us on Instagram"
             >
               <FaInstagram className="w-6 h-6" />
@@ -108,7 +108,7 @@ const Footer = () => {
               href="https://share.google/TYNGzCEHyBVnC6hs8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-primary transition-colors duration-200"
+              className="text-text hover:text-primary transition-colors duration-200"
               aria-label="Follow us on Google"
             >
               <FaGoogle className="w-6 h-6" />

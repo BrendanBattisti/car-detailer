@@ -11,7 +11,7 @@ const BeforeandAfter = () => {
     >
       <div className="animate-in">
         <div className="text-center mb-12">
-          <p className="text-lg text-white max-w-3xl mx-auto">
+          <p className="text-lg text-text max-w-3xl mx-auto">
             Witness the incredible transformation our professional car detailing
             services can achieve. From dull and dirty to showroom-ready shine -
             see the difference for yourself.

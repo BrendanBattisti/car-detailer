@@ -37,15 +37,6 @@ const Contact = () => {
     },
   ];
 
-  const services = [
-    "Premium Interior Package",
-    "Elite Interior Package",
-    "Premium Exterior Package",
-    "Elite Exterior Package",
-    "Premium Full Package(Interior + Exterior)",
-    "Elite Full Package(Interior + Exterior)",
-  ];
-
   return (
     <Section
       id="contact"
@@ -60,7 +51,7 @@ const Contact = () => {
           <div className="text-center mb-6">
             <Link
               to="/booking"
-              className="inline-block bg-primary hover:bg-primary-100 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200 text-lg mb-4"
+              className="inline-block bg-primary hover:bg-primary-100 text-text font-bold py-3 px-8 rounded-lg transition-colors duration-200 text-lg mb-4"
             >
               Book Your Service Now
             </Link>
@@ -69,7 +60,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <h3 className="text-2xl font-bold text-white mb-6">
+          <h3 className="text-2xl font-bold text-text mb-6">
             Send us a Message
           </h3>
           <form className="space-y-6">
@@ -77,7 +68,7 @@ const Contact = () => {
               <div className="animate-in">
                 <label
                   htmlFor="firstName"
-                  className="block text-white font-semibold mb-2"
+                  className="block text-text font-semibold mb-2"
                 >
                   First Name
                 </label>
@@ -91,7 +82,7 @@ const Contact = () => {
               <div className="animate-in">
                 <label
                   htmlFor="lastName"
-                  className="block text-white font-semibold mb-2"
+                  className="block text-text font-semibold mb-2"
                 >
                   Last Name
                 </label>
@@ -107,7 +98,7 @@ const Contact = () => {
             <div className="animate-in">
               <label
                 htmlFor="email"
-                className="block text-white font-semibold mb-2"
+                className="block text-text font-semibold mb-2"
               >
                 Email Address
               </label>
@@ -122,7 +113,7 @@ const Contact = () => {
             <div className="animate-in">
               <label
                 htmlFor="phone"
-                className="block text-white font-semibold mb-2"
+                className="block text-text font-semibold mb-2"
               >
                 Phone Number
               </label>
@@ -136,28 +127,8 @@ const Contact = () => {
 
             <div className="animate-in">
               <label
-                htmlFor="service"
-                className="block text-white font-semibold mb-2"
-              >
-                Service Interested In
-              </label>
-              <select
-                id="service"
-                className="w-full px-4 py-3 border rounded-none text-black focus:outline-none focus:border-primary transition-colors"
-              >
-                <option value="">Select a service</option>
-                {services.map((service, index) => (
-                  <option key={index} value={service}>
-                    {service}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="animate-in">
-              <label
                 htmlFor="message"
-                className="block text-white font-semibold mb-2"
+                className="block text-text font-semibold mb-2"
               >
                 Message
               </label>
@@ -186,7 +157,7 @@ const Contact = () => {
                 >
                   <div className="text-3xl h-full my-auto">{info.icon}</div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">
+                    <h4 className="text-lg font-semibold text-text mb-2">
                       {info.title}
                     </h4>
                     {info.link ? (

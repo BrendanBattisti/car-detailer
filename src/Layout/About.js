@@ -49,7 +49,7 @@ const About = () => {
           {/* Right side - visual accent card */}
           <div className="animate-in bg-gradient-to-br from-primary/10 to-background-200 rounded-2xl p-8 shadow-xl">
             <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-white">Our Promise</h4>
+              <h4 className="text-xl font-semibold text-text">Our Promise</h4>
               <p className="text-subtext leading-relaxed">
                 Whether it’s restoring that showroom shine or giving your ride a
                 quick refresh, our goal is always the same: make your car look

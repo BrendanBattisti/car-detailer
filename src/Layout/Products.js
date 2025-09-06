@@ -161,7 +161,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
       <div className="space-y-8">
         {services.map((service, idx) => (
           <div key={idx}>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-text mb-4">
               {service.category}
             </h2>
             <div className="grid md:grid-cols-2 gap-6 items-start">
@@ -191,11 +191,9 @@ const Products = ({ vehicleType, setVehicleType }) => {
                         <div className="mb-3">
                           <h3 className="text-xl font-semibold">
                             {tier.name === "Elite" ? (
-                              <span className="from-primary-200 via-primary-100 to-primary bg-gradient-to-tr bg-clip-text text-transparent">
-                                Elite
-                              </span>
+                              <em>Elite</em>
                             ) : (
-                              <span className="text-white">{tier.name}</span>
+                              <span className="text-text">{tier.name}</span>
                             )}
                           </h3>
                           <p className="text-subtext text-sm mt-1">
@@ -216,7 +214,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
                                 key={fIdx}
                                 className={`flex items-center ${
                                   isPremiumLine
-                                    ? "text-white font-bold"
+                                    ? "text-text font-bold"
                                     : "text-subtext"
                                 }`}
                               >
@@ -265,7 +263,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
 
       {/* Add-Ons Section*/}
       <div className="animate-in mt-12">
-        <h2 className="text-2xl font-bold text-white mb-4">Add-Ons</h2>
+        <h2 className="text-2xl font-bold text-text mb-4">Add-Ons</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {addons.map((addon, idx) => (
             <div
@@ -274,7 +272,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
             >
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
-                  <span className="text-white font-semibold">{addon.name}</span>
+                  <span className="text-text font-semibold">{addon.name}</span>
                 </div>
                 <span className="text-primary font-bold">{addon.price}</span>
               </div>
@@ -286,7 +284,7 @@ const Products = ({ vehicleType, setVehicleType }) => {
       {/* Book Now Section */}
       <div className="animate-in mt-12 text-center">
         <div className="bg-background-200 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-white mb-4">
+          <h2 className="text-2xl font-bold text-text mb-4">
             Ready to Book Your Service?
           </h2>
           <p className="text-subtext mb-6 max-w-2xl mx-auto">
@@ -295,111 +293,12 @@ const Products = ({ vehicleType, setVehicleType }) => {
           </p>
           <Link
             to="/booking"
-            className="inline-block bg-primary hover:bg-primary-100 text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 text-lg"
+            className="inline-block bg-primary hover:bg-primary-100 text-text font-bold py-4 px-8 rounded-lg transition-colors duration-200 text-lg"
           >
             Book Your Service Now
           </Link>
         </div>
       </div>
-
-      {/* Selected Addons Summary */}
-      {/* {selectedAddons.length > 0 && (
-        <div className="mt-12 w-4/5 mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-6 text-center">
-            Selected Add-Ons
-          </h2>
-          <div className="bg-background-200 rounded-lg p-6">
-            <div className="space-y-3">
-              {selectedAddons.map((addonName) => {
-                const addon = addons.find((a) => a.name === addonName);
-                return (
-                  <div
-                    key={addonName}
-                    className="flex justify-between items-center"
-                  >
-                    <span className="text-white font-semibold">
-                      {addonName}
-                    </span>
-                    <span className="text-primary font-bold">
-                      {addon.price}
-                    </span>
-                  </div>
-                );
-              })}
-              <hr className="border-background-300 my-4" />
-              <div className="flex justify-between items-center text-lg">
-                <span className="text-white font-bold">Total Add-Ons:</span>
-                <span className="text-primary font-bold">
-                  $
-                  {selectedAddons.reduce((total, addonName) => {
-                    const addon = addons.find((a) => a.name === addonName);
-                    const price = addon.price.replace(/[^0-9]/g, "");
-                    return total + parseInt(price);
-                  }, 0)}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      )} */}
-
-      {/* Contact Section - Only shows when addons are selected */}
-      {/* {selectedAddons.length > 0 && (
-        <div className="mt-12 w-4/5 mx-auto">
-          <div className="bg-background-200 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-white mb-4 text-center">
-              Is this exactly what you are looking for? Send us a message!
-            </h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div>
-                <label className="block text-white text-sm font-medium mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  value={contactForm.name}
-                  onChange={(e) =>
-                    handleContactInputChange("name", e.target.value)
-                  }
-                  className="w-full px-3 py-2 bg-background-100 border border-background-300  text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="block text-white text-sm font-medium mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  value={contactForm.number}
-                  onChange={(e) =>
-                    handleContactInputChange("number", e.target.value)
-                  }
-                  className="w-full px-3 py-2 bg-background-100 border border-background-300 text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
-                  placeholder="(555) 123-4567"
-                />
-              </div>
-              <div>
-                <label className="block text-white text-sm font-medium mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  value={contactForm.email}
-                  onChange={(e) =>
-                    handleContactInputChange("email", e.target.value)
-                  }
-                  className="w-full px-3 py-2 bg-background-100 border border-background-300 text-white placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
-            <div className="mt-6 text-center">
-              <button className="button-primary">Contact Us</button>
-            </div>
-          </div>
-        </div>
-      )} */}
     </Section>
   );
 };

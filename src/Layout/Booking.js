@@ -141,7 +141,7 @@ const Booking = () => {
         {/* Header Information */}
         <div className="text-center mb-12">
           <div className="bg-background-200 rounded-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-text mb-4">
               Book Your Mobile Detailing Service
             </h2>
             <p className="text-lg text-subtext max-w-3xl mx-auto">
@@ -156,7 +156,7 @@ const Booking = () => {
           {/* Main Booking Form */}
           <div className="w-full">
             <div className="bg-background-200 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <h3 className="text-2xl font-bold text-text mb-6 flex items-center gap-3">
                 <FaCalendarAlt className="text-primary" />
                 Booking Details
               </h3>
@@ -164,12 +164,12 @@ const Booking = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
                 <div className="bg-background-100 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-white mb-4">
+                  <h4 className="text-lg font-semibold text-text mb-4">
                     Personal Information
                   </h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-white text-sm font-medium mb-2">
+                      <label className="block text-text text-sm font-medium mb-2">
                         First Name *
                       </label>
                       <input
@@ -184,7 +184,7 @@ const Booking = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-white text-sm font-medium mb-2">
+                      <label className="block text-text text-sm font-medium mb-2">
                         Last Name *
                       </label>
                       <input
@@ -202,7 +202,7 @@ const Booking = () => {
 
                   <div className="grid md:grid-cols-2 gap-4 mt-4">
                     <div>
-                      <label className="block text-white text-sm font-medium mb-2">
+                      <label className="block text-text text-sm font-medium mb-2">
                         Email Address *
                       </label>
                       <input
@@ -217,7 +217,7 @@ const Booking = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-white text-sm font-medium mb-2">
+                      <label className="block text-text text-sm font-medium mb-2">
                         Phone Number *
                       </label>
                       <input
@@ -236,14 +236,14 @@ const Booking = () => {
 
                 {/* Vehicle & Service Information */}
                 <div className="bg-background-100 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-3">
+                  <h4 className="text-lg font-semibold text-text mb-4 flex items-center gap-3">
                     <FaCar className="text-primary" />
                     Vehicle & Service Details
                   </h4>
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-white text-sm font-medium mb-2">
+                      <label className="block text-text text-sm font-medium mb-2">
                         Vehicle Type *
                       </label>
                       <select
@@ -260,7 +260,7 @@ const Booking = () => {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-white text-sm font-medium mb-2">
+                      <label className="block text-text text-sm font-medium mb-2">
                         Service Package *
                       </label>
                       <select
@@ -283,7 +283,7 @@ const Booking = () => {
 
                   {/* Add-Ons Selection */}
                   <div className="mt-6">
-                    <label className="block text-white text-sm font-medium mb-3">
+                    <label className="block text-text text-sm font-medium mb-3">
                       Add-Ons (Optional)
                     </label>
                     <div className="grid md:grid-cols-3 gap-3 max-h-48 overflow-y-auto border border-background-300 p-3 bg-background-100 rounded">
@@ -295,7 +295,7 @@ const Booking = () => {
                             onClick={() => toggleAddon(addon.name)}
                             className={`flex items-center gap-3 p-2 rounded cursor-pointer transition-colors duration-200 ${
                               isSelected
-                                ? "bg-primary text-white"
+                                ? "bg-primary text-text"
                                 : "bg-background-200 hover:bg-background-300"
                             }`}
                           >
@@ -316,14 +316,14 @@ const Booking = () => {
                             </div>
                             <span
                               className={`font-medium ${
-                                isSelected ? "text-white" : "text-white"
+                                isSelected ? "text-text" : "text-text"
                               }`}
                             >
                               {addon.name}
                             </span>
                             <span
                               className={`ml-auto text-sm ${
-                                isSelected ? "text-white" : "text-subtext"
+                                isSelected ? "text-text" : "text-subtext"
                               }`}
                             >
                               {addon.price}
@@ -342,11 +342,11 @@ const Booking = () => {
 
                 {/* Additional Message */}
                 <div className="bg-background-100 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-white mb-4">
+                  <h4 className="text-lg font-semibold text-text mb-4">
                     Additional Information
                   </h4>
                   <div>
-                    <label className="block text-white text-sm font-medium mb-2">
+                    <label className="block text-text text-sm font-medium mb-2">
                       Special Instructions or Notes
                     </label>
                     <textarea
@@ -364,7 +364,7 @@ const Booking = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary-100 text-white font-bold py-4 px-6 rounded-lg transition-colors duration-200 text-lg"
+                  className="w-full bg-primary hover:bg-primary-100 text-text font-bold py-4 px-6 rounded-lg transition-colors duration-200 text-lg"
                 >
                   Send us your Request
                 </button>
@@ -376,7 +376,7 @@ const Booking = () => {
         {/* Price Estimate */}
         <div className="animate-in mt-12">
           <div className="bg-background-200 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">
+            <h3 className="text-2xl font-bold text-text mb-6 text-center">
               Price Estimate
             </h3>
 
@@ -384,7 +384,7 @@ const Booking = () => {
               {/* Service Cost */}
               {bookingData.service && (
                 <div className="flex justify-between items-center py-3 border-b border-background-300">
-                  <span className="text-white font-medium">
+                  <span className="text-text font-medium">
                     {bookingData.service}
                   </span>
                   <span className="text-primary font-bold text-lg">
@@ -402,7 +402,7 @@ const Booking = () => {
               {selectedAddons.length > 0 && (
                 <>
                   <div className="mt-4 mb-2">
-                    <h4 className="text-white font-semibold mb-3">
+                    <h4 className="text-text font-semibold mb-3">
                       Selected Add-Ons:
                     </h4>
                   </div>
@@ -423,7 +423,7 @@ const Booking = () => {
               {/* Total */}
               {totalPrice > 0 && (
                 <div className="flex justify-between items-center py-4 border-t border-background-300 mt-4">
-                  <span className="text-white font-bold text-lg">
+                  <span className="text-text font-bold text-lg">
                     Estimated Total:
                   </span>
                   <span className="text-primary font-bold text-2xl">
@@ -449,9 +449,7 @@ const Booking = () => {
         {/* Service Guarantee - moved to bottom */}
         <div className="animate-in mt-12 text-center">
           <div className="bg-background-200 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Our Guarantee
-            </h3>
+            <h3 className="text-2xl font-bold text-text mb-4">Our Guarantee</h3>
             <div className="text-subtext text-lg max-w-3xl mx-auto">
               <p>
                 We're committed to your satisfaction and professional quality
