@@ -10,6 +10,7 @@ import Navbar from "./Layout/Navbar";
 import FAQ from "./Layout/FAQ";
 import VideoSlideshow from "./Layout/VideoSlideshow";
 import BeforeandAfter from "./Layout/BeforeandAfter";
+import BeforeAfterGallery from "./Layout/BeforeAfterGallery";
 import Testimonials from "./Layout/Testimonials";
 import Booking from "./Layout/Booking";
 import { useState } from "react";
@@ -92,6 +93,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/booking" element={<BookingPage />} />
+        <Route path="/gallery" element={<BeforeAfterGallery />} />
       </Routes>
     </Router>
   );

@@ -52,6 +52,6 @@
   }
 
   em {
-    @apply from-primary via-primary-100 to-primary-200 bg-gradient-to-tr bg-clip-text text-transparent not-italic;
+    @apply from-primary to-primary-100 bg-gradient-to-tr bg-clip-text text-transparent not-italic;
   }
 }

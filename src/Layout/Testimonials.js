@@ -181,14 +181,14 @@ const Testimonials = () => {
                 <div className="mt-4 pt-4 border-t border-background-300">
                   <div className="w-12 h-1 bg-primary rounded-full"></div>
                 </div>
-              </div>
+              </div>0
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Custom Navigation Buttons */}
-        <div className="swiper-button-prev !text-primary !text-2xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-left-4 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
-        <div className="swiper-button-next !text-primary !text-2xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-right-4 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
+        <div className="swiper-button-prev !text-primary !text-xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-left-4 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
+        <div className="swiper-button-next !text-primary !text-xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-right-4 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
       </div>
 
       {/* Custom CSS */}
