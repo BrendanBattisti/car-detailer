@@ -13,11 +13,9 @@ import BeforeandAfter from "./Layout/BeforeandAfter";
 import BeforeAfterGallery from "./Layout/BeforeAfterGallery";
 import Testimonials from "./Layout/Testimonials";
 import Booking from "./Layout/Booking";
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [vehicleType, setVehicleType] = useState("sedan");
   // Main page component with all sections
   const MainPage = () => (
     <div
@@ -54,10 +52,10 @@ function App() {
           <Hero />
         </div>
         <About />
-        <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
+        <Products />
         <BeforeandAfter />
         <Testimonials />
-        <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
+        <Contact />
         <FAQ />
         <Footer data={data} />
       </div>

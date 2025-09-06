@@ -3,7 +3,8 @@ import Section from "../Components/Section";
 import VehicleSelector from "./VehicleSelector";
 import { Link } from "react-router-dom";
 
-const Products = ({ vehicleType, setVehicleType }) => {
+const Products = () => {
+  const [vehicleType, setVehicleType] = useState("sedan");
   const [expandedCards, setExpandedCards] = useState([]);
   // const [selectedAddons, setSelectedAddons] = useState([]);
   // const [contactForm, setContactForm] = useState({
