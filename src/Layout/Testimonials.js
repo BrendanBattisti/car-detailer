@@ -181,7 +181,7 @@ const Testimonials = () => {
                 <div className="mt-4 pt-4 border-t border-background-300">
                   <div className="w-12 h-1 bg-primary rounded-full"></div>
                 </div>
-              </div>0
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
