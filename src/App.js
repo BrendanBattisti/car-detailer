@@ -17,7 +17,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [vehicleType, setVehicleType] = useState("sedan");
-  console.log(window.innerWidth);
   // Main page component with all sections
   const MainPage = () => (
     <div

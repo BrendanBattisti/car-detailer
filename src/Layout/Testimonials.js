@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
+  console.log(window.innerWidth);
   const testimonials = [
     {
       id: 1,
