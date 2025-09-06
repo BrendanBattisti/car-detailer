@@ -51,7 +51,7 @@ const Testimonials = () => {
     },
     {
       id: 8,
-      name: "INK REDIBLE",
+      name: "Ink R.",
       rating: 5,
       text: "Excellent service from start to finish! The team was efficient, professional, and paid great attention to detail. My car looks spotless inside and out, like I just bought it from the dealership and the whole process was hassle-free. I highly recommend to anyone looking for top-quality car detailing services.",
     },
