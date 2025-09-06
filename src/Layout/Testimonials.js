@@ -114,23 +114,32 @@ const Testimonials = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1, // Default to mobile-first (1 slide)
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
     pauseOnHover: true,
+    centerMode: true,
+    centerPadding: "15px",
+    swipeToSlide: true,
     responsive: [
       {
-        breakpoint: 1024, // tablets / small laptops
-        settings: { slidesToShow: 2, slidesToScroll: 1 },
+        breakpoint: 768, // tablets and up
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerMode: false,
+          centerPadding: "0px",
+        },
       },
       {
-        breakpoint: 768, // large phones / portrait tablets
-        settings: { slidesToShow: 1, slidesToScroll: 1, dots: true },
-      },
-      {
-        breakpoint: 480, // small phones
-        settings: { slidesToShow: 1, slidesToScroll: 1, dots: true },
+        breakpoint: 1024, // desktop and up
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          centerMode: false,
+          centerPadding: "0px",
+        },
       },
     ],
   };

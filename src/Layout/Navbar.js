@@ -44,13 +44,13 @@ const Navbar = ({ isBookingPage = false }) => {
   return (
     <div ref={navRef} className="w-full font-bold max-h-1/6 flex flex-col">
       <div>
-        <div className="h-4 md:h-6 lg:h-8 bg-white"></div>
+        <div className="h-4 hidden md:block md:h-6 lg:h-8 bg-white"></div>
       </div>
       <div>
         <div className="nav-wrap flex flex-row justify-between lg:pr-16 pr-4">
           <Link
             to="/"
-            className="bg-white p-4 pr-8 md:pr-16 pt-0 [clip-path:polygon(0_0,100%_0%,85%_100%,0%_100%)]"
+            className="bg-white p-4 pr-12 md:pr-16 pt-0 [clip-path:polygon(0_0,100%_0%,85%_100%,0%_100%)]"
           >
             <img
               className="hidden lg:block"
