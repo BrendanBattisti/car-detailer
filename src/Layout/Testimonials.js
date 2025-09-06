@@ -1,10 +1,11 @@
 import Section from "../Components/Section";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Testimonials = () => {
-  console.log(window.innerWidth);
   const testimonials = [
     {
       id: 1,
@@ -110,40 +111,6 @@ const Testimonials = () => {
     },
   ];
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1, // Default to mobile-first (1 slide)
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-    centerMode: true,
-    centerPadding: "15px",
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 768, // tablets and up
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          centerMode: false,
-          centerPadding: "0px",
-        },
-      },
-      {
-        breakpoint: 1024, // desktop and up
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          centerMode: false,
-          centerPadding: "0px",
-        },
-      },
-    ],
-  };
-
   const renderStars = (rating) => "★".repeat(rating) + "☆".repeat(5 - rating);
 
   return (
@@ -154,9 +121,42 @@ const Testimonials = () => {
       header="Testimonials"
     >
       <div className="max-w-7xl mx-auto relative">
-        <Slider {...settings} className="testimonials-slider">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          pagination={{
+            clickable: true,
+            bulletClass: "swiper-pagination-bullet",
+            bulletActiveClass: "swiper-pagination-bullet-active",
+          }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+          className="testimonials-swiper"
+        >
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="px-3">
+            <SwiperSlide key={testimonial.id}>
               <div className="bg-background-200 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                 {/* Header */}
                 <div className="mb-4">
@@ -182,43 +182,66 @@ const Testimonials = () => {
                   <div className="w-12 h-1 bg-primary rounded-full"></div>
                 </div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
+
+        {/* Custom Navigation Buttons */}
+        <div className="swiper-button-prev !text-primary !text-2xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-left-4 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
+        <div className="swiper-button-next !text-primary !text-2xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-right-4 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
       </div>
 
       {/* Custom CSS */}
       <style jsx>{`
-        .testimonials-slider .slick-dots {
-          bottom: -40px;
-        }
-        .testimonials-slider .slick-dots li button:before {
-          font-size: 12px;
-          color: #6b7280;
-        }
-        .testimonials-slider .slick-dots li.slick-active button:before {
-          color: #ef233c;
-        }
-        .testimonials-slider .slick-slide {
-          opacity: 0.7;
-          transition: opacity 0.3s ease;
-        }
-        .testimonials-slider .slick-slide.slick-active {
-          opacity: 1;
-        }
-        .testimonials-slider .slick-slide > div {
-          height: 100%;
+        .testimonials-swiper {
+          padding: 20px 0 60px 0;
         }
 
-        /* Mobile-specific spacing */
+        .testimonials-swiper .swiper-pagination {
+          bottom: 20px;
+        }
+
+        .testimonials-swiper .swiper-pagination-bullet {
+          background: #6b7280;
+          opacity: 0.5;
+          width: 12px;
+          height: 12px;
+          margin: 0 6px;
+          transition: all 0.3s ease;
+        }
+
+        .testimonials-swiper .swiper-pagination-bullet-active {
+          background: #ef233c;
+          opacity: 1;
+          transform: scale(1.2);
+        }
+
+        .testimonials-swiper .swiper-button-prev:after,
+        .testimonials-swiper .swiper-button-next:after {
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        .testimonials-swiper .swiper-button-prev:hover,
+        .testimonials-swiper .swiper-button-next:hover {
+          background: #f8f9fa;
+        }
+
+        /* Mobile responsiveness */
         @media (max-width: 768px) {
-          .testimonials-slider .slick-slide > div {
-            padding: 0 6px;
+          .testimonials-swiper .swiper-button-prev,
+          .testimonials-swiper .swiper-button-next {
+            display: none;
+          }
+
+          .testimonials-swiper {
+            padding: 20px 0 50px 0;
           }
         }
-        @media (max-width: 480px) {
-          .testimonials-slider .slick-slide > div {
-            padding: 0 4px;
+
+        @media (max-width: 640px) {
+          .testimonials-swiper {
+            padding: 10px 0 40px 0;
           }
         }
       `}</style>
