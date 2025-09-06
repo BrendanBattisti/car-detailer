@@ -32,8 +32,8 @@ const VehicleSelector = ({ vehicleType, setVehicleType }) => {
               className={`flex flex-col w-full sm:w-1/3 items-center gap-2 py-4 font-semibold transition-colors duration-300 ease-in-out
                 ${
                   vehicleType === btn.type
-                    ? "bg-primary-100 text-background"
-                    : "bg-background text-primary-100 hover:bg-primary-100/30"
+                    ? "bg-primary-100 text-text"
+                    : "bg-text text-primary-100 hover:bg-primary-100/30"
                 }`}
             >
               {btn.icon}
