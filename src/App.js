@@ -45,22 +45,19 @@ function App() {
       <div className="h-screen w-full z-0 fixed">
         <VideoSlideshow />
       </div>
-      {/* <div className="absolute z-10 inset-0 bg-gradient-to-r from-black via-black/65 to-black/10"></div> */}
 
       <div className="absolute z-20 w-screen">
-        <div className="block w-screen h-screen">
-          <div className="h-full">
-            <Navbar />
-            <Hero />
-          </div>
-          <About />
-          <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
-          <BeforeandAfter />
-          <Testimonials />
-          <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
-          <FAQ />
-          <Footer data={data} />
+        <div className="h-screen flex flex-col justify-between bg-gradient-to-r from-black via-black/65 to-black/10">
+          <Navbar />
+          <Hero />
         </div>
+        <About />
+        <Products vehicleType={vehicleType} setVehicleType={setVehicleType} />
+        <BeforeandAfter />
+        <Testimonials />
+        <Contact vehicleType={vehicleType} setVehicleType={setVehicleType} />
+        <FAQ />
+        <Footer data={data} />
       </div>
     </div>
   );

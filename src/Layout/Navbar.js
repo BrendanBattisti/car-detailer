@@ -18,7 +18,7 @@ const Navbar = ({ isBookingPage = false }) => {
       <HashLink
         smooth
         to={url}
-        className={`hover:bg-white/20 p-6 my-auto text-text text-center ${extraClasses}`}
+        className={`hover:bg-white/20 p-6 transition-colors duration-200 my-auto text-text text-center ${extraClasses}`}
       >
         {text}
       </HashLink>
@@ -42,10 +42,7 @@ const Navbar = ({ isBookingPage = false }) => {
   const [mobileNav, setMobileNav] = useState(false);
 
   return (
-    <div
-      ref={navRef}
-      className="w-full font-bold h-1/6 bg-gradient-to-r from-black via-black/65 to-black/10 flex flex-col"
-    >
+    <div ref={navRef} className="w-full font-bold max-h-1/6 flex flex-col">
       <div>
         <div className="h-4 md:h-6 lg:h-8 bg-white"></div>
       </div>

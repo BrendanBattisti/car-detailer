@@ -49,7 +49,7 @@ const Section = ({ id, title, header, children, className = "" }) => {
 
   return (
     <section ref={sectionRef} id={id} className={`py-16 px-4 ${className}`}>
-      <div className="container mx-auto w-full md:w-4/5 p-4">
+      <div className="mx-auto w-full md:w-4/5 p-4">
         <h4 className="section-header">{header}</h4>
         <h2 className="section-title py-6">{title}</h2>
         {children}

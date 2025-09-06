@@ -34,12 +34,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <div
-      ref={heroRef}
-      className="h-5/6 flex items-end pb-10 bg-gradient-to-r from-black via-black/65 to-black/10"
-    >
+    <div ref={heroRef} className="h-5/6">
       {/* Content */}
-      <div className="h-full z-10 mx-auto px-4 lg:w-4/5 flex flex-col justify-end">
+      <div className="h-full z-10 mx-auto px-4 lg:w-4/5 flex flex-col justify-end md:pb-10">
         <div className="lg:w-3/4">
           <h1 className="hero-title">
             <em>Elite</em>
