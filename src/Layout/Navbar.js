@@ -44,9 +44,11 @@ const Navbar = ({ isBookingPage = false }) => {
   return (
     <div
       ref={navRef}
-      className={`static w-full font-bold h-1/6 bg-gradient-to-r from-black via-black/65 to-black/10 flex flex-col`}
+      className="w-full font-bold h-1/6 bg-gradient-to-r from-black via-black/65 to-black/10 flex flex-col"
     >
-      <div className="h-8 bg-white"></div>
+      <div>
+        <div className="h-4 md:h-6 lg:h-8 bg-white"></div>
+      </div>
       <div>
         <div className="nav-wrap flex flex-row justify-between lg:pr-16 pr-4">
           <Link

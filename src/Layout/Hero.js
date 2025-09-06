@@ -36,10 +36,10 @@ const Hero = () => {
   return (
     <div
       ref={heroRef}
-      className="h-5/6 flex lg:items-center items-end pb-10 bg-gradient-to-r from-black via-black/65 to-black/10"
+      className="h-5/6 flex items-end pb-10 bg-gradient-to-r from-black via-black/65 to-black/10"
     >
       {/* Content */}
-      <div className="h-full z-10 container mx-auto px-4 lg:w-4/5 flex flex-col justify-end md:mt-16">
+      <div className="h-full z-10 mx-auto px-4 lg:w-4/5 flex flex-col justify-end">
         <div className="lg:w-3/4">
           <h1 className="hero-title">
             <em>Elite</em>

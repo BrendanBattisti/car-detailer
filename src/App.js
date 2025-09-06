@@ -48,8 +48,8 @@ function App() {
       {/* <div className="absolute z-10 inset-0 bg-gradient-to-r from-black via-black/65 to-black/10"></div> */}
 
       <div className="absolute z-20 w-screen">
-        <div className="w-screen h-screen">
-          <div>
+        <div className="block w-screen h-screen">
+          <div className="h-full">
             <Navbar />
             <Hero />
           </div>
