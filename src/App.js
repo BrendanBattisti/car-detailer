@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [vehicleType, setVehicleType] = useState("sedan");
-
+  console.log(window.innerWidth);
   // Main page component with all sections
   const MainPage = () => (
     <div
@@ -43,7 +43,6 @@ function App() {
         <link rel="canonical" href="https://carmichaelselite.com/" />
       </Helmet>
       <div className="h-screen w-full z-0 fixed">
-        <div className="bg-transparent h-8"></div>
         <VideoSlideshow />
       </div>
       {/* <div className="absolute z-10 inset-0 bg-gradient-to-r from-black via-black/65 to-black/10"></div> */}

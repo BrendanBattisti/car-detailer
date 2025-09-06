@@ -70,7 +70,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <MdEmail className="text-sm" />
+            <MdEmail className="text-base flex-shrink-0" />
             <a
               href="mailto:carmichaelelite25@gmail.com"
               className="hover:text-primary transition-colors duration-200"
@@ -79,8 +79,10 @@ const Footer = () => {
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <FaLocationDot className="text-sm" />
-            <p>Rochester, NY Area - Mobile Service</p>
+            <FaLocationDot className="text-sm " />
+            <p className="text-white text-subtext">
+              Rochester, NY Area - Mobile Service
+            </p>
           </div>
         </div>
         <div className="animate-in flex flex-col gap-4">

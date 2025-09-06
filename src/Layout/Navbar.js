@@ -44,21 +44,22 @@ const Navbar = ({ isBookingPage = false }) => {
   return (
     <div
       ref={navRef}
-      className={`static w-full font-bold h-1/6 bg-black/20 flex flex-col`}
+      className={`static w-full font-bold h-1/6 bg-gradient-to-r from-black via-black/65 to-black/10 flex flex-col`}
     >
+      <div className="h-8 bg-white"></div>
       <div>
-        <div className="nav-wrap flex flex-row justify-between md:pr-20 pr-4">
+        <div className="nav-wrap flex flex-row justify-between lg:pr-16 pr-4">
           <Link
             to="/"
-            className="bg-white p-4 pr-16 [clip-path:polygon(0_0,100%_0%,85%_100%,0%_100%)]"
+            className="bg-white p-4 pr-8 md:pr-16 [clip-path:polygon(0_0,100%_0%,85%_100%,0%_100%)]"
           >
             <img
-              className="hidden md:block"
+              className="hidden lg:block"
               src="Images/Logo-removebg-preview.png"
               alt="Carmichl's Elite Mobile Detailing"
             />
             <img
-              className="block md:hidden"
+              className="block lg:hidden"
               src="Images/Logo-mobile.png"
               alt="Carmichl's Elite Mobile Detailing"
             />
