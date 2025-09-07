@@ -3,7 +3,6 @@ import Section from "../Components/Section";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
   const contactInfo = [
@@ -49,12 +48,12 @@ const Contact = () => {
         <div className="animate-in bg-background-200 rounded-lg p-8">
           {/* Book Now Button */}
           <div className="text-center mb-6">
-            <Link
-              to="/booking"
+            <a
+              href="/booking"
               className="inline-block bg-primary hover:bg-primary-100 text-text font-bold py-3 px-8 rounded-lg transition-colors duration-200 text-lg mb-4"
             >
               Book Your Service Now
-            </Link>
+            </a>
             <p className="text-subtext text-sm">
               Prefer to book directly? Use our comprehensive booking form above.
             </p>

@@ -157,7 +157,7 @@ const Testimonials = () => {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
-              <div className="bg-background-200 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+              <div className="testimonial-card bg-background-200 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                 {/* Header */}
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
@@ -187,8 +187,8 @@ const Testimonials = () => {
         </Swiper>
 
         {/* Custom Navigation Buttons */}
-        <div className="swiper-button-prev !text-primary !text-xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-left-4 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
-        <div className="swiper-button-next !text-primary !text-xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-right-4 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
+        <div className="swiper-button-prev !text-primary !text-xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-left-12 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
+        <div className="swiper-button-next !text-primary !text-xl !w-12 !h-12 !mt-0 !top-1/2 !-translate-y-1/2 !-right-12 !bg-white !rounded-full !shadow-lg hover:!shadow-xl transition-shadow"></div>
       </div>
 
       {/* Custom CSS */}
@@ -198,7 +198,7 @@ const Testimonials = () => {
         }
 
         .testimonials-swiper .swiper-pagination {
-          bottom: 20px;
+          bottom: 20px; /* distance from bottom of swiper container */
         }
 
         .testimonials-swiper .swiper-pagination-bullet {
@@ -216,32 +216,37 @@ const Testimonials = () => {
           transform: scale(1.2);
         }
 
-        .testimonials-swiper .swiper-button-prev:after,
-        .testimonials-swiper .swiper-button-next:after {
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
           font-size: 18px;
           font-weight: bold;
         }
 
-        .testimonials-swiper .swiper-button-prev:hover,
-        .testimonials-swiper .swiper-button-next:hover {
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
           background: #f8f9fa;
         }
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
-          .testimonials-swiper .swiper-button-prev,
-          .testimonials-swiper .swiper-button-next {
+          .testimonial-card {
+            max-height: 350px;
+            overflow-y: auto;
+          }
+
+          .swiper-button-prev,
+          .swiper-button-next {
             display: none;
           }
 
           .testimonials-swiper {
-            padding: 20px 0 50px 0;
+            padding: 20px 0 70px 0;
           }
         }
 
         @media (max-width: 640px) {
           .testimonials-swiper {
-            padding: 10px 0 40px 0;
+            padding: 10px 0 75px 0;
           }
         }
       `}</style>

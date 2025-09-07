@@ -1,6 +1,5 @@
 import Section from "../Components/Section";
 import BeforeAfterSlider from "../Components/BeforeAfterSlider";
-import { Link } from "react-router-dom";
 
 const BeforeandAfter = () => {
   return (
@@ -31,12 +30,12 @@ const BeforeandAfter = () => {
 
         {/* Gallery Link */}
         <div className="animate-in text-center">
-          <Link
-            to="/gallery"
+          <a
+            href="/gallery"
             className="inline-block bg-primary hover:bg-primary-100 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200 text-lg"
           >
             View Full Gallery
-          </Link>
+          </a>
           <p className="text-subtext text-sm mt-3">
             See more incredible transformations in our detailed before & after
             gallery

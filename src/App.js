@@ -28,7 +28,7 @@ function App() {
     >
       <Helmet>
         <title>
-          Carmichl's Elite Mobile Detailing | Premium Mobile Car Detailing
+          Carmichael's Elite Mobile Detailing | Premium Mobile Car Detailing
           Services
         </title>
         <meta
@@ -66,7 +66,7 @@ function App() {
   const BookingPage = () => (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Book Your Service | Carmichl's Elite Mobile Detailing</title>
+        <title>Book Your Service | Carmichael's Elite Mobile Detailing</title>
         <meta
           name="description"
           content="Book your mobile car detailing service. Choose your preferred date, time, and service package. We come to you in Rochester, NY area."

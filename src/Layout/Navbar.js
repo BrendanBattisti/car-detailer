@@ -55,12 +55,12 @@ const Navbar = ({ isBookingPage = false }) => {
             <img
               className="hidden lg:block"
               src="Images/Logo-removebg-preview.png"
-              alt="Carmichl's Elite Mobile Detailing"
+              alt="Carmichael's Elite Mobile Detailing"
             />
             <img
               className="block lg:hidden"
               src="Images/Logo-mobile.png"
-              alt="Carmichl's Elite Mobile Detailing"
+              alt="Carmichael's Elite Mobile Detailing"
             />
           </Link>
 

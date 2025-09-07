@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Section from "../Components/Section";
 import VehicleSelector from "./VehicleSelector";
-import { Link } from "react-router-dom";
 
 const Products = () => {
   const [vehicleType, setVehicleType] = useState("sedan");
@@ -292,12 +291,12 @@ const Products = () => {
             Choose your preferred date, time, and service package. We'll come to
             you for a convenient, professional detailing experience.
           </p>
-          <Link
-            to="/booking"
+          <a
+            href="/booking"
             className="inline-block bg-primary hover:bg-primary-100 text-text font-bold py-4 px-8 rounded-lg transition-colors duration-200 text-lg"
           >
             Book Your Service Now
-          </Link>
+          </a>
         </div>
       </div>
     </Section>
