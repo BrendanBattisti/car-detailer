@@ -46,15 +46,44 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right side - visual accent card */}
-          <div className="animate-in bg-gradient-to-br from-primary/10 to-background-200 rounded-2xl p-8 shadow-xl">
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-text">Our Promise</h4>
-              <p className="text-subtext leading-relaxed">
-                Whether it’s restoring that showroom shine or giving your ride a
-                quick refresh, our goal is always the same: make your car look
-                and feel its best—without ever stepping foot in a shop.
-              </p>
+          {/* Right side - video showcase */}
+          <div className="animate-in bg-background-200 rounded-2xl p-8 shadow-xl">
+            <div className="relative">
+              <video
+                className="w-full h-auto rounded-lg shadow-lg"
+                controls
+                poster="/Images/after.jpg"
+                preload="metadata"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/Video/cardetailing.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute inset-0 bg-black/20 rounded-lg flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <div className="bg-white/90 rounded-full p-4">
+                  <svg
+                    className="w-8 h-8 text-primary"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div className="mt-4 text-center">
+              <a
+                href="https://instagram.com/carmichaelelite25"
+                target="_blank"
+                className="text-primary"
+              >
+                <p className="text-subtext text-sm">
+                  Watch our professional detailing process in action
+                </p>
+              </a>
             </div>
           </div>
         </div>

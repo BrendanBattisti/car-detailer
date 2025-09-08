@@ -46,12 +46,12 @@ const Footer = () => {
           >
             FAQ
           </HashLink>
-          <Link
-            to="/booking"
+          <a
+            href="/booking"
             className="hover:text-primary transition-colors duration-200"
           >
             Book Now
-          </Link>
+          </a>
         </div>
         <div className="animate-in flex flex-col gap-4">
           <h4>Contact</h4>
@@ -115,7 +115,7 @@ const Footer = () => {
       </div>
       <div className="animate-in w-full mx-auto text-center border-t p-6 bg-white">
         <div className="flex flex-col items-center gap-4">
-          <Link to="/">
+          <a href="/">
             <img
               className="hidden lg:block"
               src="/Images/Logo-removebg-preview.png"
@@ -126,7 +126,7 @@ const Footer = () => {
               src="/Images/Logo-mobile.png"
               alt="Carmichael's Elite Mobile Detailing"
             />
-          </Link>
+          </a>
           <p className="text-sm text-gray-800">
             Copyright © {year} Carmichael's Elite Mobile Detailing. All rights
             reserved.
