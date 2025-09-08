@@ -12,27 +12,30 @@ import "swiper/css/thumbs";
 const BeforeAfterGallery = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  // Gallery data - you can expand this with more before/after pairs
+  // Gallery data organized by car with multiple before/after photos
   const galleryItems = [
     {
       id: 1,
-      beforeImage: "/Images/before.jpg",
-      afterImage: "/Images/after.jpg",
-      title: "Complete Interior & Exterior Detail",
-      description:
-        "Full transformation from dirty and dull to showroom-ready shine",
-      category: "Full Detail",
+      carInfo: {
+        make: "Cadillac",
+        model: "Escalade",
+        color: "White",
+      },
+      photos: [
+        {
+          id: 1,
+          beforeImage: "/Images/Examples/CadillacExteriorBefore.JPG",
+          afterImage: "/Images/Examples/CadillacExteriorAfter.jpg",
+          title: "Complete Exterior Detail",
+        },
+        {
+          id: 2,
+          beforeImage: "/Images/Examples/CadillacInteriorBefore.JPG",
+          afterImage: "/Images/Examples/CadillacInteriorAfter.JPG",
+          title: "Interior Deep Clean",
+        },
+      ],
     },
-    {
-      id: 2,
-      beforeImage: "/Images/cleaning1.jpg",
-      afterImage: "/Images/buffing.jpg",
-      title: "Paint Correction & Buffing",
-      description:
-        "Professional paint correction removing years of swirl marks and scratches",
-      category: "Paint Correction",
-    },
-    // Add more gallery items as you get more before/after photos
   ];
 
   return (
@@ -50,12 +53,11 @@ const BeforeAfterGallery = () => {
           href="https://carmichaelselitemobiledetailing.com/gallery"
         />
       </Helmet>
-
       <div className="absolute z-20 w-screen">
         <Navbar isBookingPage={true} />
 
         {/* Hero Section */}
-        <div className="pt-20 pb-12 bg-gradient-to-r from-black via-black/65 to-black/10">
+        <div className="pt-20 pb-12 bg-background-100">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Before & After Gallery
@@ -68,93 +70,81 @@ const BeforeAfterGallery = () => {
           </div>
         </div>
 
-        {/* Gallery Section */}
+        {/* Gallery */}
         <div className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid gap-12">
-              {galleryItems.map((item) => (
+              {galleryItems.map((car) => (
                 <div
-                  key={item.id}
+                  key={car.id}
                   className="bg-background-200 rounded-2xl p-8 shadow-xl"
                 >
+                  {/* Car Info Header */}
                   <div className="text-center mb-8">
-                    <span className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                      {item.category}
-                    </span>
-                    <h2 className="text-2xl md:text-3xl font-bold text-text mb-4">
-                      {item.title}
+                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">
+                      {car.carInfo.year} {car.carInfo.make} {car.carInfo.model}
                     </h2>
-                    <p className="text-subtext text-lg max-w-2xl mx-auto">
-                      {item.description}
+                    <p className="text-subtext text-lg">
+                      {car.carInfo.color} • Complete Transformation
                     </p>
                   </div>
 
-                  {/* Before/After Swiper */}
-                  <div className="relative">
-                    <Swiper
-                      modules={[Navigation, Pagination, Thumbs]}
-                      spaceBetween={20}
-                      navigation={true}
-                      pagination={{
-                        clickable: true,
-                        renderBullet: function (index, className) {
-                          return `<span class="${className}">${
-                            index === 0 ? "Before" : "After"
-                          }</span>`;
-                        },
-                      }}
-                      thumbs={{ swiper: thumbsSwiper }}
-                      className="before-after-swiper rounded-lg overflow-hidden"
-                    >
-                      <SwiperSlide>
-                        <div className="relative">
-                          <img
-                            src={item.beforeImage}
-                            alt={`${item.title} - Before`}
-                            className="w-full h-96 object-cover"
-                          />
-                          <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold">
-                            BEFORE
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <div className="relative">
-                          <img
-                            src={item.afterImage}
-                            alt={`${item.title} - After`}
-                            className="w-full h-96 object-cover"
-                          />
-                          <div className="absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold">
-                            AFTER
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                    </Swiper>
+                  {/* Before/After Photos Grid */}
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {car.photos.map((photo) => (
+                      <div key={photo.id} className="space-y-4">
+                        <h3 className="text-xl font-bold text-text text-center">
+                          {photo.title}
+                        </h3>
+                        <p className="text-subtext text-center mb-4">
+                          {photo.description}
+                        </p>
 
-                    {/* Thumbnail Swiper */}
-                    <Swiper
-                      onSwiper={setThumbsSwiper}
-                      spaceBetween={10}
-                      slidesPerView={2}
-                      watchSlidesProgress={true}
-                      className="mt-4 thumbnail-swiper"
-                    >
-                      <SwiperSlide>
-                        <img
-                          src={item.beforeImage}
-                          alt="Before thumbnail"
-                          className="w-full h-20 object-cover rounded-lg cursor-pointer opacity-50 hover:opacity-100 transition-opacity"
-                        />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img
-                          src={item.afterImage}
-                          alt="After thumbnail"
-                          className="w-full h-20 object-cover rounded-lg cursor-pointer opacity-50 hover:opacity-100 transition-opacity"
-                        />
-                      </SwiperSlide>
-                    </Swiper>
+                        {/* Before/After Swiper */}
+                        <div className="relative">
+                          <Swiper
+                            modules={[Navigation, Pagination, Thumbs]}
+                            spaceBetween={20}
+                            navigation={true}
+                            pagination={{
+                              clickable: true,
+                              renderBullet: function (index, className) {
+                                return `<span class="${className}">${
+                                  index === 0 ? "Before" : "After"
+                                }</span>`;
+                              },
+                            }}
+                            thumbs={{ swiper: thumbsSwiper }}
+                            className="before-after-swiper rounded-lg overflow-hidden"
+                          >
+                            <SwiperSlide>
+                              <div className="relative">
+                                <img
+                                  src={photo.beforeImage}
+                                  alt={`${photo.title} - Before`}
+                                  className="w-full object-cover"
+                                />
+                                <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold">
+                                  BEFORE
+                                </div>
+                              </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <div className="relative">
+                                <img
+                                  src={photo.afterImage}
+                                  alt={`${photo.title} - After`}
+                                  className="w-full object-cover"
+                                />
+                                <div className="absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold">
+                                  AFTER
+                                </div>
+                              </div>
+                            </SwiperSlide>
+                          </Swiper>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ))}
@@ -162,7 +152,7 @@ const BeforeAfterGallery = () => {
 
             {/* Call to Action */}
             <div className="text-center mt-16">
-              <div className="bg-gradient-to-r from-primary to-primary-100 rounded-2xl p-8 text-white">
+              <div className="bg-background-200 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">
                   Ready to Transform Your Vehicle?
                 </h3>
@@ -170,10 +160,7 @@ const BeforeAfterGallery = () => {
                   Book your professional mobile detailing service today and see
                   the difference for yourself.
                 </p>
-                <a
-                  href="/booking"
-                  className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 text-lg"
-                >
+                <a href="/booking" className="button-primary text-lg">
                   Book Your Service Now
                 </a>
               </div>
@@ -184,7 +171,6 @@ const BeforeAfterGallery = () => {
         <Footer />
       </div>
 
-      {/* Custom CSS */}
       <style jsx>{`
         .before-after-swiper .swiper-button-next,
         .before-after-swiper .swiper-button-prev {
