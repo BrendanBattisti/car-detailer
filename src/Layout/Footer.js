@@ -8,12 +8,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="w-full bg-background">
-      <div className="grid md:grid-cols-4 grid-cols-2 w-full justify-evenly mx-auto p-6 pt-10 md:w-4/5 gap-6">
-        <div className="animate-in">
-          <Link to="/">
-            <img src="/Images/darkmodeLogosmall.png" alt="Carmichael Elite" />
-          </Link>
-        </div>
+      <div className="grid md:grid-cols-3 grid-cols-2 w-full justify-evenly mx-auto p-6 pt-10 md:w-4/5 gap-6">
         <div className="animate-in flex flex-col gap-4">
           <h4>Links</h4>
           <HashLink
@@ -118,11 +113,25 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="animate-in w-4/5 mx-auto text-center border-t p-6">
-        <p className="text-sm">
-          Copyright © {year} Carmichael's Elite Mobile Detailing. All rights
-          reserved.
-        </p>
+      <div className="animate-in w-full mx-auto text-center border-t p-6 bg-white">
+        <div className="flex flex-col items-center gap-4">
+          <Link to="/">
+            <img
+              className="hidden lg:block"
+              src="/Images/Logo-removebg-preview.png"
+              alt="Carmichael's Elite Mobile Detailing"
+            />
+            <img
+              className="block lg:hidden"
+              src="/Images/Logo-mobile.png"
+              alt="Carmichael's Elite Mobile Detailing"
+            />
+          </Link>
+          <p className="text-sm text-gray-800">
+            Copyright © {year} Carmichael's Elite Mobile Detailing. All rights
+            reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

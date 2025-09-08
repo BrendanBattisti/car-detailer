@@ -18,11 +18,6 @@ const FAQ = () => {
       answer:
         "Yes! We offer mobile detailing services for your convenience. We can come to your home or office.",
     },
-    {
-      question: "What payment methods do you accept?",
-      answer:
-        "We accept cash, credit cards, debit cards, and digital payments including Venmo and PayPal.",
-    },
   ];
 
   return (
@@ -32,7 +27,7 @@ const FAQ = () => {
       title="Frequently Asked Questions"
     >
       <div className="text-center mb-8"></div>
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid gap-6">
         {faqData.map((faq, index) => (
           <div
             key={index}
