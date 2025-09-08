@@ -10,16 +10,18 @@ import "swiper/css/pagination";
 import "swiper/css/thumbs";
 
 const BeforeAfterGallery = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper] = useState(null);
 
   // Gallery data organized by car with multiple before/after photos
   const galleryItems = [
     {
       id: 1,
       carInfo: {
+        year: "2022",
         make: "Cadillac",
         model: "Escalade",
         color: "White",
+        package: "Complete Transformation",
       },
       photos: [
         {
@@ -42,7 +44,7 @@ const BeforeAfterGallery = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>
-          Before & After Gallery | Carmichl's Elite Mobile Detailing
+          Before & After Gallery | Carmichael's Elite Mobile Detailing
         </title>
         <meta
           name="description"
@@ -85,12 +87,12 @@ const BeforeAfterGallery = () => {
                       {car.carInfo.year} {car.carInfo.make} {car.carInfo.model}
                     </h2>
                     <p className="text-subtext text-lg">
-                      {car.carInfo.color} • Complete Transformation
+                      {car.carInfo.color} • {car.carInfo.package}
                     </p>
                   </div>
 
                   {/* Before/After Photos Grid */}
-                  <div className="grid md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {car.photos.map((photo) => (
                       <div key={photo.id} className="space-y-4">
                         <h3 className="text-xl font-bold text-text text-center">
