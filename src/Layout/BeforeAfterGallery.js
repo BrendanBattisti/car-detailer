@@ -11,6 +11,7 @@ import "swiper/css/thumbs";
 
 const BeforeAfterGallery = () => {
   const [thumbsSwiper] = useState(null);
+  const toWebp = (path) => path.replace(/\.(jpe?g|png)$/i, ".webp");
 
   // Gallery data organized by car with multiple before/after photos
   const galleryItems = [
@@ -147,11 +148,18 @@ const BeforeAfterGallery = () => {
                           >
                             <SwiperSlide>
                               <div className="relative">
-                                <img
-                                  src={photo.beforeImage}
-                                  alt={`${photo.title} - Before`}
-                                  className="w-full object-cover"
-                                />
+                                <picture>
+                                  <source
+                                    srcSet={toWebp(photo.beforeImage)}
+                                    type="image/webp"
+                                  />
+                                  <img
+                                    src={photo.beforeImage}
+                                    alt={`${photo.title} - Before`}
+                                    className="w-full object-cover"
+                                    loading="lazy"
+                                  />
+                                </picture>
                                 <div className="hidden md:block absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold">
                                   BEFORE
                                 </div>
@@ -159,11 +167,18 @@ const BeforeAfterGallery = () => {
                             </SwiperSlide>
                             <SwiperSlide>
                               <div className="relative">
-                                <img
-                                  src={photo.afterImage}
-                                  alt={`${photo.title} - After`}
-                                  className="w-full object-cover"
-                                />
+                                <picture>
+                                  <source
+                                    srcSet={toWebp(photo.afterImage)}
+                                    type="image/webp"
+                                  />
+                                  <img
+                                    src={photo.afterImage}
+                                    alt={`${photo.title} - After`}
+                                    className="w-full object-cover"
+                                    loading="lazy"
+                                  />
+                                </picture>
                                 <div className="hidden md:block absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold">
                                   AFTER
                                 </div>

@@ -6,6 +6,7 @@ const BeforeAfterSlider = ({
   beforeAlt,
   afterAlt,
 }) => {
+  const toWebp = (path) => path.replace(/\.(jpe?g|png)$/i, ".webp");
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
@@ -76,11 +77,14 @@ const BeforeAfterSlider = ({
           onTouchMove={handleTouchMove}
         >
           {/* After image (background) */}
-          <img
-            src={afterImage}
-            alt={afterAlt}
-            className="absolute top-0 left-0 w-full h-full object-cover select-none"
-          />
+          <picture>
+            <source srcSet={toWebp(afterImage)} type="image/webp" />
+            <img
+              src={afterImage}
+              alt={afterAlt}
+              className="absolute top-0 left-0 w-full h-full object-cover select-none"
+            />
+          </picture>
 
           {/* Before image (clipped with mask) */}
           <div
@@ -89,11 +93,14 @@ const BeforeAfterSlider = ({
               clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
             }}
           >
-            <img
-              src={beforeImage}
-              alt={beforeAlt}
-              className="w-full h-full object-cover select-none"
-            />
+            <picture>
+              <source srcSet={toWebp(beforeImage)} type="image/webp" />
+              <img
+                src={beforeImage}
+                alt={beforeAlt}
+                className="w-full h-full object-cover select-none"
+              />
+            </picture>
           </div>
 
           {/* Slider handle */}
