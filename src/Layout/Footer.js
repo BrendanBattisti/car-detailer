@@ -68,7 +68,7 @@ const Footer = () => {
             <MdEmail className="text-base flex-shrink-0" />
             <a
               href="mailto:carmichaelelite25@gmail.com"
-              className="hover:text-primary transition-colors duration-200"
+              className="hover:text-primary transition-colors break-all duration-200"
             >
               carmichaelelite25@gmail.com
             </a>
