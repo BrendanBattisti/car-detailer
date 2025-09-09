@@ -62,24 +62,6 @@ const BeforeAfterGallery = () => {
         },
       ],
     },
-    {
-      id: 3,
-      carInfo: {
-        year: "Featured",
-        make: "Vehicle",
-        model: "Showcase",
-        color: "—",
-        package: "Full Detail",
-      },
-      photos: [
-        {
-          id: 1,
-          beforeImage: "/Images/before.jpg",
-          afterImage: "/Images/after.jpg",
-          title: "Featured Transformation",
-        },
-      ],
-    },
   ];
 
   return (
