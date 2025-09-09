@@ -2,6 +2,7 @@ import { FaPhoneAlt, FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { HashLink } from "react-router-hash-link";
+import { bookingUrl } from "../config/booking";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -46,7 +47,7 @@ const Footer = () => {
             FAQ
           </HashLink>
           <a
-            href="/booking"
+            href={bookingUrl}
             className="hover:text-primary transition-colors duration-200"
           >
             Book Now

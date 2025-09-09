@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BeforeAfterSlider from "../Components/BeforeAfterSlider";
-import { bookingUrl } from "../config/booking";
 
 const BeforeAfterGallery = () => {
   const singleGalleryItems = [

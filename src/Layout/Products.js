@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Section from "../Components/Section";
 import VehicleSelector from "./VehicleSelector";
 import { detailedServices, addons } from "../data/bookingData";
+import { bookingUrl } from "../config/booking";
 
 const Products = () => {
   const [vehicleType, setVehicleType] = useState("sedan");
@@ -181,7 +182,7 @@ const Products = () => {
             you for a convenient, professional detailing experience.
           </p>
           <a
-            href="/booking"
+            href={bookingUrl}
             className="inline-block bg-primary hover:bg-primary-100 text-text font-bold py-4 px-8 rounded-lg transition-colors duration-200 text-lg"
           >
             Book Your Service Now

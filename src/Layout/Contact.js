@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "../config/emailjs";
+import { bookingUrl } from "../config/booking";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -106,7 +107,7 @@ const Contact = () => {
           {/* Book Now Button */}
           <div className="text-center mb-6">
             <a
-              href="/booking"
+              href={bookingUrl}
               className="inline-block bg-primary hover:bg-primary-100 text-text font-bold py-3 px-8 rounded-lg transition-colors duration-200 text-lg mb-4"
             >
               Book Your Service Now

@@ -17,8 +17,8 @@ const BookingMobile = ({
   submitStatus,
 }) => {
   return (
-    <div className="bg-background-100">
-      <div className="w-full">
+    <div className="bg-background-100 overflow-x-auto">
+      <div className="w-full px-4">
         {/* Header Information */}
         <div className="text-center mb-12">
           <div className="bg-background rounded-lg p-4 md:p-8 mb-8">

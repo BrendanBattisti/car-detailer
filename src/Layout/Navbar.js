@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { bookingUrl } from "../config/booking";
 
 const Navbar = ({ isBookingPage = false }) => {
   const sections = [
@@ -73,7 +74,7 @@ const Navbar = ({ isBookingPage = false }) => {
 
           {/* Desktop Buttons */}
           <div className="hidden lg:flex gap-4">
-            <Link className="button-primary text-center" to="/booking">
+            <Link className="button-primary text-center" to={bookingUrl}>
               Book Now
             </Link>
           </div>
@@ -123,7 +124,7 @@ const Navbar = ({ isBookingPage = false }) => {
 
             {/* Mobile Buttons */}
             <Link
-              to="/booking"
+              to={bookingUrl}
               className="mt-6 text-center py-3 rounded-xl button-primary text-xl"
               onClick={() => setMobileNav(false)}
             >
