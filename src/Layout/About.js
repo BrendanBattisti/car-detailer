@@ -46,38 +46,45 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right side - video showcase */}
-          <div className="animate-in bg-background-200 rounded-2xl p-8 shadow-xl">
-            <div className="relative">
-              <video
-                className="w-full h-2/3 rounded-lg shadow-lg object-cover"
-                controls
-                poster="/Images/after.jpg"
-                preload="metadata"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="/Video/cardetailing.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="absolute inset-0 bg-black/20 rounded-lg flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <div className="bg-white/90 rounded-full p-4">
-                  <svg
-                    className="w-8 h-8 text-primary"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+          {/* Right side - video showcase (non-interactive, links to Instagram) */}
+          <div className="animate-in bg-background-200 rounded-2xl p-8 shadow-xl w-full md:w-fit mx-auto">
+            <a
+              href="https://instagram.com/carmichaelelite25"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <div className="relative">
+                <video
+                  className="w-full rounded-lg shadow-lg pointer-events-none select-none"
+                  poster="/Images/after.jpg"
+                  preload="metadata"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="/Video/cardetailing.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-black/20 rounded-lg flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-white/90 rounded-full p-4">
+                    <svg
+                      className="w-8 h-8 text-primary"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
             <div className="mt-4 text-center">
               <a
                 href="https://instagram.com/carmichaelelite25"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-primary"
               >
                 <p className="text-subtext text-sm">
