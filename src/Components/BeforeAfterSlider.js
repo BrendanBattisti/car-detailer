@@ -106,13 +106,17 @@ const BeforeAfterSlider = ({
             </div>
           </div>
 
-          {/* Labels */}
-          <div className="absolute top-4 left-4 bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm font-medium">
-            Before
-          </div>
-          <div className="absolute top-4 right-4 bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm font-medium">
-            After
-          </div>
+          {/* Labels - Only show when respective image is visible */}
+          {sliderPosition > 20 && (
+            <div className="absolute top-4 left-4 bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm font-medium">
+              Before
+            </div>
+          )}
+          {sliderPosition < 80 && (
+            <div className="absolute top-4 right-4 bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm font-medium">
+              After
+            </div>
+          )}
         </div>
       </div>
 

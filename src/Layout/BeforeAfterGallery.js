@@ -1,18 +1,10 @@
-import { useState } from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Thumbs } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/thumbs";
+import BeforeAfterSlider from "../Components/BeforeAfterSlider";
 import { bookingUrl } from "../config/booking";
 
 const BeforeAfterGallery = () => {
-  const [thumbsSwiper] = useState(null);
-
   const singleGalleryItems = [
     {
       id: 1,
@@ -174,52 +166,14 @@ const BeforeAfterGallery = () => {
                           {photo.description}
                         </p>
 
-                        {/* Before/After Swiper */}
+                        {/* Before/After Slider */}
                         <div className="relative">
-                          <Swiper
-                            modules={[Navigation, Pagination, Thumbs]}
-                            spaceBetween={20}
-                            navigation={true}
-                            pagination={{
-                              clickable: true,
-                              renderBullet: function (index, className) {
-                                if (index === 0) {
-                                  return `<span class="${className} before-bullet">Before</span>`;
-                                } else {
-                                  return `<span class="${className} after-bullet">After</span>`;
-                                }
-                              },
-                            }}
-                            thumbs={{ swiper: thumbsSwiper }}
-                            className="before-after-swiper rounded-lg overflow-hidden"
-                          >
-                            <SwiperSlide>
-                              <div className="relative">
-                                <img
-                                  src={photo.beforeImage}
-                                  alt={`${photo.title} - Before`}
-                                  className="w-full object-cover"
-                                  loading="lazy"
-                                />
-                                <div className="hidden md:block absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold">
-                                  BEFORE
-                                </div>
-                              </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <div className="relative">
-                                <img
-                                  src={photo.afterImage}
-                                  alt={`${photo.title} - After`}
-                                  className="w-full object-cover"
-                                  loading="lazy"
-                                />
-                                <div className="hidden md:block absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold">
-                                  AFTER
-                                </div>
-                              </div>
-                            </SwiperSlide>
-                          </Swiper>
+                          <BeforeAfterSlider
+                            beforeImage={photo.beforeImage}
+                            afterImage={photo.afterImage}
+                            beforeAlt={`${photo.title} - Before`}
+                            afterAlt={`${photo.title} - After`}
+                          />
                         </div>
                       </div>
                     ))}
@@ -243,50 +197,12 @@ const BeforeAfterGallery = () => {
                           {photo.title}
                         </h4>
                         <div className="relative">
-                          <Swiper
-                            modules={[Navigation, Pagination, Thumbs]}
-                            spaceBetween={20}
-                            navigation={true}
-                            pagination={{
-                              clickable: true,
-                              renderBullet: function (index, className) {
-                                if (index === 0) {
-                                  return `<span class="${className} before-bullet">Before</span>`;
-                                } else {
-                                  return `<span class="${className} after-bullet">After</span>`;
-                                }
-                              },
-                            }}
-                            thumbs={{ swiper: thumbsSwiper }}
-                            className="before-after-swiper rounded-lg overflow-hidden"
-                          >
-                            <SwiperSlide>
-                              <div className="relative">
-                                <img
-                                  src={photo.beforeImage}
-                                  alt={`${photo.title} - Before`}
-                                  className="w-full object-cover"
-                                  loading="lazy"
-                                />
-                                <div className="hidden md:block absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold">
-                                  BEFORE
-                                </div>
-                              </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <div className="relative">
-                                <img
-                                  src={photo.afterImage}
-                                  alt={`${photo.title} - After`}
-                                  className="w-full object-cover"
-                                  loading="lazy"
-                                />
-                                <div className="hidden md:block absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold">
-                                  AFTER
-                                </div>
-                              </div>
-                            </SwiperSlide>
-                          </Swiper>
+                          <BeforeAfterSlider
+                            beforeImage={photo.beforeImage}
+                            afterImage={photo.afterImage}
+                            beforeAlt={`${item.name} - Before`}
+                            afterAlt={`${item.name} - After`}
+                          />
                         </div>
                       </div>
                     ))}
@@ -315,63 +231,6 @@ const BeforeAfterGallery = () => {
 
         <Footer />
       </div>
-
-      <style jsx>{`
-        .before-after-swiper .swiper-button-next,
-        .before-after-swiper .swiper-button-prev {
-          color: #ef233c;
-          background: rgba(255, 255, 255, 0.9);
-          width: 44px;
-          height: 44px;
-          border-radius: 50%;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .before-after-swiper .swiper-button-next:after,
-        .before-after-swiper .swiper-button-prev:after {
-          font-size: 18px;
-          font-weight: bold;
-        }
-
-        .before-after-swiper .swiper-pagination {
-          bottom: 20px;
-        }
-
-        .before-after-swiper .swiper-pagination-bullet {
-          background: rgba(255, 255, 255, 0.5);
-          color: white;
-          font-size: 14px;
-          font-weight: bold;
-          padding: 8px 16px;
-          border-radius: 20px;
-          width: auto;
-          height: auto;
-          margin: 0 8px;
-          transition: all 0.3s ease;
-        }
-
-        .before-after-swiper .before-bullet.swiper-pagination-bullet-active {
-          background: #ef233c;
-          color: white;
-        }
-
-        .before-after-swiper .after-bullet.swiper-pagination-bullet-active {
-          background: #16a34a;
-          color: white;
-        }
-
-        .thumbnail-swiper .swiper-slide-thumb-active img {
-          opacity: 1 !important;
-          border: 2px solid #ef233c;
-        }
-
-        @media (max-width: 768px) {
-          .before-after-swiper .swiper-button-next,
-          .before-after-swiper .swiper-button-prev {
-            display: none;
-          }
-        }
-      `}</style>
     </div>
   );
 };
