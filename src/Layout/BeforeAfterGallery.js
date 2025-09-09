@@ -38,6 +38,30 @@ const BeforeAfterGallery = () => {
         },
       ],
     },
+    {
+      id: 2,
+      carInfo: {
+        year: "2000s",
+        make: "Keystone",
+        model: "Cougar",
+        color: "White",
+        package: "Exterior Transformation",
+      },
+      photos: [
+        {
+          id: 1,
+          beforeImage: "/Images/Examples/RVFrontBefore.jpg",
+          afterImage: "/Images/Examples/RVFrontAfter.jpg",
+          title: "Front Profile",
+        },
+        {
+          id: 2,
+          beforeImage: "/Images/Examples/RVSideBefore.jpg",
+          afterImage: "/Images/Examples/RVSideAfter.jpg",
+          title: "Side Profile",
+        },
+      ],
+    },
   ];
 
   return (
@@ -74,7 +98,7 @@ const BeforeAfterGallery = () => {
 
         {/* Gallery */}
         <div className="py-16 bg-background">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 md:px-20">
             <div className="grid gap-12">
               {galleryItems.map((car) => (
                 <div
@@ -111,10 +135,12 @@ const BeforeAfterGallery = () => {
                             pagination={{
                               clickable: true,
                               renderBullet: function (index, className) {
-                                return `<span class="${className}">${
-                                  index === 0 ? "Before" : "After"
-                                }</span>`;
-                              },
+                                if (index === 0) {
+                                  return `<span class="${className} before-bullet">Before</span>`;
+                                } else {
+                                  return `<span class="${className} after-bullet">After</span>`;
+                                }
+                              }
                             }}
                             thumbs={{ swiper: thumbsSwiper }}
                             className="before-after-swiper rounded-lg overflow-hidden"
@@ -126,7 +152,7 @@ const BeforeAfterGallery = () => {
                                   alt={`${photo.title} - Before`}
                                   className="w-full object-cover"
                                 />
-                                <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold">
+                                <div className="hidden md:block absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold">
                                   BEFORE
                                 </div>
                               </div>
@@ -138,7 +164,7 @@ const BeforeAfterGallery = () => {
                                   alt={`${photo.title} - After`}
                                   className="w-full object-cover"
                                 />
-                                <div className="absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold">
+                                <div className="hidden md:block absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold">
                                   AFTER
                                 </div>
                               </div>
@@ -207,8 +233,13 @@ const BeforeAfterGallery = () => {
           transition: all 0.3s ease;
         }
 
-        .before-after-swiper .swiper-pagination-bullet-active {
+        .before-after-swiper .before-bullet.swiper-pagination-bullet-active {
           background: #ef233c;
+          color: white;
+        }
+
+        .before-after-swiper .after-bullet.swiper-pagination-bullet-active {
+          background: #16a34a;
           color: white;
         }
 
