@@ -1,10 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import Section from "../Components/Section";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
+import { EMAILJS_CONFIG } from "../config/emailjs";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        to_name: "Carmichael's Elite Mobile Detailing",
+      };
+
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
+
+      setSubmitStatus("success");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactInfo = [
     {
       icon: <FaPhoneAlt className="text-3xl" />,
@@ -62,18 +119,36 @@ const Contact = () => {
           <h3 className="text-2xl font-bold text-text mb-6">
             Send us a Message
           </h3>
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Status Messages */}
+            {submitStatus === "success" && (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                Thank you! Your message has been sent successfully. We'll get
+                back to you soon.
+              </div>
+            )}
+            {submitStatus === "error" && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                Sorry, there was an error sending your message. Please try again
+                or call us directly.
+              </div>
+            )}
+
             <div className="grid md:grid-cols-2 gap-4">
               <div className="animate-in">
                 <label
                   htmlFor="firstName"
                   className="block text-text font-semibold mb-2"
                 >
-                  First Name
+                  First Name *
                 </label>
                 <input
                   type="text"
                   id="firstName"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  required
                   className="w-full px-4 py-3 border text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="John"
                 />
@@ -83,12 +158,16 @@ const Contact = () => {
                   htmlFor="lastName"
                   className="block text-text font-semibold mb-2"
                 >
-                  Last Name
+                  Last Name *
                 </label>
                 <input
                   type="text"
                   id="lastName"
-                  className="w-full px-4 py-3 border  rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                   placeholder="Doe"
                 />
               </div>
@@ -99,11 +178,15 @@ const Contact = () => {
                 htmlFor="email"
                 className="block text-text font-semibold mb-2"
               >
-                Email Address
+                Email Address *
               </label>
               <input
                 type="email"
                 id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
                 className="w-full px-4 py-3 border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                 placeholder="john.doe@example.com"
               />
@@ -119,7 +202,10 @@ const Contact = () => {
               <input
                 type="tel"
                 id="phone"
-                className="w-full px-4 py-3  border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors"
                 placeholder="(555) 123-4567"
               />
             </div>
@@ -129,18 +215,26 @@ const Contact = () => {
                 htmlFor="message"
                 className="block text-text font-semibold mb-2"
               >
-                Message
+                Message *
               </label>
               <textarea
                 id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
                 rows="4"
-                className="w-full px-4 py-3  border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors resize-none"
+                className="w-full px-4 py-3 border rounded-none text-black placeholder-background-400 focus:outline-none focus:border-primary transition-colors resize-none"
                 placeholder="Tell us about your vehicle and what you'd like us to help you with..."
               ></textarea>
             </div>
 
-            <button type="submit" className="animate-in w-full">
-              Send Message
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="animate-in w-full button-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>

@@ -83,7 +83,7 @@ const BeforeAfterGallery = () => {
         <Navbar isBookingPage={true} />
 
         {/* Hero Section */}
-        <div className="pt-20 pb-12 bg-background-100">
+        <div className="pt-20 pb-12 bg-background">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Before & After Gallery
@@ -97,7 +97,7 @@ const BeforeAfterGallery = () => {
         </div>
 
         {/* Gallery */}
-        <div className="py-16 bg-background">
+        <div className="py-16 bg-background-100">
           <div className="container mx-auto px-4 md:px-20">
             <div className="grid gap-12">
               {galleryItems.map((car) => (
@@ -140,7 +140,7 @@ const BeforeAfterGallery = () => {
                                 } else {
                                   return `<span class="${className} after-bullet">After</span>`;
                                 }
-                              }
+                              },
                             }}
                             thumbs={{ swiper: thumbsSwiper }}
                             className="before-after-swiper rounded-lg overflow-hidden"

@@ -50,7 +50,7 @@ const About = () => {
           <div className="animate-in bg-background-200 rounded-2xl p-8 shadow-xl">
             <div className="relative">
               <video
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-2/3 rounded-lg shadow-lg object-cover"
                 controls
                 poster="/Images/after.jpg"
                 preload="metadata"
