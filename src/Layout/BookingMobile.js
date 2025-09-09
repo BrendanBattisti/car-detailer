@@ -17,20 +17,15 @@ const BookingMobile = ({
   submitStatus,
 }) => {
   return (
-    <Section
-      id="booking"
-      className="bg-background-100"
-      header="Book Your Service"
-      title="Schedule Your Detailing"
-    >
-      <div className="max-w-6xl mx-auto">
+    <div className="bg-background-100">
+      <div className="w-full mx-2">
         {/* Header Information */}
         <div className="text-center mb-12">
-          <div className="bg-background-200 rounded-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-text mb-4">
+          <div className="bg-background-200 rounded-lg p-4 md:p-8 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-text mb-4">
               Book Your Mobile Detailing Service
             </h2>
-            <p className="text-lg text-subtext max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-subtext max-w-3xl mx-auto">
               We bring our professional detailing services directly to your
               location. Choose your preferred date and time, and we'll come to
               you for a convenient, high-quality car detailing experience.
@@ -38,10 +33,10 @@ const BookingMobile = ({
           </div>
         </div>
 
-        <div className="flex flex-col max-4/5 mx-auto">
+        <div className="flex flex-col w-full">
           {/* Main Booking Form */}
           <div className="w-full">
-            <div className="bg-background-200 rounded-lg p-8">
+            <div className="p-4 md:p-8">
               <h3 className="text-2xl font-bold text-text mb-6 flex items-center gap-3">
                 <FaCalendarAlt className="text-primary" />
                 Booking Details
@@ -49,188 +44,188 @@ const BookingMobile = ({
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
-                <h4 className="text-lg font-semibold text-text mb-4">
-                  Personal Information
-                </h4>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-text text-sm font-medium mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={bookingData.firstName}
-                      onChange={(e) =>
-                        handleInputChange("firstName", e.target.value)
-                      }
-                      className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="John"
-                    />
+                <div className="bg-background-100 rounded-lg p-4 md:p-6">
+                  <h4 className="text-lg font-semibold text-text mb-4">
+                    Personal Information
+                  </h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-text text-sm font-medium mb-2">
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={bookingData.firstName}
+                        onChange={(e) =>
+                          handleInputChange("firstName", e.target.value)
+                        }
+                        className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="John"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-text text-sm font-medium mb-2">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={bookingData.lastName}
+                        onChange={(e) =>
+                          handleInputChange("lastName", e.target.value)
+                        }
+                        className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="Doe"
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-text text-sm font-medium mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={bookingData.lastName}
-                      onChange={(e) =>
-                        handleInputChange("lastName", e.target.value)
-                      }
-                      className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-4 mt-4">
-                  <div>
-                    <label className="block text-text text-sm font-medium mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={bookingData.email}
-                      onChange={(e) =>
-                        handleInputChange("email", e.target.value)
-                      }
-                      className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="john.doe@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-text text-sm font-medium mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={bookingData.phone}
-                      onChange={(e) =>
-                        handleInputChange("phone", e.target.value)
-                      }
-                      className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="(585) 507-7146"
-                    />
+                  <div className="grid md:grid-cols-2 gap-4 mt-4">
+                    <div>
+                      <label className="block text-text text-sm font-medium mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={bookingData.email}
+                        onChange={(e) =>
+                          handleInputChange("email", e.target.value)
+                        }
+                        className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="john.doe@example.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-text text-sm font-medium mb-2">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={bookingData.phone}
+                        onChange={(e) =>
+                          handleInputChange("phone", e.target.value)
+                        }
+                        className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="(585) 507-7146"
+                      />
+                    </div>
                   </div>
                 </div>
 
                 {/* Vehicle & Service Information */}
-                <div className="bg-background-100 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-text mb-4 flex items-center gap-3">
-                    <FaCar className="text-primary" />
-                    Vehicle & Service Details
-                  </h4>
+                <h4 className="text-lg font-semibold text-text mb-4 flex items-center gap-3 -">
+                  <FaCar className="text-primary" />
+                  Vehicle & Service Details
+                </h4>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-text text-sm font-medium mb-2">
-                        Vehicle Type *
-                      </label>
-                      <select
-                        required
-                        value={bookingData.vehicleType}
-                        onChange={(e) =>
-                          handleInputChange("vehicleType", e.target.value)
-                        }
-                        className="w-full px-4 py-3 border border-background-300 rounded text-black focus:outline-none focus:border-primary transition-colors"
-                      >
-                        <option value="sedan">Sedan</option>
-                        <option value="suv">SUV</option>
-                        <option value="truck">Truck/Minivan</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-text text-sm font-medium mb-2">
-                        Service Package *
-                      </label>
-                      <select
-                        required
-                        value={bookingData.service}
-                        onChange={(e) =>
-                          handleInputChange("service", e.target.value)
-                        }
-                        className="w-full px-4 py-3 border border-background-300 rounded text-black focus:outline-none focus:border-primary transition-colors"
-                      >
-                        <option value="">Select a service</option>
-                        {services.map((service, index) => {
-                          const price =
-                            servicePrices[bookingData.vehicleType]?.[service] ||
-                            0;
-                          return (
-                            <option key={index} value={service}>
-                              {service} - ${price}
-                            </option>
-                          );
-                        })}
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Add-Ons Selection */}
-                  <div className="mt-6">
-                    <label className="block text-text text-sm font-medium mb-3">
-                      Add-Ons (Optional)
+                <div className="grid md:grid-cols-2 gap-4 p-4">
+                  <div>
+                    <label className="block text-text text-sm font-medium mb-2">
+                      Vehicle Type *
                     </label>
-                    <div className="grid md:grid-cols-3 gap-3 max-h-48 overflow-y-auto border border-background-300 p-3 bg-background-100 rounded">
-                      {addons.map((addon, idx) => {
-                        const isSelected = selectedAddons.includes(addon.name);
+                    <select
+                      required
+                      value={bookingData.vehicleType}
+                      onChange={(e) =>
+                        handleInputChange("vehicleType", e.target.value)
+                      }
+                      className="w-full px-4 py-3 border border-background-300 rounded text-black focus:outline-none focus:border-primary transition-colors"
+                    >
+                      <option value="sedan">Sedan</option>
+                      <option value="suv">SUV</option>
+                      <option value="truck">Truck/Minivan</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-text text-sm font-medium mb-2">
+                      Service Package *
+                    </label>
+                    <select
+                      required
+                      value={bookingData.service}
+                      onChange={(e) =>
+                        handleInputChange("service", e.target.value)
+                      }
+                      className="w-full px-4 py-3 border border-background-300 rounded text-black focus:outline-none focus:border-primary transition-colors"
+                    >
+                      <option value="">Select a service</option>
+                      {services.map((service, index) => {
+                        const price =
+                          servicePrices[bookingData.vehicleType]?.[service] ||
+                          0;
                         return (
-                          <div
-                            key={idx}
-                            onClick={() => toggleAddon(addon.name)}
-                            className={`flex items-center gap-3 p-2 rounded cursor-pointer transition-colors duration-200 ${
-                              isSelected
-                                ? "bg-primary text-text"
-                                : "bg-background-200 hover:bg-background-300"
-                            }`}
-                          >
-                            <div
-                              className={`w-4 h-4 border-2 rounded transition-colors duration-200 ${
-                                isSelected
-                                  ? "bg-white border-white"
-                                  : "border-gray-400"
-                              }`}
-                            >
-                              {isSelected && (
-                                <div className="w-full h-full flex items-center justify-center">
-                                  <span className="text-primary text-xs font-bold">
-                                    ✓
-                                  </span>
-                                </div>
-                              )}
-                            </div>
-                            <span
-                              className={`font-medium ${
-                                isSelected ? "text-text" : "text-text"
-                              }`}
-                            >
-                              {addon.name}
-                            </span>
-                            <span
-                              className={`ml-auto text-sm ${
-                                isSelected ? "text-text" : "text-subtext"
-                              }`}
-                            >
-                              {addon.price}
-                            </span>
-                          </div>
+                          <option key={index} value={service}>
+                            {service} - ${price}
+                          </option>
                         );
                       })}
-                    </div>
-                    {selectedAddons.length > 0 && (
-                      <p className="text-sm text-subtext mt-2">
-                        Selected: {selectedAddons.join(", ")}
-                      </p>
-                    )}
+                    </select>
                   </div>
                 </div>
 
+                {/* Add-Ons Selection */}
+                <div className="mt-6 p-4">
+                  <label className="block text-text text-sm font-medium mb-3">
+                    Add-Ons (Optional)
+                  </label>
+                  <div className="grid md:grid-cols-3 grid-cols-2 gap-3   border border-background-300 p-3 bg-background-100 rounded">
+                    {addons.map((addon, idx) => {
+                      const isSelected = selectedAddons.includes(addon.name);
+                      return (
+                        <div
+                          key={idx}
+                          onClick={() => toggleAddon(addon.name)}
+                          className={`flex items-center gap-3 p-2 rounded cursor-pointer transition-colors duration-200 ${
+                            isSelected
+                              ? "bg-primary text-text"
+                              : "bg-background-200 hover:bg-background-300"
+                          }`}
+                        >
+                          <div
+                            className={`w-4 h-4 border-2 rounded transition-colors duration-200 ${
+                              isSelected
+                                ? "bg-white border-white"
+                                : "border-gray-400"
+                            }`}
+                          >
+                            {isSelected && (
+                              <div className="w-full h-full flex items-center justify-center">
+                                <span className="text-primary text-xs font-bold">
+                                  ✓
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                          <span
+                            className={`font-medium ${
+                              isSelected ? "text-text" : "text-text"
+                            }`}
+                          >
+                            {addon.name}
+                          </span>
+                          <span
+                            className={`ml-auto text-md ${
+                              isSelected ? "text-text" : "text-text"
+                            }`}
+                          >
+                            {addon.price}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  {selectedAddons.length > 0 && (
+                    <p className="text-sm text-subtext mt-2">
+                      Selected: {selectedAddons.join(", ")}
+                    </p>
+                  )}
+                </div>
+
                 {/* Additional Message */}
-                <div className="bg-background-100 rounded-lg p-6">
+                <div className="bg-background-100 rounded-lg p-4 md:p-6">
                   <h4 className="text-lg font-semibold text-text mb-4">
                     Additional Information
                   </h4>
@@ -292,7 +287,7 @@ const BookingMobile = ({
 
         {/* Price Estimate */}
         <div className="animate-in mt-12">
-          <div className="bg-background-200 rounded-lg p-8">
+          <div className="bg-background-200 p-4 md:p-8">
             <h3 className="text-2xl font-bold text-text mb-6 text-center">
               Price Estimate
             </h3>
@@ -365,7 +360,7 @@ const BookingMobile = ({
 
         {/* Service Guarantee - moved to bottom */}
         <div className="animate-in mt-12 text-center">
-          <div className="bg-background-200 rounded-lg p-8">
+          <div className="bg-background-200 rounded-lg p-4 md:p-8">
             <h3 className="text-2xl font-bold text-text mb-4">Our Guarantee</h3>
             <div className="text-subtext text-lg max-w-3xl mx-auto">
               <p>
@@ -377,7 +372,7 @@ const BookingMobile = ({
           </div>
         </div>
       </div>
-    </Section>
+    </div>
   );
 };
 
