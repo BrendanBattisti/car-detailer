@@ -29,8 +29,8 @@ const BeforeAfterGallery = () => {
       name: "Headlight Restoration",
       photos: [
         {
-          beforeImage: "/Images/before.webp",
-          afterImage: "/Images/after.webp",
+          beforeImage: "/Images/Examples/beforeSquare.webp",
+          afterImage: "/Images/Examples/afterSquare.webp",
         },
       ],
     },
