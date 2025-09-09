@@ -117,12 +117,12 @@ const Footer = () => {
           <a href="/">
             <img
               className="hidden lg:block"
-              src="/Images/Logo-removebg-preview.png"
+              src="/Images/Logo-removebg-preview.avif"
               alt="Carmichael's Elite Mobile Detailing"
             />
             <img
               className="block lg:hidden"
-              src="/Images/Logo-mobile.png"
+              src="/Images/Logo-mobile.avif"
               alt="Carmichael's Elite Mobile Detailing"
             />
           </a>
