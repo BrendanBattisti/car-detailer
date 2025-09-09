@@ -117,7 +117,7 @@ const Footer = () => {
           <a href="/">
             <img
               className="hidden lg:block"
-              src="/Images/Logo-removebg-preview.avif"
+              src="/Images/Logo.avif"
               alt="Carmichael's Elite Mobile Detailing"
             />
             <img
