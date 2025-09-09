@@ -8,11 +8,33 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
+import { bookingUrl } from "../config/booking";
 
 const BeforeAfterGallery = () => {
   const [thumbsSwiper] = useState(null);
-  const toWebp = (path) => path.replace(/\.(jpe?g|png)$/i, ".webp");
 
+  const singleGalleryItems = [
+    {
+      id: 1,
+      name: "Interior Deep Clean",
+      photos: [
+        {
+          beforeImage: "/Images/Examples/InteriorBefore.webp",
+          afterImage: "/Images/Examples/InteriorAfter.webp",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Headlight Restoration",
+      photos: [
+        {
+          beforeImage: "/Images/before.webp",
+          afterImage: "/Images/after.webp",
+        },
+      ],
+    },
+  ];
   // Gallery data organized by car with multiple before/after photos
   const galleryItems = [
     {
@@ -27,14 +49,14 @@ const BeforeAfterGallery = () => {
       photos: [
         {
           id: 1,
-          beforeImage: "/Images/Examples/CadillacExteriorBefore.JPG",
-          afterImage: "/Images/Examples/CadillacExteriorAfter.jpg",
+          beforeImage: "/Images/Examples/CadillacExteriorBefore.webp",
+          afterImage: "/Images/Examples/CadillacExteriorAfter.webp",
           title: "Complete Exterior Detail",
         },
         {
           id: 2,
-          beforeImage: "/Images/Examples/CadillacInteriorBefore.JPG",
-          afterImage: "/Images/Examples/CadillacInteriorAfter.JPG",
+          beforeImage: "/Images/Examples/CadillacInteriorBefore.webp",
+          afterImage: "/Images/Examples/CadillacInteriorAfter.webp",
           title: "Interior Deep Clean",
         },
       ],
@@ -51,15 +73,38 @@ const BeforeAfterGallery = () => {
       photos: [
         {
           id: 1,
-          beforeImage: "/Images/Examples/RVFrontBefore.jpg",
-          afterImage: "/Images/Examples/RVFrontAfter.jpg",
+          beforeImage: "/Images/Examples/RVFrontBefore.webp",
+          afterImage: "/Images/Examples/RVFrontAfter.webp",
           title: "Front Profile",
         },
         {
           id: 2,
-          beforeImage: "/Images/Examples/RVSideBefore.jpg",
-          afterImage: "/Images/Examples/RVSideAfter.jpg",
+          beforeImage: "/Images/Examples/RVSideBefore.webp",
+          afterImage: "/Images/Examples/RVSideAfter.webp",
           title: "Side Profile",
+        },
+      ],
+    },
+    {
+      id: 3,
+      carInfo: {
+        make: "Subaru",
+        model: "Outback",
+        color: "Blue",
+        package: "Complete Transformation",
+      },
+      photos: [
+        {
+          id: 1,
+          beforeImage: "/Images/Examples/SubaruExteriorBefore .webp",
+          afterImage: "/Images/Examples/SubaruExteriorAfter.webp",
+          title: "Exterior Detail",
+        },
+        {
+          id: 2,
+          beforeImage: "/Images/Examples/SubaruInteriorBefore.webp",
+          afterImage: "/Images/Examples/SubaruInteriorAfter.webp",
+          title: "Interior Detail",
         },
       ],
     },
@@ -107,15 +152,17 @@ const BeforeAfterGallery = () => {
                   className="bg-background-200 rounded-2xl p-8 shadow-xl"
                 >
                   {/* Car Info Header */}
-                  <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">
-                      {car.carInfo.year} {car.carInfo.make} {car.carInfo.model}
-                    </h2>
-                    <p className="text-subtext text-lg">
-                      {car.carInfo.color} • {car.carInfo.package}
-                    </p>
-                  </div>
-
+                  {car.carInfo && (
+                    <div className="text-center mb-8">
+                      <h2 className="text-3xl md:text-4xl font-bold text-text mb-2">
+                        {car.carInfo.year} {car.carInfo.make}{" "}
+                        {car.carInfo.model}
+                      </h2>
+                      <p className="text-subtext text-lg">
+                        {car.carInfo.color} • {car.carInfo.package}
+                      </p>
+                    </div>
+                  )}
                   {/* Before/After Photos Grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {car.photos.map((photo) => (
@@ -148,18 +195,12 @@ const BeforeAfterGallery = () => {
                           >
                             <SwiperSlide>
                               <div className="relative">
-                                <picture>
-                                  <source
-                                    srcSet={toWebp(photo.beforeImage)}
-                                    type="image/webp"
-                                  />
-                                  <img
-                                    src={photo.beforeImage}
-                                    alt={`${photo.title} - Before`}
-                                    className="w-full object-cover"
-                                    loading="lazy"
-                                  />
-                                </picture>
+                                <img
+                                  src={photo.beforeImage}
+                                  alt={`${photo.title} - Before`}
+                                  className="w-full object-cover"
+                                  loading="lazy"
+                                />
                                 <div className="hidden md:block absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold">
                                   BEFORE
                                 </div>
@@ -167,18 +208,79 @@ const BeforeAfterGallery = () => {
                             </SwiperSlide>
                             <SwiperSlide>
                               <div className="relative">
-                                <picture>
-                                  <source
-                                    srcSet={toWebp(photo.afterImage)}
-                                    type="image/webp"
-                                  />
-                                  <img
-                                    src={photo.afterImage}
-                                    alt={`${photo.title} - After`}
-                                    className="w-full object-cover"
-                                    loading="lazy"
-                                  />
-                                </picture>
+                                <img
+                                  src={photo.afterImage}
+                                  alt={`${photo.title} - After`}
+                                  className="w-full object-cover"
+                                  loading="lazy"
+                                />
+                                <div className="hidden md:block absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold">
+                                  AFTER
+                                </div>
+                              </div>
+                            </SwiperSlide>
+                          </Swiper>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+              {singleGalleryItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-background-200 rounded-2xl p-8 shadow-xl"
+                >
+                  <h3 className="text-xl font-bold text-text text-center mb-6">
+                    {item.name}
+                  </h3>
+                  <div className="space-y-4">
+                    {item.photos.map((photo, index) => (
+                      <div key={index} className="space-y-4">
+                        <h4 className="text-lg font-semibold text-text text-center">
+                          {photo.title}
+                        </h4>
+                        <div className="relative">
+                          <Swiper
+                            modules={[Navigation, Pagination, Thumbs]}
+                            spaceBetween={20}
+                            navigation={true}
+                            pagination={{
+                              clickable: true,
+                              renderBullet: function (index, className) {
+                                if (index === 0) {
+                                  return `<span class="${className} before-bullet">Before</span>`;
+                                } else {
+                                  return `<span class="${className} after-bullet">After</span>`;
+                                }
+                              },
+                            }}
+                            thumbs={{ swiper: thumbsSwiper }}
+                            className="before-after-swiper rounded-lg overflow-hidden"
+                          >
+                            <SwiperSlide>
+                              <div className="relative">
+                                <img
+                                  src={photo.beforeImage}
+                                  alt={`${photo.title} - Before`}
+                                  className="w-full object-cover"
+                                  loading="lazy"
+                                />
+                                <div className="hidden md:block absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold">
+                                  BEFORE
+                                </div>
+                              </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <div className="relative">
+                                <img
+                                  src={photo.afterImage}
+                                  alt={`${photo.title} - After`}
+                                  className="w-full object-cover"
+                                  loading="lazy"
+                                />
                                 <div className="hidden md:block absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold">
                                   AFTER
                                 </div>

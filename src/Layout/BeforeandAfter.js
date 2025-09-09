@@ -21,8 +21,8 @@ const BeforeandAfter = () => {
         {/* Before and After Slider */}
         <div className="animate-in mb-12">
           <BeforeAfterSlider
-            beforeImage="/Images/before.jpg"
-            afterImage="/Images/after.jpg"
+            beforeImage="/Images/before.webp"
+            afterImage="/Images/after.webp"
             beforeAlt="Car before detailing - dirty and dull"
             afterAlt="Car after detailing - clean and shiny"
           />
