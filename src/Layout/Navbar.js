@@ -10,7 +10,7 @@ const Navbar = ({ isBookingPage = false }) => {
     ["About Us", "/#about"],
     ["FAQs", "/#faq"],
     ["Testimonials", "/#testimonials"],
-    ["Before and After", "/#beforeandafter"],
+    ["Gallery", "/gallery"],
   ];
 
   function NavbarLink({ text, url, extraClasses = "" }) {

@@ -18,6 +18,11 @@ const FAQ = () => {
       answer:
         "Yes! We offer mobile detailing services for your convenience. We can come to your home or office.",
     },
+    {
+      question: "Do you work with fleet vehicles?",
+      answer:
+        "Yes! We work with fleet vehicles. For us, no job is too big or too small. We can come to your fleet and detail all of your vehicles at once.",
+    },
   ];
 
   return (

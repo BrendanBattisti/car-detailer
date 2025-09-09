@@ -34,10 +34,10 @@ const Footer = () => {
           </HashLink>
           <HashLink
             smooth
-            to="/#beforeandafter"
+            to="/gallery"
             className="hover:text-primary transition-colors duration-200"
           >
-            Before & After
+            Gallery
           </HashLink>
           <HashLink
             smooth
