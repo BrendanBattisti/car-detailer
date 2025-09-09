@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Section from "../Components/Section";
 import VehicleSelector from "./VehicleSelector";
+import { detailedServices, addons } from "../data/bookingData";
 
 const Products = () => {
   const [vehicleType, setVehicleType] = useState("sedan");
@@ -35,118 +36,6 @@ const Products = () => {
   //   }));
   // };
 
-  const services = [
-    {
-      category: "Interior",
-      tiers: [
-        {
-          name: "Premium",
-          description: "Thorough interior cleaning for a refreshed ride.",
-          features: [
-            "Light Interior Wipe Down",
-            "Full Seat & Floor Vacuum",
-            "Interior Glass Clean",
-            "Detailed Clean of Vents and Center Console",
-          ],
-          prices: { sedan: "$120", suv: "$160", truck: "$200" },
-        },
-        {
-          name: "Elite",
-          description: "Deep interior detail with premium treatments.",
-          features: [
-            "UV Protection of Hard Surfaces",
-            "Detailed Clean and Shine Treatment of Hard Surfaces",
-            "Full Shampoo & Spot Treatment of All Upholstery",
-            "Full Interior Steam Clean",
-          ],
-          prices: { sedan: "$150", suv: "$190", truck: "$230" },
-        },
-      ],
-    },
-    {
-      category: "Exterior",
-      tiers: [
-        {
-          name: "Premium",
-          description: "Protective wash and shine for your car's exterior.",
-          features: [
-            "Tires & Wheels",
-            "Pre-Wash and Hand Wash (two bucket method)",
-            "Exterior Glass Clean",
-            "Wheel Well",
-            "Tire Shine",
-            "Bug & Tar Removal",
-            "Door Jamb Wipe Down",
-            "Trim Restoration",
-          ],
-          prices: { sedan: "$80", suv: "$120", truck: "$160" },
-        },
-        {
-          name: "Elite",
-          description: "Full exterior restoration with lasting shine.",
-          features: [
-            "Iron Decontamination",
-            "Clay Bar Treatment",
-            "Wax Polish",
-            "UV Protection (up to 6 months)",
-          ],
-          prices: { sedan: "$110", suv: "$150", truck: "$190" },
-        },
-      ],
-    },
-    {
-      category: "Full Package (Interior + Exterior)",
-      tiers: [
-        {
-          name: "Premium",
-          description: "Complete inside & out refresh for your vehicle.",
-          features: [
-            "Light Interior Wipe Down",
-            "Full Seat & Floor Vacuum",
-            "Interior Glass Clean",
-            "Detailed Clean of Vents and Center Console",
-            "Tires & Wheels",
-            "Pre-Wash and Hand Wash (two bucket method)",
-            "Exterior Glass Clean",
-            "Wheel Well",
-            "Tire Shine",
-            "Bug & Tar Removal",
-            "Door Jamb Wipe Down",
-            "Trim Restoration",
-          ],
-          prices: { sedan: "$180", suv: "$250", truck: "$320" },
-        },
-        {
-          name: "Elite",
-          description: "Our most comprehensive detailing package.",
-          features: [
-            "UV Protection of Hard Surfaces",
-            "Detailed Clean and Shine Treatment of Hard Surfaces",
-            "Full Shampoo & Spot Treatment of All Upholstery",
-            "Full Interior Steam Clean",
-            "Iron Decontamination",
-            "Clay Bar Treatment",
-            "Wax Polish",
-            "UV Protection (up to 6 months)",
-          ],
-          prices: { sedan: "$225", suv: "$305", truck: "$385" },
-        },
-      ],
-    },
-  ];
-
-  const addons = [
-    { name: "Headlight Restoration", price: "$55" },
-    { name: "Engine Bay Detail", price: "$70" },
-    { name: "Clay Bar Treatment", price: "$55" },
-    { name: "Ceramic Coating", price: "$550+" },
-    { name: "UV Protection", price: "$35" },
-    { name: "Seat Shampoo", price: "$70" },
-    { name: "Carpet & Mat Shampoo", price: "$55" },
-    { name: "Smoke/Odor Removal", price: "$95" },
-    { name: "Pet Hair Removal", price: "$55" },
-  ];
-
   return (
     <Section
       id="services"
@@ -159,7 +48,7 @@ const Products = () => {
         setVehicleType={setVehicleType}
       />
       <div className="space-y-8">
-        {services.map((service, idx) => (
+        {detailedServices.map((service, idx) => (
           <div key={idx}>
             <h2 className="text-2xl font-bold text-text mb-4">
               {service.category}

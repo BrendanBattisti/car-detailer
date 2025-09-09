@@ -3,6 +3,7 @@
 export const EMAILJS_CONFIG = {
   serviceId: "service_1tuew8j", // Your EmailJS service ID
   templateId: "template_cnzetya", // Your EmailJS template ID
+  bookingTemplateId: "template_xivw41a",
   publicKey: "PK58mdRLEoSl_n8gz", // Your EmailJS public key
 };
 

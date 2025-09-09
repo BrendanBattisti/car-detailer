@@ -2,7 +2,7 @@ import React from "react";
 import Section from "../Components/Section";
 import { FaCalendarAlt, FaCar } from "react-icons/fa";
 
-const BookingMobile = ({
+const BookingDesktop = ({
   bookingData,
   selectedAddons,
   handleInputChange,
@@ -49,72 +49,74 @@ const BookingMobile = ({
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
-                <h4 className="text-lg font-semibold text-text mb-4">
-                  Personal Information
-                </h4>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-text text-sm font-medium mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={bookingData.firstName}
-                      onChange={(e) =>
-                        handleInputChange("firstName", e.target.value)
-                      }
-                      className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="John"
-                    />
+                <div className="bg-background-100 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-text mb-4">
+                    Personal Information
+                  </h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-text text-sm font-medium mb-2">
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={bookingData.firstName}
+                        onChange={(e) =>
+                          handleInputChange("firstName", e.target.value)
+                        }
+                        className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="John"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-text text-sm font-medium mb-2">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={bookingData.lastName}
+                        onChange={(e) =>
+                          handleInputChange("lastName", e.target.value)
+                        }
+                        className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="Doe"
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-text text-sm font-medium mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={bookingData.lastName}
-                      onChange={(e) =>
-                        handleInputChange("lastName", e.target.value)
-                      }
-                      className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-4 mt-4">
-                  <div>
-                    <label className="block text-text text-sm font-medium mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={bookingData.email}
-                      onChange={(e) =>
-                        handleInputChange("email", e.target.value)
-                      }
-                      className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="john.doe@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-text text-sm font-medium mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={bookingData.phone}
-                      onChange={(e) =>
-                        handleInputChange("phone", e.target.value)
-                      }
-                      className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="(585) 507-7146"
-                    />
+                  <div className="grid md:grid-cols-2 gap-4 mt-4">
+                    <div>
+                      <label className="block text-text text-sm font-medium mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={bookingData.email}
+                        onChange={(e) =>
+                          handleInputChange("email", e.target.value)
+                        }
+                        className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="john.doe@example.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-text text-sm font-medium mb-2">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={bookingData.phone}
+                        onChange={(e) =>
+                          handleInputChange("phone", e.target.value)
+                        }
+                        className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="(585) 507-7146"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -276,8 +278,8 @@ const BookingMobile = ({
                 )}
 
                 {submitStatus === "error" && (
-                  <div className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-                    <p className="font-semibold">
+                  <div className="mt-4 p-4 bg-red-100 border border-red-400  rounded-lg">
+                    <p className="font-semibold text-primary">
                       Sorry, there was an error sending your request.
                     </p>
                     <p className="text-black">
@@ -381,4 +383,4 @@ const BookingMobile = ({
   );
 };
 
-export default BookingMobile;
+export default BookingDesktop;
