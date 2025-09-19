@@ -41,7 +41,7 @@ const Hero = () => {
           <h1 className="hero-title">
             <em>Elite</em>
             <br />
-            Mobile <br /> Detailing
+            Mobile <br className="md:hidden" /> Detailing
           </h1>
           <p className="hero-sub text-lg lg:text-xl mb-8 max-w-2xl lg:w-3/5 font-secondary mt-10">
             Transform your vehicle with our premium mobile detailing services.

@@ -63,7 +63,6 @@ export const detailedServices = [
         features: [
           "Iron Decontamination",
           "Clay Bar Treatment",
-          "Wax Polish",
           "UV Protection (up to 6 months)",
         ],
         prices: { sedan: "$110", suv: "$150", truck: "$190" },
@@ -102,7 +101,6 @@ export const detailedServices = [
           "Full Interior Steam Clean",
           "Iron Decontamination",
           "Clay Bar Treatment",
-          "Wax Polish",
           "UV Protection (up to 6 months)",
         ],
         prices: { sedan: "$225", suv: "$305", truck: "$385" },
