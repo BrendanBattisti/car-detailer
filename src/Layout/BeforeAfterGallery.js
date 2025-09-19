@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BeforeAfterSlider from "../Components/BeforeAfterSlider";
+import { bookingUrl } from "../config/booking";
 
 const BeforeAfterGallery = () => {
   const singleGalleryItems = [
@@ -220,7 +221,7 @@ const BeforeAfterGallery = () => {
                   Book your professional mobile detailing service today and see
                   the difference for yourself.
                 </p>
-                <a href="/booking" className="button-primary text-lg">
+                <a href={bookingUrl} className="button-primary text-lg">
                   Book Your Service Now
                 </a>
               </div>

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Link } from "react-router-dom";
+import { bookingUrl } from "../config/booking";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -49,9 +49,9 @@ const Hero = () => {
             your car wherever you are.
           </p>
           <div className="hero-cta flex flex-row gap-4 pb-6">
-            <Link className="button-primary w-fit" to="/booking">
+            <a className="button-primary w-fit" href={bookingUrl}>
               Book Now
-            </Link>
+            </a>
 
             <a className="border-2 button-secondary w-fit" href="#services">
               View Services
