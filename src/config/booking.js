@@ -3,7 +3,7 @@
 
 export const BOOKING_CONFIG = {
   // Main booking page URL
-  bookingUrl: "https://calendly.com/brendan-battisti",
+  bookingUrl: "https://carmichaelselitemobiledetailing.com/booking",
 
   // Booking button text
   bookingButtonText: "Book Now",

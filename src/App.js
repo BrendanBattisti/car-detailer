@@ -92,6 +92,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/gallery" element={<BeforeAfterGallery />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
