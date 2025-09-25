@@ -13,7 +13,12 @@ import BeforeandAfter from "./Layout/BeforeandAfter";
 import BeforeAfterGallery from "./Layout/BeforeAfterGallery";
 import Testimonials from "./Layout/Testimonials";
 import Booking from "./Layout/Booking";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 function App() {
   // Main page component with all sections
