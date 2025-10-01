@@ -76,10 +76,7 @@ function App() {
           name="description"
           content="Book your mobile car detailing service. Choose your preferred date, time, and service package. We come to you in Rochester, NY area."
         />
-        <link
-          rel="canonical"
-          href="https://carmichaelselitemobiledetailing.com/booking"
-        />
+        <link href="https://carmichaelselitemobiledetailing.com/booking" />
       </Helmet>
       <div className="absolute z-20 w-screen">
         <Navbar isBookingPage={true} />
