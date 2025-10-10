@@ -31,6 +31,14 @@ function App() {
         scrollBehavior: "smooth",
       }}
     >
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-5SPSBNBQ"
+          height="0"
+          width="0"
+          style="display: none; visibility: hidden"
+        ></iframe>
+      </noscript>
       <Helmet>
         <title>
           Carmichael's Elite Mobile Detailing | Premium Mobile Car Detailing
