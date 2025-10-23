@@ -3,7 +3,8 @@
 
 export const BOOKING_CONFIG = {
   // Main booking page URL
-  bookingUrl: "https://carmichaelselitemobiledetailing.com/booking",
+  bookingUrl:
+    "https://clienthub.getjobber.com/booking/ee24c0b9-3b81-4134-a69f-4d9434bbad04",
 
   // Booking button text
   bookingButtonText: "Book Now",

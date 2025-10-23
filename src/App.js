@@ -13,6 +13,7 @@ import BeforeandAfter from "./Layout/BeforeandAfter";
 import BeforeAfterGallery from "./Layout/BeforeAfterGallery";
 import Testimonials from "./Layout/Testimonials";
 import Booking from "./Layout/Booking";
+import { bookingUrl } from "./config/booking";
 import {
   BrowserRouter as Router,
   Routes,
@@ -100,7 +101,13 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/booking" element={<BookingPage />} />
+        <Route
+          path="/booking"
+          component={() => {
+            window.location.href = bookingUrl;
+            return null;
+          }}
+        />{" "}
         <Route path="/gallery" element={<BeforeAfterGallery />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
