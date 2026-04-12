@@ -13,9 +13,14 @@ const BookingDesktop = ({
   addons,
   servicePrices,
   addonPrices,
+  serviceBasePrice,
+  rvRate,
+  rvServiceName,
   isSubmitting,
   submitStatus,
 }) => {
+  const isRv = bookingData.vehicleType === "rv";
+
   return (
     <Section
       id="booking"
@@ -143,34 +148,69 @@ const BookingDesktop = ({
                         <option value="sedan">Sedan</option>
                         <option value="suv">SUV</option>
                         <option value="truck">Truck/Minivan</option>
+                        <option value="rv">RV</option>
                       </select>
                     </div>
-                    <div>
-                      <label className="block text-text text-sm font-medium mb-2">
-                        Service Package *
-                      </label>
-                      <select
-                        required
-                        value={bookingData.service}
-                        onChange={(e) =>
-                          handleInputChange("service", e.target.value)
-                        }
-                        className="w-full px-4 py-3 border border-background-300 rounded text-black focus:outline-none focus:border-primary transition-colors"
-                      >
-                        <option value="">Select a service</option>
-                        {services.map((service, index) => {
-                          const price =
-                            servicePrices[bookingData.vehicleType]?.[service] ||
-                            0;
-                          return (
-                            <option key={index} value={service}>
-                              {service} - ${price}
-                            </option>
-                          );
-                        })}
-                      </select>
-                    </div>
+                    {!isRv ? (
+                      <div>
+                        <label className="block text-text text-sm font-medium mb-2">
+                          Service Package *
+                        </label>
+                        <select
+                          required
+                          value={bookingData.service}
+                          onChange={(e) =>
+                            handleInputChange("service", e.target.value)
+                          }
+                          className="w-full px-4 py-3 border border-background-300 rounded text-black focus:outline-none focus:border-primary transition-colors"
+                        >
+                          <option value="">Select a service</option>
+                          {services.map((service, index) => {
+                            const price =
+                              servicePrices[bookingData.vehicleType]?.[service] ||
+                              0;
+                            return (
+                              <option key={index} value={service}>
+                                {service} - ${price}
+                              </option>
+                            );
+                          })}
+                        </select>
+                      </div>
+                    ) : (
+                      <div>
+                        <label className="block text-text text-sm font-medium mb-2">
+                          Service
+                        </label>
+                        <div className="w-full px-4 py-3 border border-background-300 rounded bg-background-200 text-text">
+                          {rvServiceName} - ${rvRate}/sq ft
+                        </div>
+                      </div>
+                    )}
                   </div>
+
+                  {isRv && (
+                    <div className="mt-4">
+                      <label className="block text-text text-sm font-medium mb-2">
+                        RV Square Footage *
+                      </label>
+                      <input
+                        type="number"
+                        min="1"
+                        step="1"
+                        required={isRv}
+                        value={bookingData.squareFootage}
+                        onChange={(e) =>
+                          handleInputChange("squareFootage", e.target.value)
+                        }
+                        className="w-full px-4 py-3 border border-background-300 rounded text-black placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+                        placeholder="e.g. 250"
+                      />
+                      <p className="text-subtext text-sm mt-2">
+                        RV pricing is ${rvRate} per square foot.
+                      </p>
+                    </div>
+                  )}
 
                   {/* Add-Ons Selection */}
                   <div className="mt-6">
@@ -301,18 +341,15 @@ const BookingDesktop = ({
 
             <div className="max-w-2xl mx-auto">
               {/* Service Cost */}
-              {bookingData.service && (
+              {(isRv ? Number(bookingData.squareFootage) > 0 : bookingData.service) && (
                 <div className="flex justify-between items-center py-3 border-b border-background-300">
                   <span className="text-text font-medium">
-                    {bookingData.service}
+                    {isRv
+                      ? `${rvServiceName} (${bookingData.squareFootage || 0} sq ft @ $${rvRate}/sq ft)`
+                      : bookingData.service}
                   </span>
                   <span className="text-primary font-bold text-lg">
-                    $
-                    {
-                      servicePrices[bookingData.vehicleType][
-                        bookingData.service
-                      ]
-                    }
+                    ${serviceBasePrice}
                   </span>
                 </div>
               )}

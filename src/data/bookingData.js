@@ -10,6 +10,9 @@ export const services = [
   "Elite Full Package(Interior + Exterior)",
 ];
 
+export const RV_SQFT_RATE = 10;
+export const RV_SERVICE_NAME = "RV Cleaning";
+
 // Detailed service structure for products page
 export const detailedServices = [
   {
@@ -24,7 +27,7 @@ export const detailedServices = [
           "Interior Glass Clean",
           "Detailed Clean of Vents and Center Console",
         ],
-        prices: { sedan: "$120", suv: "$160", truck: "$200" },
+        prices: { sedan: "$120", suv: "$160", truck: "$200", rv: "$10/sq ft" },
       },
       {
         name: "Elite",
@@ -35,7 +38,7 @@ export const detailedServices = [
           "Full Shampoo & Spot Treatment of All Upholstery",
           "Full Interior Steam Clean",
         ],
-        prices: { sedan: "$150", suv: "$190", truck: "$230" },
+        prices: { sedan: "$150", suv: "$190", truck: "$230", rv: "$10/sq ft" },
       },
     ],
   },
@@ -55,7 +58,7 @@ export const detailedServices = [
           "Door Jamb Wipe Down",
           "Trim Restoration",
         ],
-        prices: { sedan: "$80", suv: "$120", truck: "$160" },
+        prices: { sedan: "$80", suv: "$120", truck: "$160", rv: "$10/sq ft" },
       },
       {
         name: "Elite",
@@ -65,7 +68,7 @@ export const detailedServices = [
           "Clay Bar Treatment",
           "UV Protection (up to 6 months)",
         ],
-        prices: { sedan: "$110", suv: "$150", truck: "$190" },
+        prices: { sedan: "$110", suv: "$150", truck: "$190", rv: "$10/sq ft" },
       },
     ],
   },
@@ -89,7 +92,7 @@ export const detailedServices = [
           "Door Jamb Wipe Down",
           "Trim Restoration",
         ],
-        prices: { sedan: "$180", suv: "$250", truck: "$320" },
+        prices: { sedan: "$180", suv: "$250", truck: "$320", rv: "$10/sq ft" },
       },
       {
         name: "Elite",
@@ -103,7 +106,7 @@ export const detailedServices = [
           "Clay Bar Treatment",
           "UV Protection (up to 6 months)",
         ],
-        prices: { sedan: "$225", suv: "$305", truck: "$385" },
+        prices: { sedan: "$225", suv: "$305", truck: "$385", rv: "$10/sq ft" },
       },
     ],
   },
@@ -169,6 +172,7 @@ export const initialBookingData = {
   email: "",
   phone: "",
   vehicleType: "sedan",
+  squareFootage: "",
   service: "",
   addons: [],
   message: "",

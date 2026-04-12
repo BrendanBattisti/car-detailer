@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCarAlt } from "react-icons/fa";
+import { FaBus, FaCarAlt } from "react-icons/fa";
 import { TbCarSuv } from "react-icons/tb";
 import { FaVanShuttle } from "react-icons/fa6";
 
@@ -12,6 +12,7 @@ const VehicleSelector = ({ vehicleType, setVehicleType }) => {
       label: "Truck/Minivan",
       icon: <FaVanShuttle className="w-8 h-8" />,
     },
+    { type: "rv", label: "RV", icon: <FaBus className="w-8 h-8" /> },
   ];
 
   return (
@@ -29,7 +30,7 @@ const VehicleSelector = ({ vehicleType, setVehicleType }) => {
             <button
               key={btn.type}
               onClick={() => setVehicleType(btn.type)}
-              className={`flex flex-col w-full sm:w-1/3 items-center gap-2 py-4 font-semibold transition-colors duration-300 ease-in-out
+              className={`flex flex-col w-full sm:w-1/4 items-center gap-2 py-4 font-semibold transition-colors duration-300 ease-in-out
                 ${
                   vehicleType === btn.type
                     ? "bg-primary text-text"

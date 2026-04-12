@@ -5,6 +5,8 @@ import {
   servicePrices,
   addonPrices,
   initialBookingData,
+  RV_SQFT_RATE,
+  RV_SERVICE_NAME,
 } from "../data/bookingData";
 import BookingDesktop from "./BookingDesktop";
 import BookingMobile from "./BookingMobile";
@@ -18,10 +20,21 @@ const Booking = () => {
   const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleInputChange = (field, value) => {
-    setBookingData((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
+    setBookingData((prev) => {
+      if (field === "vehicleType") {
+        return {
+          ...prev,
+          vehicleType: value,
+          // RV has a standalone service model and does not use package selection.
+          service: value === "rv" ? "" : prev.service,
+        };
+      }
+
+      return {
+        ...prev,
+        [field]: value,
+      };
+    });
   };
 
   const toggleAddon = (addonName) => {
@@ -39,10 +52,14 @@ const Booking = () => {
 
     try {
       // Prepare email template parameters
-      const servicePrice =
-        servicePrices[bookingData.vehicleType]?.[bookingData.service] || 0;
-      const serviceWithPrice = bookingData.service
-        ? `${bookingData.service} - $${servicePrice}`
+      const servicePrice = calculateServicePrice();
+      const isRv = bookingData.vehicleType === "rv";
+      const squareFootage = Number(bookingData.squareFootage) || 0;
+      const effectiveServiceName = isRv ? RV_SERVICE_NAME : bookingData.service;
+      const serviceWithPrice = effectiveServiceName
+        ? isRv
+          ? `${effectiveServiceName} - ${squareFootage} sq ft @ $${RV_SQFT_RATE}/sq ft = $${servicePrice}`
+          : `${effectiveServiceName} - $${servicePrice}`
         : "No service selected";
 
       const addonsWithPrices =
@@ -64,6 +81,8 @@ const Booking = () => {
         timestamp: new Date().toLocaleString(),
         selected_addons: addonsWithPrices,
         estimated_total: `$${totalPrice}`,
+        square_footage: isRv ? squareFootage : "N/A",
+        rv_rate: isRv ? `$${RV_SQFT_RATE}/sq ft` : "N/A",
       };
 
       console.log(templateParams);
@@ -89,17 +108,22 @@ const Booking = () => {
   };
 
   // Calculate total price
+  const calculateServicePrice = () => {
+    if (bookingData.vehicleType === "rv") {
+      const squareFootage = Number(bookingData.squareFootage) || 0;
+      return squareFootage * RV_SQFT_RATE;
+    }
+
+    if (!bookingData.service) return 0;
+
+    return servicePrices[bookingData.vehicleType]?.[bookingData.service] || 0;
+  };
+
   const calculateTotalPrice = () => {
     let total = 0;
 
     // Add service price based on vehicle type
-    if (
-      bookingData.service &&
-      servicePrices[bookingData.vehicleType] &&
-      servicePrices[bookingData.vehicleType][bookingData.service]
-    ) {
-      total += servicePrices[bookingData.vehicleType][bookingData.service];
-    }
+    total += calculateServicePrice();
 
     // Add addon prices
     selectedAddons.forEach((addonName) => {
@@ -111,6 +135,7 @@ const Booking = () => {
     return total;
   };
 
+  const serviceBasePrice = calculateServicePrice();
   const totalPrice = calculateTotalPrice();
 
   // Determine which view to render based on screen size or other criteria
@@ -140,6 +165,9 @@ const Booking = () => {
     addons,
     servicePrices,
     addonPrices,
+    serviceBasePrice,
+    rvRate: RV_SQFT_RATE,
+    rvServiceName: RV_SERVICE_NAME,
     isSubmitting,
     submitStatus,
   };
