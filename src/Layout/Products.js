@@ -13,7 +13,11 @@ const Products = () => {
   const [vehicleType, setVehicleType] = useState("sedan");
   const [expandedCards, setExpandedCards] = useState([]);
   const isRv = vehicleType === "rv";
+  const specialtyServices = detailedServices.find(
+    (service) => service.category === "Specialty Services"
+  );
   const visibleServices = detailedServices
+    .filter((service) => service.category !== "Specialty Services")
     .map((service) => ({
       ...service,
       tiers: service.tiers.filter((tier) => Boolean(tier.prices?.[vehicleType])),
@@ -110,6 +114,11 @@ const Products = () => {
                     service.category === "Motorcycle Services";
                   const isCardExpanded =
                     alwaysExpandedForMotorcycle || isExpanded;
+                  const tierDisplayPrice =
+                    tier.prices?.[vehicleType] ??
+                    tier.prices?.motorcycle ??
+                    Object.values(tier.prices || {})[0] ??
+                    "";
 
                   // add "Includes everything..." for Elite cards
                   const featureList =
@@ -195,7 +204,7 @@ const Products = () => {
                         {/* Right column: pricing */}
                         <div className="mt-4 xl:mt-0 xl:w-2/5 flex xl:flex-col flex-row text-right text-lg gap-2 flex-wrap">
                           <p className="p-1 xl:mb-2 rounded-lg font-primary self-end text-xl font-bold">
-                            {tier.prices[vehicleType]}
+                            {tierDisplayPrice}
                           </p>
                         </div>
                       </div>
@@ -212,6 +221,82 @@ const Products = () => {
               contact us for a custom quote.
             </div>
           )}
+        </div>
+      )}
+      {specialtyServices && specialtyServices.tiers.length > 0 && (
+        <div className="space-y-8 mt-8">
+          <div>
+            <h2 className="text-2xl font-bold text-text mb-4">
+              {specialtyServices.category}
+            </h2>
+            <div className="grid gap-6 items-start md:grid-cols-2">
+              {specialtyServices.tiers.map((tier, tIdx) => {
+                const cardKey = `specialty-${tIdx}`;
+                const isExpanded = expandedCards.includes(cardKey);
+                const tierDisplayPrice =
+                  tier.prices?.[vehicleType] ??
+                  tier.prices?.motorcycle ??
+                  Object.values(tier.prices || {})[0] ??
+                  "";
+
+                return (
+                  <div
+                    key={tIdx}
+                    className="service-card bg-background-200 rounded-lg overflow-hidden shadow-lg
+                                hover:shadow-2xl hover:scale-105 transform transition duration-300"
+                  >
+                    <div className="animate-in flex flex-col xl:flex-row p-6">
+                      <div className="flex-1 xl:w-3/5 xl:pr-6">
+                        <div className="mb-3">
+                          <h3 className="text-xl font-semibold">
+                            <span className="text-text">{tier.name}</span>
+                          </h3>
+                          <p className="text-subtext text-sm mt-1">
+                            {tier.description}
+                          </p>
+                        </div>
+
+                        <ul className="space-y-2 text-sm font-secondary leading-relaxed">
+                          {(isExpanded ? tier.features : tier.features.slice(0, 3)).map(
+                            (feature, fIdx) => (
+                              <li key={fIdx} className="flex items-center text-subtext">
+                                <span className="text-primary mr-2">✓</span>
+                                {feature}
+                              </li>
+                            )
+                          )}
+
+                          {tier.features.length > 3 && !isExpanded && (
+                            <li
+                              className="text-primary font-semibold cursor-pointer hover:text-primary-100"
+                              onClick={() => toggleExpand(cardKey)}
+                            >
+                              +{tier.features.length - 3} more features
+                            </li>
+                          )}
+
+                          {isExpanded && (
+                            <li
+                              className="text-primary font-semibold cursor-pointer hover:text-primary-100"
+                              onClick={() => toggleExpand(cardKey)}
+                            >
+                              Show less
+                            </li>
+                          )}
+                        </ul>
+                      </div>
+
+                      <div className="mt-4 xl:mt-0 xl:w-2/5 flex xl:flex-col flex-row text-right text-lg gap-2 flex-wrap">
+                        <p className="p-1 xl:mb-2 rounded-lg font-primary self-end text-xl font-bold">
+                          {tierDisplayPrice}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       )}
 
