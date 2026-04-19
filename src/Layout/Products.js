@@ -13,6 +13,12 @@ const Products = () => {
   const [vehicleType, setVehicleType] = useState("sedan");
   const [expandedCards, setExpandedCards] = useState([]);
   const isRv = vehicleType === "rv";
+  const visibleServices = detailedServices
+    .map((service) => ({
+      ...service,
+      tiers: service.tiers.filter((tier) => Boolean(tier.prices?.[vehicleType])),
+    }))
+    .filter((service) => service.tiers.length > 0);
   // const [selectedAddons, setSelectedAddons] = useState([]);
   // const [contactForm, setContactForm] = useState({
   //   name: "",
@@ -75,15 +81,35 @@ const Products = () => {
         </div>
       ) : (
         <div className="space-y-8">
-          {detailedServices.map((service, idx) => (
+          {visibleServices.map((service, idx) => {
+            const isSingleTier = service.tiers.length === 1;
+            const hideCategoryTitle = service.category === "Motorcycle Services";
+            return (
             <div key={idx}>
-              <h2 className="text-2xl font-bold text-text mb-4">
-                {service.category}
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6 items-start">
+              {!hideCategoryTitle && (
+                <h2
+                  className={`text-2xl font-bold text-text mb-4 ${
+                    isSingleTier ? "md:text-center" : ""
+                  }`}
+                >
+                  {service.category}
+                </h2>
+              )}
+              <div
+                className={`grid gap-6 items-start ${
+                  isSingleTier
+                    ? "md:grid-cols-1 max-w-2xl mx-auto justify-items-center"
+                    : "md:grid-cols-2"
+                }`}
+              >
                 {service.tiers.map((tier, tIdx) => {
                   const cardKey = `${idx}-${tIdx}`;
                   const isExpanded = expandedCards.includes(cardKey);
+                  const alwaysExpandedForMotorcycle =
+                    vehicleType === "motorcycle" &&
+                    service.category === "Motorcycle Services";
+                  const isCardExpanded =
+                    alwaysExpandedForMotorcycle || isExpanded;
 
                   // add "Includes everything..." for Elite cards
                   const featureList =
@@ -97,8 +123,10 @@ const Products = () => {
                   return (
                     <div
                       key={tIdx}
-                      className="service-card bg-background-200 rounded-lg overflow-hidden shadow-lg 
-                                hover:shadow-2xl hover:scale-105 transform transition duration-300"
+                      className={`service-card bg-background-200 rounded-lg overflow-hidden shadow-lg
+                                hover:shadow-2xl hover:scale-105 transform transition duration-300 ${
+                                  isSingleTier ? "w-full md:max-w-xl" : ""
+                                }`}
                     >
                       <div className="animate-in flex flex-col xl:flex-row p-6">
                         {/* Left column: title, description, features */}
@@ -119,7 +147,7 @@ const Products = () => {
 
                           {/* Features */}
                           <ul className="space-y-2 text-sm font-secondary leading-relaxed">
-                            {(isExpanded
+                            {(isCardExpanded
                               ? featureList
                               : featureList.slice(0, 3)
                             ).map((feature, fIdx) => {
@@ -142,7 +170,9 @@ const Products = () => {
                               );
                             })}
 
-                            {featureList.length > 3 && !isExpanded && (
+                            {featureList.length > 3 &&
+                              !isCardExpanded &&
+                              !alwaysExpandedForMotorcycle && (
                               <li
                                 className="text-primary font-semibold cursor-pointer hover:text-primary-100"
                                 onClick={() => toggleExpand(cardKey)}
@@ -151,7 +181,7 @@ const Products = () => {
                               </li>
                             )}
 
-                            {isExpanded && (
+                            {isCardExpanded && !alwaysExpandedForMotorcycle && (
                               <li
                                 className="text-primary font-semibold cursor-pointer hover:text-primary-100"
                                 onClick={() => toggleExpand(cardKey)}
@@ -174,7 +204,14 @@ const Products = () => {
                 })}
               </div>
             </div>
-          ))}
+            );
+          })}
+          {visibleServices.length === 0 && (
+            <div className="bg-background-200 rounded-lg p-6 text-center text-subtext">
+              No services are currently listed for this vehicle type. Please
+              contact us for a custom quote.
+            </div>
+          )}
         </div>
       )}
 

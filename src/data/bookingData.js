@@ -27,7 +27,7 @@ export const detailedServices = [
           "Interior Glass Clean",
           "Detailed Clean of Vents and Center Console",
         ],
-        prices: { sedan: "$120", suv: "$160", truck: "$200", rv: "$10/sq ft" },
+        prices: { sedan: "$150", suv: "$180", truck: "$200", rv: "$10/sq ft" },
       },
       {
         name: "Elite",
@@ -38,7 +38,7 @@ export const detailedServices = [
           "Full Shampoo & Spot Treatment of All Upholstery",
           "Full Interior Steam Clean",
         ],
-        prices: { sedan: "$150", suv: "$190", truck: "$230", rv: "$10/sq ft" },
+        prices: { sedan: "$170", suv: "$200", truck: "$230", rv: "$10/sq ft" },
       },
     ],
   },
@@ -107,6 +107,47 @@ export const detailedServices = [
           "UV Protection (up to 6 months)",
         ],
         prices: { sedan: "$225", suv: "$305", truck: "$385", rv: "$10/sq ft" },
+      },
+    ],
+  },
+  {
+    category: "Specialty Services",
+    tiers: [
+      {
+        name: "One Step Paint Correction",
+        description:
+          "Single-stage polish that reduces light swirls and haze while boosting gloss and depth.",
+        features: [
+          "Paint Assessment and Prep Wash",
+          "Light Defect and Swirl Reduction",
+          "Gloss Enhancement Polish",
+          "Protective Finish Applied",
+        ],
+        prices: { sedan: "Starting at $400", suv: "Starting at $400", truck: "Starting at $400", rv: "Starting at $400" },
+      },
+      {
+        name: "Two Step Paint Correction",
+        description:
+          "Two-stage correction process to target heavier imperfections and refine for a clear, deep finish.",
+        features: [
+          "Paint Assessment and Decontamination",
+          "Cutting Step for Deeper Defect Removal",
+          "Refinement Polish for Clarity and Gloss",
+          "Protective Finish Applied",
+        ],
+        prices: { sedan: "Starting at $700", suv: "Starting at $700", truck: "Starting at $700", rv: "Starting at $700" },
+      },
+    ],
+  },
+  {
+    category: "Motorcycle Services",
+    tiers: [
+      {
+        name: "Motorcycle Detail",
+        description:
+          "Comprehensive bike detailing to clean, brighten, and protect your ride from top to bottom.",
+        features: [],
+        prices: { motorcycle: "Starting at $200" },
       },
     ],
   },

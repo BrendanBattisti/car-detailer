@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBus, FaCarAlt } from "react-icons/fa";
+import { FaBus, FaCarAlt, FaMotorcycle } from "react-icons/fa";
 import { TbCarSuv } from "react-icons/tb";
 import { FaVanShuttle } from "react-icons/fa6";
 
@@ -11,6 +11,11 @@ const VehicleSelector = ({ vehicleType, setVehicleType }) => {
       type: "truck",
       label: "Truck/Minivan",
       icon: <FaVanShuttle className="w-8 h-8" />,
+    },
+    {
+      type: "motorcycle",
+      label: "Motorcycle",
+      icon: <FaMotorcycle className="w-8 h-8" />,
     },
     { type: "rv", label: "RV", icon: <FaBus className="w-8 h-8" /> },
   ];
@@ -24,13 +29,20 @@ const VehicleSelector = ({ vehicleType, setVehicleType }) => {
         <p className="text-center text-sm text-gray-300 mb-6">
           This helps determine the package price.
         </p>
-        {/*horizontal on sm+ screens, vertical on smaller screens */}
-        <div className="flex flex-col sm:flex-row justify-between w-full bg-white rounded-md overflow-hidden border border-gray-300">
-          {buttons.map((btn) => (
+        {/* 2-column layout on mobile, single row on larger screens */}
+        <div className="grid grid-cols-2 sm:grid-cols-5 w-full bg-[rgb(35,32,32)] rounded-md overflow-hidden border border-[rgb(35,32,32)]">
+          {buttons.map((btn, idx) => {
+            const isCenteredLastItem =
+              buttons.length % 2 === 1 && idx === buttons.length - 1;
+            return (
             <button
               key={btn.type}
               onClick={() => setVehicleType(btn.type)}
-              className={`flex flex-col w-full sm:w-1/4 items-center gap-2 py-4 font-semibold transition-colors duration-300 ease-in-out
+              className={`flex flex-col w-full items-center gap-2 py-4 font-semibold transition-colors duration-300 ease-in-out ${
+                isCenteredLastItem
+                  ? "col-span-2 sm:col-span-1 justify-self-center sm:justify-self-auto max-w-[12rem] sm:max-w-none"
+                  : ""
+              }
                 ${
                   vehicleType === btn.type
                     ? "bg-primary text-text"
@@ -40,7 +52,8 @@ const VehicleSelector = ({ vehicleType, setVehicleType }) => {
               {btn.icon}
               <span>{btn.label}</span>
             </button>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
