@@ -146,7 +146,8 @@ const BookingDesktop = ({
                         className="w-full px-4 py-3 border border-background-300 rounded text-black focus:outline-none focus:border-primary transition-colors"
                       >
                         <option value="sedan">Sedan</option>
-                        <option value="suv">SUV</option>
+                        <option value="suv">2-Row SUV</option>
+                        <option value="suv3row">3-Row SUV</option>
                         <option value="truck">Truck/Minivan</option>
                         <option value="rv">RV</option>
                       </select>
